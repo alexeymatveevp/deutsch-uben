@@ -33,6 +33,7 @@ function App() {
     return Math.floor(Math.random() * cards.length)
   })
   const [isFlipped, setIsFlipped] = useState(false)
+  const [disableFlipTransition, setDisableFlipTransition] = useState(false)
 
   useEffect(() => {
     if (cards.length === 0) {
@@ -43,6 +44,11 @@ function App() {
 
   useEffect(() => {
     setIsFlipped(false)
+    setDisableFlipTransition(true)
+    const frame = requestAnimationFrame(() => {
+      setDisableFlipTransition(false)
+    })
+    return () => cancelAnimationFrame(frame)
   }, [index])
 
   const activeCard = cards[index]
@@ -85,7 +91,9 @@ function App() {
         {displayIndex} / {total}
       </div>
       <button
-        className={`card ${isFlipped ? 'is-flipped' : ''}`}
+        className={`card ${isFlipped ? 'is-flipped' : ''} ${
+          disableFlipTransition ? 'no-transition' : ''
+        }`}
         type="button"
         onClick={() => setIsFlipped((current) => !current)}
         aria-pressed={isFlipped}

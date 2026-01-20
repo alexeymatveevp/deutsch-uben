@@ -75,6 +75,10 @@ button {
   transform-style: preserve-3d;
 }
 
+.card.no-transition .card-inner {
+  transition: none;
+}
+
 .card.is-flipped .card-inner {
   transform: rotateY(180deg);
 }
