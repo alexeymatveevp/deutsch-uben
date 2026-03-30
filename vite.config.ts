@@ -5,6 +5,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   // Netlify serves from the site root by default.
   base: '/',
+  server: {
+    host: true,
+  },
   plugins: [
     react(),
     VitePWA({

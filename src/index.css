@@ -108,7 +108,7 @@ button {
 .index-badge {
   position: fixed;
   top: 20px;
-  right: 24px;
+  left: 24px;
   padding: 8px 14px;
   background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(148, 163, 184, 0.4);
@@ -117,8 +117,77 @@ button {
   letter-spacing: 0.02em;
 }
 
-.card {
+.card-wrapper {
+  position: relative;
   width: min(900px, 92vw);
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+  color: #94a3b8;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  z-index: 10;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* ─── Shatter animation ─────────────────────────────────────────────────── */
+
+.shatter-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.shard {
+  position: absolute;
+  background: #f8fafc;
+  border-radius: 4px;
+  animation: shard-fly 0.5s ease-out forwards;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 3×3 grid of shards */
+.shard-0 { top: 0;      left: 0;      width: 38%; height: 36%; --tx: -60px;  --ty: -80px;  --rot: -18deg; }
+.shard-1 { top: 0;      left: 33%;    width: 38%; height: 30%; --tx: 10px;   --ty: -90px;  --rot: 8deg;   }
+.shard-2 { top: 0;      right: 0;     width: 34%; height: 34%; --tx: 70px;   --ty: -60px;  --rot: 22deg;  }
+.shard-3 { top: 30%;    left: 0;      width: 36%; height: 38%; --tx: -80px;  --ty: 10px;   --rot: -12deg; }
+.shard-4 { top: 28%;    left: 30%;    width: 40%; height: 40%; --tx: 5px;    --ty: 20px;   --rot: 3deg;   }
+.shard-5 { top: 32%;    right: 0;     width: 34%; height: 36%; --tx: 90px;   --ty: 15px;   --rot: 15deg;  }
+.shard-6 { bottom: 0;   left: 0;      width: 36%; height: 34%; --tx: -70px;  --ty: 80px;   --rot: -20deg; }
+.shard-7 { bottom: 0;   left: 32%;    width: 38%; height: 36%; --tx: -5px;   --ty: 100px;  --rot: -5deg;  }
+.shard-8 { bottom: 0;   right: 0;     width: 36%; height: 32%; --tx: 80px;   --ty: 70px;   --rot: 25deg;  }
+
+@keyframes shard-fly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(0.7);
+  }
+}
+
+.card {
+  width: 100%;
   height: min(70vh, 520px);
   background: transparent;
   border: none;

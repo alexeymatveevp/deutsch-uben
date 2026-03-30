@@ -1,16 +1,19 @@
 #!/usr/bin/env node
 
 /**
- * Enriches data.json entries with LLM-generated German usage examples.
+ * Syncs data.json from yandex-collections.json and Pantry, and optionally
+ * enriches entries with LLM-generated German usage examples.
  *
  * Usage:
- *   node scripts/enrich-data.mjs --sync
- *   OPENAI_API_KEY=sk-... node scripts/enrich-data.mjs [--limit N] [--ids 1109,1108] [--model gpt-4o]
+ *   node scripts/enrich-data.mjs                          # sync only
+ *   node scripts/enrich-data.mjs --limit 5                # sync + enrich 5 items
+ *   node scripts/enrich-data.mjs --ids 1109,1108          # sync + enrich specific IDs
+ *   node scripts/enrich-data.mjs --limit 2 --model gpt-4o-mini
+ *   node scripts/enrich-data.mjs --dry-run                # print prompt, no API call
  *
  * Options:
- *   --sync           Sync data.json from yandex-collections.json (add new items, keep existing examples)
- *   --limit N        Process only the first N items that have no examples yet
- *   --ids 1109,1108  Process only these specific IDs
+ *   --limit N        Enrich the first N items that have no examples yet
+ *   --ids 1109,1108  Enrich specific items by ID
  *   --model NAME     OpenAI model to use (default: gpt-4o)
  *   --dry-run        Print the prompt for the first item and exit
  */
@@ -26,18 +29,56 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_JSON = resolve(__dirname, "../src/data/data.json");
 const COLLECTIONS_JSON = resolve(__dirname, "../src/data/yandex-collections.json");
 
+const PANTRY_ID = process.env.VITE_PANTRY_ID;
+const BASKET = "deleted-cards";
+const PANTRY_URL = PANTRY_ID
+  ? `https://getpantry.cloud/apiv1/pantry/${PANTRY_ID}/basket/${BASKET}`
+  : null;
+
 // ─── Argument parsing ─────────────────────────────────────────────────────────
 function parseArgs() {
   const args = process.argv.slice(2);
-  const opts = { limit: 0, ids: /** @type {number[]} */ ([]), model: "gpt-4o", dryRun: false, sync: false };
+  const opts = { limit: 0, ids: /** @type {number[]} */ ([]), model: "gpt-4o", dryRun: false };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--limit" && args[i + 1]) opts.limit = parseInt(args[++i], 10);
     else if (args[i] === "--ids" && args[i + 1]) opts.ids = args[++i].split(",").map(Number);
     else if (args[i] === "--model" && args[i + 1]) opts.model = args[++i];
     else if (args[i] === "--dry-run") opts.dryRun = true;
-    else if (args[i] === "--sync") opts.sync = true;
   }
   return opts;
+}
+
+// ─── Pantry helpers ──────────────────────────────────────────────────────────
+async function fetchDeletedIds() {
+  if (!PANTRY_URL) {
+    console.error("No VITE_PANTRY_ID set — skipping Pantry sync.");
+    return [];
+  }
+  try {
+    const res = await fetch(PANTRY_URL);
+    if (!res.ok) throw new Error(res.statusText);
+    const data = await res.json();
+    return Array.isArray(data.ids) ? data.ids : [];
+  } catch {
+    console.error("Pantry basket not found or empty — no deletions to process.");
+    return [];
+  }
+}
+
+async function clearPantryBasket() {
+  if (!PANTRY_URL) return;
+  try {
+    // Replace basket with empty ids array
+    const res = await fetch(PANTRY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids: [] }),
+    });
+    if (!res.ok) throw new Error(res.statusText);
+    console.error("Pantry basket cleared.");
+  } catch (err) {
+    console.error(`Warning: could not clear Pantry basket: ${err.message}`);
+  }
 }
 
 // ─── Prompt ───────────────────────────────────────────────────────────────────
@@ -58,8 +99,8 @@ Bitte erstelle eine kurze, nützliche Lernkarte auf Deutsch. Verwende folgendes 
 Antworte nur auf Deutsch. Benutze Markdown-Formatierung.`;
 }
 
-// ─── Sync data.json from yandex-collections.json ─────────────────────────────
-function syncFromCollections() {
+// ─── Sync data.json from yandex-collections.json + Pantry ────────────────────
+async function syncFromCollections() {
   const source = JSON.parse(readFileSync(COLLECTIONS_JSON, "utf-8"));
   let data;
   try {
@@ -68,21 +109,39 @@ function syncFromCollections() {
     data = [];
   }
 
-  // Build a lookup of existing items by source_text to preserve examples_html
+  // Fetch deleted IDs from Pantry
+  const pantryDeletedIds = await fetchDeletedIds();
+  console.error(`Pantry deleted IDs: ${pantryDeletedIds.length}`);
+
+  // Collect all previously deleted IDs from data.json
+  const alreadyDeleted = new Set(
+    data.filter((item) => item.deleted).map((item) => item.id)
+  );
+
+  // Build a lookup of existing items by source_text to preserve fields
   const existingByText = new Map();
   for (const item of data) {
     existingByText.set(item.source_text, item);
+  }
+
+  // Merge pantry deletions: map pantry IDs to source_texts so we can mark them
+  const pantryDeletedTexts = new Set();
+  for (const id of pantryDeletedIds) {
+    const item = data.find((d) => d.id === id);
+    if (item) pantryDeletedTexts.add(item.source_text);
   }
 
   // Rebuild: same order as source, IDs assigned so last item = 1
   const total = source.length;
   const synced = source.map((entry, i) => {
     const existing = existingByText.get(entry.source_text);
+    const deleted = existing?.deleted || pantryDeletedTexts.has(entry.source_text);
     return {
       id: total - i,
       source_text: entry.source_text,
       target_text: entry.target_text,
       examples_html: existing?.examples_html ?? null,
+      ...(deleted ? { deleted: true } : {}),
     };
   });
 
@@ -90,38 +149,47 @@ function syncFromCollections() {
 
   const newCount = synced.filter((s) => !existingByText.has(s.source_text)).length;
   const keptExamples = synced.filter((s) => s.examples_html).length;
-  console.error(`Synced: ${synced.length} items (${newCount} new, ${keptExamples} with examples preserved)`);
+  const deletedCount = synced.filter((s) => s.deleted).length;
+  const newlyDeleted = pantryDeletedIds.length;
+  console.error(`Synced: ${synced.length} items (${newCount} new, ${keptExamples} with examples, ${deletedCount} deleted total, ${newlyDeleted} from Pantry)`);
+
+  // Clear Pantry basket after successful sync
+  if (pantryDeletedIds.length > 0) {
+    await clearPantryBasket();
+  }
+
   return synced;
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   const opts = parseArgs();
+  const wantsEnrich = opts.ids.length > 0 || opts.limit > 0 || opts.dryRun;
 
-  if (opts.sync) {
-    syncFromCollections();
-    return;
-  }
+  // Always sync first
+  await syncFromCollections();
 
+  if (!wantsEnrich) return;
+
+  // ── LLM enrichment ──────────────────────────────────────────────────────
   const data = JSON.parse(readFileSync(DATA_JSON, "utf-8"));
-  console.error(`Loaded ${data.length} items from data.json`);
+  const active = data.filter((item) => !item.deleted);
+  console.error(`\n${active.length} active items available for enrichment`);
 
-  // Select items to process
   let toProcess;
   if (opts.ids.length > 0) {
     const idSet = new Set(opts.ids);
-    toProcess = data.filter((item) => idSet.has(item.id));
+    toProcess = active.filter((item) => idSet.has(item.id));
     if (toProcess.length === 0) {
-      console.error(`No items found with IDs: ${opts.ids.join(", ")}`);
+      console.error(`No active items found with IDs: ${opts.ids.join(", ")}`);
       process.exit(1);
     }
   } else {
-    // Pick items that don't have examples yet
-    toProcess = data.filter((item) => !item.examples_html);
+    toProcess = active.filter((item) => !item.examples_html);
     if (opts.limit > 0) toProcess = toProcess.slice(0, opts.limit);
   }
 
-  console.error(`Will process ${toProcess.length} items`);
+  console.error(`Will enrich ${toProcess.length} items`);
 
   if (opts.dryRun) {
     const item = toProcess[0];
@@ -158,7 +226,7 @@ async function main() {
 
       const html = await marked.parse(markdown);
 
-      // Update the item in the original data array
+      // Update the item in the full data array
       const idx = data.findIndex((d) => d.id === item.id);
       data[idx].examples_html = html;
 
