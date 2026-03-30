@@ -26,6 +26,13 @@ body {
   margin: 0;
 }
 
+.page-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
 button {
   font: inherit;
 }
@@ -39,6 +46,59 @@ button {
   gap: 24px;
   padding: 32px 24px 40px;
   color: #f8fafc;
+}
+
+.examples {
+  max-width: min(900px, 92vw);
+  margin: 0 auto;
+  padding: 32px 28px 80px;
+  color: #e2e8f0;
+  font-size: clamp(15px, 2.2vw, 18px);
+  line-height: 1.7;
+}
+
+.examples h1,
+.examples h2,
+.examples h3 {
+  color: #f8fafc;
+  margin: 1.2em 0 0.5em;
+}
+
+.examples h2 {
+  font-size: 1.3em;
+}
+
+.examples h3 {
+  font-size: 1.1em;
+}
+
+.examples p {
+  margin: 0.6em 0;
+}
+
+.examples strong {
+  color: #fbbf24;
+}
+
+.examples em {
+  color: #93c5fd;
+  font-style: italic;
+}
+
+.examples ul,
+.examples ol {
+  padding-left: 1.5em;
+  margin: 0.6em 0;
+}
+
+.examples li {
+  margin: 0.4em 0;
+}
+
+.examples hr {
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  margin: 1.5em 0;
 }
 
 .app-empty {

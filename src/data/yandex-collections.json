@@ -1,5 +1,413 @@
 [
   {
+    "source_text": "strampeln",
+    "target_text": "дрыгать ногами"
+  },
+  {
+    "source_text": "Schraubenzieher",
+    "target_text": "Отвертка"
+  },
+  {
+    "source_text": "Zange",
+    "target_text": "Щипцы"
+  },
+  {
+    "source_text": "Ich baue jetzt an meine KI Apps. Ich bin damit sehr beschäftigt.",
+    "target_text": "Сейчас я работаю над своими ИИ-приложениями. Это занимает у меня много времени."
+  },
+  {
+    "source_text": "passt wie Arsch auf Eimer",
+    "target_text": "умещается, как задница на ведре"
+  },
+  {
+    "source_text": "Sie sieht aus wie geleckt.",
+    "target_text": "Она выглядит как вылизанная"
+  },
+  {
+    "source_text": "Pünktlich wie die Maurer.",
+    "target_text": "Как по часам."
+  },
+  {
+    "source_text": "Es brüllt wie am Spieß.",
+    "target_text": "Ревет, как на вертеле."
+  },
+  {
+    "source_text": "Sie redet wie ein Wasserfall",
+    "target_text": "Она говорит, как водопад"
+  },
+  {
+    "source_text": "Eine Schnur ist eine Art lange Faden.",
+    "target_text": "Шнур - это разновидность длинной нити."
+  },
+  {
+    "source_text": "Das läuft wie am Schnürchen.",
+    "target_text": "Все идет как по маслу."
+  },
+  {
+    "source_text": "Das stinkt wie die Pest",
+    "target_text": "Это воняет, как чума."
+  },
+  {
+    "source_text": "Er ist dumm wie brot",
+    "target_text": "Он глуп, как хлеб"
+  },
+  {
+    "source_text": "Schornstein",
+    "target_text": "Дымовая труба"
+  },
+  {
+    "source_text": "sie raucht wie ein Schlot",
+    "target_text": "она курит, как труба"
+  },
+  {
+    "source_text": "er ist stolz wie Oskar",
+    "target_text": "он гордится, как Оскар."
+  },
+  {
+    "source_text": "Er lügt wie gedruckt.",
+    "target_text": "Он лжёт как по писаному."
+  },
+  {
+    "source_text": "Die Hosen passen dir wie angegossen.",
+    "target_text": "Брюки подходят тебе как перчатка."
+  },
+  {
+    "source_text": "Eine gute Führungsgraft sollte in der Lage sein, eine Leistung der Angestellten objektiv zu beurteilen.",
+    "target_text": "Хороший кадровый состав должен уметь объективно оценивать работу сотрудников."
+  },
+  {
+    "source_text": "Nicht nur Fachwissen verfügen, sondern auch eine hohe Teamfähigkeit besitzen.",
+    "target_text": "Обладать не только профессиональными знаниями, но и высокой способностью к командной работе."
+  },
+  {
+    "source_text": "Ehrgeiz ist ein Streben nach Erfolg und Aufstieg.",
+    "target_text": "Амбиции - это стремление к успеху и продвижению по службе."
+  },
+  {
+    "source_text": "Falls Sie einverstanden sind, ändern wir den Plan.",
+    "target_text": "Если вы не возражаете, мы изменим план."
+  },
+  {
+    "source_text": "Dem Vater wäre es lieber gewesen, wenn der Sohn einen anderen Beruf gewählt hätte.",
+    "target_text": "Отцу было бы приятнее, если бы сын выбрал другую профессию."
+  },
+  {
+    "source_text": "Wenn man schon so viel Geld ausgibt, dann möchte man auch etwas davon haben.",
+    "target_text": "Если уж тратишь столько денег, то хочется получить хоть что-то взамен."
+  },
+  {
+    "source_text": "Es wäre mir lieber, wenn du mich früher abholen würdest.",
+    "target_text": "Мне было бы удобнее, если бы ты заехал за мной пораньше."
+  },
+  {
+    "source_text": "ertragen",
+    "target_text": "вытерпеть"
+  },
+  {
+    "source_text": "Ungeziefer",
+    "target_text": "Паразиты"
+  },
+  {
+    "source_text": "Sich rechtfertigen.",
+    "target_text": "Оправдываться."
+  },
+  {
+    "source_text": "spüren",
+    "target_text": "чувствовать"
+  },
+  {
+    "source_text": "Das stimmt nur zum Teil, denn...",
+    "target_text": "Это верно лишь отчасти, потому что..."
+  },
+  {
+    "source_text": "Ich kann Ihre Einstellung verstehen, nur",
+    "target_text": "Я могу понять ваше отношение, только"
+  },
+  {
+    "source_text": "Da haben Sie zwar recht, aber...",
+    "target_text": "Хотя в этом вы правы, но..."
+  },
+  {
+    "source_text": "Hab den Eindruck, dass",
+    "target_text": "У меня сложилось впечатление, что"
+  },
+  {
+    "source_text": "Meine Erfahrung nach",
+    "target_text": "По моему опыту"
+  },
+  {
+    "source_text": "Soweit ich das beurteilen kann.",
+    "target_text": "Насколько я могу судить."
+  },
+  {
+    "source_text": "rechnen damit",
+    "target_text": "рассчитывать на это"
+  },
+  {
+    "source_text": "anfertigen",
+    "target_text": "изготавливать"
+  },
+  {
+    "source_text": "Bitte teilen Sie uns mit.",
+    "target_text": "Пожалуйста, дайте нам знать."
+  },
+  {
+    "source_text": "Überschreiten.",
+    "target_text": "Превосходить."
+  },
+  {
+    "source_text": "Vortragende.",
+    "target_text": "Докладчик."
+  },
+  {
+    "source_text": "Aufschlussreich",
+    "target_text": "Показательный"
+  },
+  {
+    "source_text": "anscheulich",
+    "target_text": "отвратительный"
+  },
+  {
+    "source_text": "Vortrag",
+    "target_text": "Доклад"
+  },
+  {
+    "source_text": "Anlässlich.",
+    "target_text": "По случаю."
+  },
+  {
+    "source_text": "Stimmen Sie die Meinung teilweise zu, oder widersprechen Sie.",
+    "target_text": "Соглашайтесь с мнением частично или не соглашайтесь."
+  },
+  {
+    "source_text": "Ich kann Ihre Einstellung verstehen, aber so einfach ist das nicht.",
+    "target_text": "Я могу понять ваше отношение, но это не так просто."
+  },
+  {
+    "source_text": "Ich könnte mir vorstellen, dass das nicht so wichtig ist.",
+    "target_text": "Я мог бы предположить, что это не так уж и важно."
+  },
+  {
+    "source_text": "Soweit ich das beurteilen kann, ist das richtig.",
+    "target_text": "Насколько я могу судить, это правильно."
+  },
+  {
+    "source_text": "Ganz im Gegenteil, ich habe da andere Erfahrungen gemacht.",
+    "target_text": "Напротив, у меня был другой опыт."
+  },
+  {
+    "source_text": "Einstellung",
+    "target_text": "Установка"
+  },
+  {
+    "source_text": "So leicht wie es scheint, ist es leider nicht.",
+    "target_text": "К сожалению, это не так просто, как кажется."
+  },
+  {
+    "source_text": "Zuständigkeit",
+    "target_text": "Обязанность"
+  },
+  {
+    "source_text": "Wünschenswert",
+    "target_text": "Желательный"
+  },
+  {
+    "source_text": "Führungskraft",
+    "target_text": "Руководящий работник"
+  },
+  {
+    "source_text": "Branche",
+    "target_text": "Отрасль"
+  },
+  {
+    "source_text": "Hab meinen Reisepass verlegt.",
+    "target_text": "Я потерял свой паспорт."
+  },
+  {
+    "source_text": "verheben",
+    "target_text": "надорваться"
+  },
+  {
+    "source_text": "Er hat sein ganzes Geld verspielt.",
+    "target_text": "Он растратил все свои деньги."
+  },
+  {
+    "source_text": "verriegelt",
+    "target_text": "блокированный"
+  },
+  {
+    "source_text": "verdeutlichen",
+    "target_text": "разъяснять"
+  },
+  {
+    "source_text": "Waise",
+    "target_text": "Сирота"
+  },
+  {
+    "source_text": "veredeln",
+    "target_text": "облагородить"
+  },
+  {
+    "source_text": "Zugriff",
+    "target_text": "Доступ"
+  },
+  {
+    "source_text": "Ehrgeiz",
+    "target_text": "Честолюбие"
+  },
+  {
+    "source_text": "Erachtens",
+    "target_text": "Взгляд"
+  },
+  {
+    "source_text": "reizvoll",
+    "target_text": "привлекательный"
+  },
+  {
+    "source_text": "Macht",
+    "target_text": "Власть"
+  },
+  {
+    "source_text": "negotiate",
+    "target_text": "verhandeln"
+  },
+  {
+    "source_text": "nachvollziehen",
+    "target_text": "соглашаться"
+  },
+  {
+    "source_text": "wahrnehmen",
+    "target_text": "воспринимать"
+  },
+  {
+    "source_text": "bewerten",
+    "target_text": "оценивать"
+  },
+  {
+    "source_text": "Vorgehensweisen besprechen",
+    "target_text": "Обсудить методы работы"
+  },
+  {
+    "source_text": "Ähnlichkeiten und Unterschiede erfragen",
+    "target_text": "Выяснять сходства и различия"
+  },
+  {
+    "source_text": "bescheiden",
+    "target_text": "скромный"
+  },
+  {
+    "source_text": "dumm wie Bohnenstroh, schlau wie ein Fuchs",
+    "target_text": "глуп, как солома, но хитер, как лиса"
+  },
+  {
+    "source_text": "jeder muss sein Beitrag leisten",
+    "target_text": "каждый должен внести свой вклад"
+  },
+  {
+    "source_text": "meine Kollegin freut sich schon seit Wochen auf den Urlaub",
+    "target_text": "моя коллега уже несколько недель с нетерпением ждет отпуска"
+  },
+  {
+    "source_text": "warum sollte ich mich dazu bringen falsche Produkte zu erwerben",
+    "target_text": "почему я должен заставлять себя покупать неправильную продукцию"
+  },
+  {
+    "source_text": "absolvieren",
+    "target_text": "завершить"
+  },
+  {
+    "source_text": "Ablenkung",
+    "target_text": "Отклонение"
+  },
+  {
+    "source_text": "Ersatz",
+    "target_text": "Замена"
+  },
+  {
+    "source_text": "Einfühlungsvermögen",
+    "target_text": "Сочувствие"
+  },
+  {
+    "source_text": "die Suche nach",
+    "target_text": "в поисках"
+  },
+  {
+    "source_text": "Erfindergeist",
+    "target_text": "Изобретательность"
+  },
+  {
+    "source_text": "Bericht",
+    "target_text": "Доклад"
+  },
+  {
+    "source_text": "unverzichtbar",
+    "target_text": "незаменимый"
+  },
+  {
+    "source_text": "Ideenreichtum",
+    "target_text": "Изобретательность"
+  },
+  {
+    "source_text": "Neuerung",
+    "target_text": "Нововведение"
+  },
+  {
+    "source_text": "Fortschritt erfordert Anpassung",
+    "target_text": "Прогресс требует адаптации"
+  },
+  {
+    "source_text": "Auswirkung",
+    "target_text": "Влияние"
+  },
+  {
+    "source_text": "überflüssig",
+    "target_text": "лишний"
+  },
+  {
+    "source_text": "zunehmender",
+    "target_text": "возрастающий"
+  },
+  {
+    "source_text": "verschwommennen Geschichten, die wir fürchten",
+    "target_text": "размытые истории, которых мы боимся"
+  },
+  {
+    "source_text": "der wache forschende Intellekt",
+    "target_text": "бдительный исследовательский интеллект"
+  },
+  {
+    "source_text": "erwähnt",
+    "target_text": "упомянутый"
+  },
+  {
+    "source_text": "den Faden verlieren",
+    "target_text": "потерять нить"
+  },
+  {
+    "source_text": "Vergütung",
+    "target_text": "Вознаграждение"
+  },
+  {
+    "source_text": "Обычный, мы окружены  мальчиками",
+    "target_text": "Normal, wir sind von Jungen umgeben"
+  },
+  {
+    "source_text": "Он слушает  внимательно",
+    "target_text": "Er hört aufmerksam zu"
+  },
+  {
+    "source_text": "die Prügelstrafe\n\tdie Folter\n\tdie Todesstrafe\n\tdie Geldstrafe",
+    "target_text": "избиение\n, пытки\n, смертная казнь\n, штраф"
+  },
+  {
+    "source_text": "Hoppe, hoppe Reiter,\nwenn er fällt dann schreit er,\nfällt er in den Graben,\nfressen ihn die Raben,\nfällt er in den Sumpf,\nmacht der Reiter PLUMPS.",
+    "target_text": "Прыгай, прыгай всадник,\nкогда он падает, то кричит,\nпадает в канаву,\nвороны его съедают,\nон падает в болото,\nи всадник ПАДАЕТ."
+  },
+  {
+    "source_text": "umschauen  sich",
+    "target_text": "оглядываться вокруг"
+  },
+  {
     "source_text": "Eins auf den Deckel bekommen.",
     "target_text": "Получили по шапке."
   },

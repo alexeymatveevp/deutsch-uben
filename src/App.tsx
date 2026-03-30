@@ -1,9 +1,11 @@
-import { useEffect, useMemo, useState } from 'react'
-import data from './data/yandex-collections.json'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import data from './data/data.json'
 
 type TranslationCard = {
+  id: number
   source_text: string
   target_text: string
+  examples_html: string | null
 }
 
 const STORAGE_KEY = 'deutsch-uben:last-card-index'
@@ -17,10 +19,7 @@ function clampIndex(index: number, length: number) {
 }
 
 function App() {
-  const cards = useMemo(
-    () => data as TranslationCard[],
-    []
-  )
+  const cards = useMemo(() => data as TranslationCard[], [])
   const [index, setIndex] = useState(() => {
     if (cards.length === 0) {
       return 0
@@ -34,6 +33,7 @@ function App() {
   })
   const [isFlipped, setIsFlipped] = useState(false)
   const [disableFlipTransition, setDisableFlipTransition] = useState(false)
+  const pageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (cards.length === 0) {
@@ -48,6 +48,10 @@ function App() {
     const frame = requestAnimationFrame(() => {
       setDisableFlipTransition(false)
     })
+    // Reset scroll to top when navigating to a new card
+    if (pageRef.current) {
+      pageRef.current.scrollTo({ top: 0 })
+    }
     return () => cancelAnimationFrame(frame)
   }, [index])
 
@@ -86,40 +90,48 @@ function App() {
   }
 
   return (
-    <main className="app">
-      <div className="index-badge">
-        {displayIndex} / {total}
-      </div>
-      <button
-        className={`card ${isFlipped ? 'is-flipped' : ''} ${
-          disableFlipTransition ? 'no-transition' : ''
-        }`}
-        type="button"
-        onClick={() => setIsFlipped((current) => !current)}
-        aria-pressed={isFlipped}
-        aria-label="Flip card"
-      >
-        <div className="card-inner">
-          <div className="card-face card-front">
-            <p>{activeCard.source_text}</p>
-          </div>
-          <div className="card-face card-back">
-            <p>{activeCard.target_text}</p>
-          </div>
+    <div className="page-scroll" ref={pageRef}>
+      <main className="app">
+        <div className="index-badge">
+          {displayIndex} / {total}
         </div>
-      </button>
-      <div className="controls">
-        <button type="button" onClick={goPrev}>
-          Previous
+        <button
+          className={`card ${isFlipped ? 'is-flipped' : ''} ${
+            disableFlipTransition ? 'no-transition' : ''
+          }`}
+          type="button"
+          onClick={() => setIsFlipped((current) => !current)}
+          aria-pressed={isFlipped}
+          aria-label="Flip card"
+        >
+          <div className="card-inner">
+            <div className="card-face card-front">
+              <p>{activeCard.source_text}</p>
+            </div>
+            <div className="card-face card-back">
+              <p>{activeCard.target_text}</p>
+            </div>
+          </div>
         </button>
-        <button type="button" onClick={goRandom}>
-          Random
-        </button>
-        <button type="button" onClick={goNext}>
-          Next
-        </button>
-      </div>
-    </main>
+        <div className="controls">
+          <button type="button" onClick={goPrev}>
+            Previous
+          </button>
+          <button type="button" onClick={goRandom}>
+            Random
+          </button>
+          <button type="button" onClick={goNext}>
+            Next
+          </button>
+        </div>
+      </main>
+      {activeCard.examples_html && (
+        <section
+          className="examples"
+          dangerouslySetInnerHTML={{ __html: activeCard.examples_html }}
+        />
+      )}
+    </div>
   )
 }
 

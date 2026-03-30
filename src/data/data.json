@@ -1,0 +1,6656 @@
+[
+  {
+    "id": 1109,
+    "source_text": "strampeln",
+    "target_text": "дрыгать ногами",
+    "examples_html": "<h3><strong>strampeln</strong></h3>\n<p><strong>Verbformen:</strong> er <strong>strampelt</strong>, er <strong>strampelte</strong>, er <strong>hat gestrampelt</strong></p>\n<hr>\n<h4>Beispielsätze:</h4>\n<ol>\n<li>Das Baby lag auf der Decke und <strong>strampelte</strong> fröhlich mit den Beinen.</li>\n<li>Während des Trainings <strong>strampelte</strong> er auf dem Heimtrainer, um fitter zu werden.</li>\n<li>Als das kleine Kind im Wasser war, <strong>strampelte</strong> es aufgeregt, um über Wasser zu bleiben.</li>\n<li>Der Hund <strong>strampelte</strong> wild, als er aus dem Fluss gezogen wurde.</li>\n<li>Sie <strong>hat</strong> so stark <strong>gestrampelt</strong>, dass ihre Schuhe ausgezogen sind.</li>\n</ol>\n"
+  },
+  {
+    "id": 1108,
+    "source_text": "Schraubenzieher",
+    "target_text": "Отвертка",
+    "examples_html": null
+  },
+  {
+    "id": 1107,
+    "source_text": "Zange",
+    "target_text": "Щипцы",
+    "examples_html": null
+  },
+  {
+    "id": 1106,
+    "source_text": "Ich baue jetzt an meine KI Apps. Ich bin damit sehr beschäftigt.",
+    "target_text": "Сейчас я работаю над своими ИИ-приложениями. Это занимает у меня много времени.",
+    "examples_html": null
+  },
+  {
+    "id": 1105,
+    "source_text": "passt wie Arsch auf Eimer",
+    "target_text": "умещается, как задница на ведре",
+    "examples_html": null
+  },
+  {
+    "id": 1104,
+    "source_text": "Sie sieht aus wie geleckt.",
+    "target_text": "Она выглядит как вылизанная",
+    "examples_html": null
+  },
+  {
+    "id": 1103,
+    "source_text": "Pünktlich wie die Maurer.",
+    "target_text": "Как по часам.",
+    "examples_html": null
+  },
+  {
+    "id": 1102,
+    "source_text": "Es brüllt wie am Spieß.",
+    "target_text": "Ревет, как на вертеле.",
+    "examples_html": null
+  },
+  {
+    "id": 1101,
+    "source_text": "Sie redet wie ein Wasserfall",
+    "target_text": "Она говорит, как водопад",
+    "examples_html": null
+  },
+  {
+    "id": 1100,
+    "source_text": "Eine Schnur ist eine Art lange Faden.",
+    "target_text": "Шнур - это разновидность длинной нити.",
+    "examples_html": null
+  },
+  {
+    "id": 1099,
+    "source_text": "Das läuft wie am Schnürchen.",
+    "target_text": "Все идет как по маслу.",
+    "examples_html": null
+  },
+  {
+    "id": 1098,
+    "source_text": "Das stinkt wie die Pest",
+    "target_text": "Это воняет, как чума.",
+    "examples_html": null
+  },
+  {
+    "id": 1097,
+    "source_text": "Er ist dumm wie brot",
+    "target_text": "Он глуп, как хлеб",
+    "examples_html": null
+  },
+  {
+    "id": 1096,
+    "source_text": "Schornstein",
+    "target_text": "Дымовая труба",
+    "examples_html": null
+  },
+  {
+    "id": 1095,
+    "source_text": "sie raucht wie ein Schlot",
+    "target_text": "она курит, как труба",
+    "examples_html": null
+  },
+  {
+    "id": 1094,
+    "source_text": "er ist stolz wie Oskar",
+    "target_text": "он гордится, как Оскар.",
+    "examples_html": null
+  },
+  {
+    "id": 1093,
+    "source_text": "Er lügt wie gedruckt.",
+    "target_text": "Он лжёт как по писаному.",
+    "examples_html": null
+  },
+  {
+    "id": 1092,
+    "source_text": "Die Hosen passen dir wie angegossen.",
+    "target_text": "Брюки подходят тебе как перчатка.",
+    "examples_html": null
+  },
+  {
+    "id": 1091,
+    "source_text": "Eine gute Führungsgraft sollte in der Lage sein, eine Leistung der Angestellten objektiv zu beurteilen.",
+    "target_text": "Хороший кадровый состав должен уметь объективно оценивать работу сотрудников.",
+    "examples_html": null
+  },
+  {
+    "id": 1090,
+    "source_text": "Nicht nur Fachwissen verfügen, sondern auch eine hohe Teamfähigkeit besitzen.",
+    "target_text": "Обладать не только профессиональными знаниями, но и высокой способностью к командной работе.",
+    "examples_html": null
+  },
+  {
+    "id": 1089,
+    "source_text": "Ehrgeiz ist ein Streben nach Erfolg und Aufstieg.",
+    "target_text": "Амбиции - это стремление к успеху и продвижению по службе.",
+    "examples_html": null
+  },
+  {
+    "id": 1088,
+    "source_text": "Falls Sie einverstanden sind, ändern wir den Plan.",
+    "target_text": "Если вы не возражаете, мы изменим план.",
+    "examples_html": null
+  },
+  {
+    "id": 1087,
+    "source_text": "Dem Vater wäre es lieber gewesen, wenn der Sohn einen anderen Beruf gewählt hätte.",
+    "target_text": "Отцу было бы приятнее, если бы сын выбрал другую профессию.",
+    "examples_html": null
+  },
+  {
+    "id": 1086,
+    "source_text": "Wenn man schon so viel Geld ausgibt, dann möchte man auch etwas davon haben.",
+    "target_text": "Если уж тратишь столько денег, то хочется получить хоть что-то взамен.",
+    "examples_html": null
+  },
+  {
+    "id": 1085,
+    "source_text": "Es wäre mir lieber, wenn du mich früher abholen würdest.",
+    "target_text": "Мне было бы удобнее, если бы ты заехал за мной пораньше.",
+    "examples_html": null
+  },
+  {
+    "id": 1084,
+    "source_text": "ertragen",
+    "target_text": "вытерпеть",
+    "examples_html": null
+  },
+  {
+    "id": 1083,
+    "source_text": "Ungeziefer",
+    "target_text": "Паразиты",
+    "examples_html": null
+  },
+  {
+    "id": 1082,
+    "source_text": "Sich rechtfertigen.",
+    "target_text": "Оправдываться.",
+    "examples_html": null
+  },
+  {
+    "id": 1081,
+    "source_text": "spüren",
+    "target_text": "чувствовать",
+    "examples_html": null
+  },
+  {
+    "id": 1080,
+    "source_text": "Das stimmt nur zum Teil, denn...",
+    "target_text": "Это верно лишь отчасти, потому что...",
+    "examples_html": null
+  },
+  {
+    "id": 1079,
+    "source_text": "Ich kann Ihre Einstellung verstehen, nur",
+    "target_text": "Я могу понять ваше отношение, только",
+    "examples_html": null
+  },
+  {
+    "id": 1078,
+    "source_text": "Da haben Sie zwar recht, aber...",
+    "target_text": "Хотя в этом вы правы, но...",
+    "examples_html": null
+  },
+  {
+    "id": 1077,
+    "source_text": "Hab den Eindruck, dass",
+    "target_text": "У меня сложилось впечатление, что",
+    "examples_html": null
+  },
+  {
+    "id": 1076,
+    "source_text": "Meine Erfahrung nach",
+    "target_text": "По моему опыту",
+    "examples_html": null
+  },
+  {
+    "id": 1075,
+    "source_text": "Soweit ich das beurteilen kann.",
+    "target_text": "Насколько я могу судить.",
+    "examples_html": null
+  },
+  {
+    "id": 1074,
+    "source_text": "rechnen damit",
+    "target_text": "рассчитывать на это",
+    "examples_html": null
+  },
+  {
+    "id": 1073,
+    "source_text": "anfertigen",
+    "target_text": "изготавливать",
+    "examples_html": null
+  },
+  {
+    "id": 1072,
+    "source_text": "Bitte teilen Sie uns mit.",
+    "target_text": "Пожалуйста, дайте нам знать.",
+    "examples_html": null
+  },
+  {
+    "id": 1071,
+    "source_text": "Überschreiten.",
+    "target_text": "Превосходить.",
+    "examples_html": null
+  },
+  {
+    "id": 1070,
+    "source_text": "Vortragende.",
+    "target_text": "Докладчик.",
+    "examples_html": null
+  },
+  {
+    "id": 1069,
+    "source_text": "Aufschlussreich",
+    "target_text": "Показательный",
+    "examples_html": null
+  },
+  {
+    "id": 1068,
+    "source_text": "anscheulich",
+    "target_text": "отвратительный",
+    "examples_html": null
+  },
+  {
+    "id": 1067,
+    "source_text": "Vortrag",
+    "target_text": "Доклад",
+    "examples_html": null
+  },
+  {
+    "id": 1066,
+    "source_text": "Anlässlich.",
+    "target_text": "По случаю.",
+    "examples_html": null
+  },
+  {
+    "id": 1065,
+    "source_text": "Stimmen Sie die Meinung teilweise zu, oder widersprechen Sie.",
+    "target_text": "Соглашайтесь с мнением частично или не соглашайтесь.",
+    "examples_html": null
+  },
+  {
+    "id": 1064,
+    "source_text": "Ich kann Ihre Einstellung verstehen, aber so einfach ist das nicht.",
+    "target_text": "Я могу понять ваше отношение, но это не так просто.",
+    "examples_html": null
+  },
+  {
+    "id": 1063,
+    "source_text": "Ich könnte mir vorstellen, dass das nicht so wichtig ist.",
+    "target_text": "Я мог бы предположить, что это не так уж и важно.",
+    "examples_html": null
+  },
+  {
+    "id": 1062,
+    "source_text": "Soweit ich das beurteilen kann, ist das richtig.",
+    "target_text": "Насколько я могу судить, это правильно.",
+    "examples_html": null
+  },
+  {
+    "id": 1061,
+    "source_text": "Ganz im Gegenteil, ich habe da andere Erfahrungen gemacht.",
+    "target_text": "Напротив, у меня был другой опыт.",
+    "examples_html": null
+  },
+  {
+    "id": 1060,
+    "source_text": "Einstellung",
+    "target_text": "Установка",
+    "examples_html": null
+  },
+  {
+    "id": 1059,
+    "source_text": "So leicht wie es scheint, ist es leider nicht.",
+    "target_text": "К сожалению, это не так просто, как кажется.",
+    "examples_html": null
+  },
+  {
+    "id": 1058,
+    "source_text": "Zuständigkeit",
+    "target_text": "Обязанность",
+    "examples_html": null
+  },
+  {
+    "id": 1057,
+    "source_text": "Wünschenswert",
+    "target_text": "Желательный",
+    "examples_html": null
+  },
+  {
+    "id": 1056,
+    "source_text": "Führungskraft",
+    "target_text": "Руководящий работник",
+    "examples_html": null
+  },
+  {
+    "id": 1055,
+    "source_text": "Branche",
+    "target_text": "Отрасль",
+    "examples_html": null
+  },
+  {
+    "id": 1054,
+    "source_text": "Hab meinen Reisepass verlegt.",
+    "target_text": "Я потерял свой паспорт.",
+    "examples_html": null
+  },
+  {
+    "id": 1053,
+    "source_text": "verheben",
+    "target_text": "надорваться",
+    "examples_html": null
+  },
+  {
+    "id": 1052,
+    "source_text": "Er hat sein ganzes Geld verspielt.",
+    "target_text": "Он растратил все свои деньги.",
+    "examples_html": null
+  },
+  {
+    "id": 1051,
+    "source_text": "verriegelt",
+    "target_text": "блокированный",
+    "examples_html": null
+  },
+  {
+    "id": 1050,
+    "source_text": "verdeutlichen",
+    "target_text": "разъяснять",
+    "examples_html": null
+  },
+  {
+    "id": 1049,
+    "source_text": "Waise",
+    "target_text": "Сирота",
+    "examples_html": null
+  },
+  {
+    "id": 1048,
+    "source_text": "veredeln",
+    "target_text": "облагородить",
+    "examples_html": null
+  },
+  {
+    "id": 1047,
+    "source_text": "Zugriff",
+    "target_text": "Доступ",
+    "examples_html": null
+  },
+  {
+    "id": 1046,
+    "source_text": "Ehrgeiz",
+    "target_text": "Честолюбие",
+    "examples_html": null
+  },
+  {
+    "id": 1045,
+    "source_text": "Erachtens",
+    "target_text": "Взгляд",
+    "examples_html": null
+  },
+  {
+    "id": 1044,
+    "source_text": "reizvoll",
+    "target_text": "привлекательный",
+    "examples_html": null
+  },
+  {
+    "id": 1043,
+    "source_text": "Macht",
+    "target_text": "Власть",
+    "examples_html": null
+  },
+  {
+    "id": 1042,
+    "source_text": "negotiate",
+    "target_text": "verhandeln",
+    "examples_html": null
+  },
+  {
+    "id": 1041,
+    "source_text": "nachvollziehen",
+    "target_text": "соглашаться",
+    "examples_html": null
+  },
+  {
+    "id": 1040,
+    "source_text": "wahrnehmen",
+    "target_text": "воспринимать",
+    "examples_html": null
+  },
+  {
+    "id": 1039,
+    "source_text": "bewerten",
+    "target_text": "оценивать",
+    "examples_html": null
+  },
+  {
+    "id": 1038,
+    "source_text": "Vorgehensweisen besprechen",
+    "target_text": "Обсудить методы работы",
+    "examples_html": null
+  },
+  {
+    "id": 1037,
+    "source_text": "Ähnlichkeiten und Unterschiede erfragen",
+    "target_text": "Выяснять сходства и различия",
+    "examples_html": null
+  },
+  {
+    "id": 1036,
+    "source_text": "bescheiden",
+    "target_text": "скромный",
+    "examples_html": null
+  },
+  {
+    "id": 1035,
+    "source_text": "dumm wie Bohnenstroh, schlau wie ein Fuchs",
+    "target_text": "глуп, как солома, но хитер, как лиса",
+    "examples_html": null
+  },
+  {
+    "id": 1034,
+    "source_text": "jeder muss sein Beitrag leisten",
+    "target_text": "каждый должен внести свой вклад",
+    "examples_html": null
+  },
+  {
+    "id": 1033,
+    "source_text": "meine Kollegin freut sich schon seit Wochen auf den Urlaub",
+    "target_text": "моя коллега уже несколько недель с нетерпением ждет отпуска",
+    "examples_html": null
+  },
+  {
+    "id": 1032,
+    "source_text": "warum sollte ich mich dazu bringen falsche Produkte zu erwerben",
+    "target_text": "почему я должен заставлять себя покупать неправильную продукцию",
+    "examples_html": null
+  },
+  {
+    "id": 1031,
+    "source_text": "absolvieren",
+    "target_text": "завершить",
+    "examples_html": null
+  },
+  {
+    "id": 1030,
+    "source_text": "Ablenkung",
+    "target_text": "Отклонение",
+    "examples_html": null
+  },
+  {
+    "id": 1029,
+    "source_text": "Ersatz",
+    "target_text": "Замена",
+    "examples_html": null
+  },
+  {
+    "id": 1028,
+    "source_text": "Einfühlungsvermögen",
+    "target_text": "Сочувствие",
+    "examples_html": null
+  },
+  {
+    "id": 1027,
+    "source_text": "die Suche nach",
+    "target_text": "в поисках",
+    "examples_html": null
+  },
+  {
+    "id": 1026,
+    "source_text": "Erfindergeist",
+    "target_text": "Изобретательность",
+    "examples_html": null
+  },
+  {
+    "id": 1025,
+    "source_text": "Bericht",
+    "target_text": "Доклад",
+    "examples_html": null
+  },
+  {
+    "id": 1024,
+    "source_text": "unverzichtbar",
+    "target_text": "незаменимый",
+    "examples_html": null
+  },
+  {
+    "id": 1023,
+    "source_text": "Ideenreichtum",
+    "target_text": "Изобретательность",
+    "examples_html": null
+  },
+  {
+    "id": 1022,
+    "source_text": "Neuerung",
+    "target_text": "Нововведение",
+    "examples_html": null
+  },
+  {
+    "id": 1021,
+    "source_text": "Fortschritt erfordert Anpassung",
+    "target_text": "Прогресс требует адаптации",
+    "examples_html": null
+  },
+  {
+    "id": 1020,
+    "source_text": "Auswirkung",
+    "target_text": "Влияние",
+    "examples_html": null
+  },
+  {
+    "id": 1019,
+    "source_text": "überflüssig",
+    "target_text": "лишний",
+    "examples_html": null
+  },
+  {
+    "id": 1018,
+    "source_text": "zunehmender",
+    "target_text": "возрастающий",
+    "examples_html": null
+  },
+  {
+    "id": 1017,
+    "source_text": "verschwommennen Geschichten, die wir fürchten",
+    "target_text": "размытые истории, которых мы боимся",
+    "examples_html": null
+  },
+  {
+    "id": 1016,
+    "source_text": "der wache forschende Intellekt",
+    "target_text": "бдительный исследовательский интеллект",
+    "examples_html": null
+  },
+  {
+    "id": 1015,
+    "source_text": "erwähnt",
+    "target_text": "упомянутый",
+    "examples_html": null
+  },
+  {
+    "id": 1014,
+    "source_text": "den Faden verlieren",
+    "target_text": "потерять нить",
+    "examples_html": null
+  },
+  {
+    "id": 1013,
+    "source_text": "Vergütung",
+    "target_text": "Вознаграждение",
+    "examples_html": null
+  },
+  {
+    "id": 1012,
+    "source_text": "Обычный, мы окружены  мальчиками",
+    "target_text": "Normal, wir sind von Jungen umgeben",
+    "examples_html": null
+  },
+  {
+    "id": 1011,
+    "source_text": "Он слушает  внимательно",
+    "target_text": "Er hört aufmerksam zu",
+    "examples_html": null
+  },
+  {
+    "id": 1010,
+    "source_text": "die Prügelstrafe\n\tdie Folter\n\tdie Todesstrafe\n\tdie Geldstrafe",
+    "target_text": "избиение\n, пытки\n, смертная казнь\n, штраф",
+    "examples_html": null
+  },
+  {
+    "id": 1009,
+    "source_text": "Hoppe, hoppe Reiter,\nwenn er fällt dann schreit er,\nfällt er in den Graben,\nfressen ihn die Raben,\nfällt er in den Sumpf,\nmacht der Reiter PLUMPS.",
+    "target_text": "Прыгай, прыгай всадник,\nкогда он падает, то кричит,\nпадает в канаву,\nвороны его съедают,\nон падает в болото,\nи всадник ПАДАЕТ.",
+    "examples_html": null
+  },
+  {
+    "id": 1008,
+    "source_text": "umschauen  sich",
+    "target_text": "оглядываться вокруг",
+    "examples_html": null
+  },
+  {
+    "id": 1007,
+    "source_text": "Eins auf den Deckel bekommen.",
+    "target_text": "Получили по шапке.",
+    "examples_html": null
+  },
+  {
+    "id": 1006,
+    "source_text": "Jemanden um den Finger wickeln.",
+    "target_text": "Обвести кого-то вокруг пальца.",
+    "examples_html": null
+  },
+  {
+    "id": 1005,
+    "source_text": "Knall",
+    "target_text": "Взрыв",
+    "examples_html": null
+  },
+  {
+    "id": 1004,
+    "source_text": "Beneidenswert.",
+    "target_text": "Завидный.",
+    "examples_html": null
+  },
+  {
+    "id": 1003,
+    "source_text": "Ganz schön kalt heute.",
+    "target_text": "Сегодня довольно холодно.",
+    "examples_html": null
+  },
+  {
+    "id": 1002,
+    "source_text": "Auch gerade auf dem heimweg?",
+    "target_text": "И даже по пути домой?",
+    "examples_html": null
+  },
+  {
+    "id": 1001,
+    "source_text": "Locker",
+    "target_text": "Неплотный",
+    "examples_html": null
+  },
+  {
+    "id": 1000,
+    "source_text": "Schon wieder draußen.",
+    "target_text": "Снова на улице.",
+    "examples_html": null
+  },
+  {
+    "id": 999,
+    "source_text": "Ihr seid aber fleißig unterwegs",
+    "target_text": "Но вы усердно путешествуете",
+    "examples_html": null
+  },
+  {
+    "id": 998,
+    "source_text": "Ich bin ein wenig schläfrig",
+    "target_text": "Я немного сонный.",
+    "examples_html": null
+  },
+  {
+    "id": 997,
+    "source_text": "Das ist pure Heuchelei",
+    "target_text": "Это чистое лицемерие",
+    "examples_html": null
+  },
+  {
+    "id": 996,
+    "source_text": "Könnte das letzte Mal dieses Jahr sein?",
+    "target_text": "Может быть, это последний раз в этом году?",
+    "examples_html": null
+  },
+  {
+    "id": 995,
+    "source_text": "Nennt sich Kind",
+    "target_text": "Называет себя ребенком",
+    "examples_html": null
+  },
+  {
+    "id": 994,
+    "source_text": "Ich nehme Anlauf und schieße den Ball.",
+    "target_text": "Я подбегаю и стреляю по мячу.",
+    "examples_html": null
+  },
+  {
+    "id": 993,
+    "source_text": "Augenzwinkern",
+    "target_text": "Подмигивание",
+    "examples_html": null
+  },
+  {
+    "id": 992,
+    "source_text": "Ja, jetzt beginnen die zweite Schicht Familie.",
+    "target_text": "Да, сейчас начинается вторая смена семьи.",
+    "examples_html": null
+  },
+  {
+    "id": 991,
+    "source_text": "Erholsam.",
+    "target_text": "Расслабляющий.",
+    "examples_html": null
+  },
+  {
+    "id": 990,
+    "source_text": "Da haben Sie ja die Hände voll.",
+    "target_text": "У них там и так полно дел.",
+    "examples_html": null
+  },
+  {
+    "id": 989,
+    "source_text": "Ja, wir überlegen, ob wir ihn an die Steckdose anschließen.",
+    "target_text": "Да, мы подумываем о том, чтобы подключить его к розетке.",
+    "examples_html": null
+  },
+  {
+    "id": 988,
+    "source_text": "Gehen Sie hier öfter spazieren?",
+    "target_text": "Вы часто ходите сюда гулять?",
+    "examples_html": null
+  },
+  {
+    "id": 987,
+    "source_text": "Heute ist ja richtig angenehm draußen finde ich.",
+    "target_text": "Я думаю, сегодня на улице действительно приятно.",
+    "examples_html": null
+  },
+  {
+    "id": 986,
+    "source_text": "Ihr Kleines ist ja flink.",
+    "target_text": "Ваш малыш очень проворный.",
+    "examples_html": null
+  },
+  {
+    "id": 985,
+    "source_text": "Das spart Zeit und hält fit.",
+    "target_text": "Это экономит время и поддерживает форму.",
+    "examples_html": null
+  },
+  {
+    "id": 984,
+    "source_text": "Wir machen oft kleine Ausflüge am Wochenende einfach raus aus der Stadt.",
+    "target_text": "Мы часто совершаем небольшие поездки по выходным просто за город.",
+    "examples_html": null
+  },
+  {
+    "id": 983,
+    "source_text": "Kennen Sie eine gute Strecke zum Wandern mit Kinderwagen?",
+    "target_text": "Знаете ли вы какой-нибудь хороший маршрут для пеших прогулок с коляской?",
+    "examples_html": null
+  },
+  {
+    "id": 982,
+    "source_text": "Du bist aber neugierig, oder?",
+    "target_text": "Но тебе любопытно, не так ли?",
+    "examples_html": null
+  },
+  {
+    "id": 981,
+    "source_text": "Unser Kind wacht nachts nicht mehr auf.",
+    "target_text": "Наш ребенок больше не просыпается по ночам.",
+    "examples_html": null
+  },
+  {
+    "id": 980,
+    "source_text": "Na klar, bei dem Wetter will jeder raus.",
+    "target_text": "Конечно, в такую погоду все хотят выйти на улицу.",
+    "examples_html": null
+  },
+  {
+    "id": 979,
+    "source_text": "vernünftig",
+    "target_text": "разумный",
+    "examples_html": null
+  },
+  {
+    "id": 978,
+    "source_text": "leger",
+    "target_text": "небрежный",
+    "examples_html": null
+  },
+  {
+    "id": 977,
+    "source_text": "zierlich",
+    "target_text": "грациозный",
+    "examples_html": null
+  },
+  {
+    "id": 976,
+    "source_text": "stur",
+    "target_text": "Упрямый",
+    "examples_html": null
+  },
+  {
+    "id": 975,
+    "source_text": "du kannst ihn nicht überreden",
+    "target_text": "ты не сможешь его переубедить",
+    "examples_html": null
+  },
+  {
+    "id": 974,
+    "source_text": "schlau",
+    "target_text": "ловко",
+    "examples_html": null
+  },
+  {
+    "id": 973,
+    "source_text": "stell sicher",
+    "target_text": "убедитесь, что",
+    "examples_html": null
+  },
+  {
+    "id": 972,
+    "source_text": "Vorgesetzte",
+    "target_text": "Начальство",
+    "examples_html": null
+  },
+  {
+    "id": 971,
+    "source_text": "Feigheit",
+    "target_text": "Трусость",
+    "examples_html": null
+  },
+  {
+    "id": 970,
+    "source_text": "Künftig",
+    "target_text": "Будущий",
+    "examples_html": null
+  },
+  {
+    "id": 969,
+    "source_text": "Mäßig.",
+    "target_text": "Умеренный.",
+    "examples_html": null
+  },
+  {
+    "id": 968,
+    "source_text": "Bettler.",
+    "target_text": "Нищий.",
+    "examples_html": null
+  },
+  {
+    "id": 967,
+    "source_text": "Einhüllen.",
+    "target_text": "Окутывать.",
+    "examples_html": null
+  },
+  {
+    "id": 966,
+    "source_text": "Ich glaube, wir lassen Sie durch.",
+    "target_text": "Я думаю, мы позволим им пройти.",
+    "examples_html": null
+  },
+  {
+    "id": 965,
+    "source_text": "Ich muss ihm das Sprechen beibringen.",
+    "target_text": "Я должен научить его говорить.",
+    "examples_html": null
+  },
+  {
+    "id": 964,
+    "source_text": "Was hätte ich noch tun sollen?",
+    "target_text": "Что еще я должен был сделать?",
+    "examples_html": null
+  },
+  {
+    "id": 963,
+    "source_text": "Lichtdurchlässig.",
+    "target_text": "Светопроницаемый.",
+    "examples_html": null
+  },
+  {
+    "id": 962,
+    "source_text": "auf mich kann man sich verlassen",
+    "target_text": "на меня можно положиться",
+    "examples_html": null
+  },
+  {
+    "id": 961,
+    "source_text": "unterhaltsamer",
+    "target_text": "занимательный",
+    "examples_html": null
+  },
+  {
+    "id": 960,
+    "source_text": "abwechslungsreiches",
+    "target_text": "разнообразное",
+    "examples_html": null
+  },
+  {
+    "id": 959,
+    "source_text": "einsetzen",
+    "target_text": "использование",
+    "examples_html": null
+  },
+  {
+    "id": 958,
+    "source_text": "umschreiben",
+    "target_text": "переписывать",
+    "examples_html": null
+  },
+  {
+    "id": 957,
+    "source_text": "mir wurde es gerade mitgeteilt",
+    "target_text": "мне только что сообщили об этом",
+    "examples_html": null
+  },
+  {
+    "id": 956,
+    "source_text": "Wesen",
+    "target_text": "Быть",
+    "examples_html": null
+  },
+  {
+    "id": 955,
+    "source_text": "Wer kann die Jugend noch retten?",
+    "target_text": "Кто еще может спасти молодежь?",
+    "examples_html": null
+  },
+  {
+    "id": 954,
+    "source_text": "schwanz",
+    "target_text": "хвост",
+    "examples_html": null
+  },
+  {
+    "id": 953,
+    "source_text": "У вас шнурки развязались",
+    "target_text": "Ihre Schnürsenkel haben sich gelöst",
+    "examples_html": null
+  },
+  {
+    "id": 952,
+    "source_text": "Stillschweigen",
+    "target_text": "Молчание",
+    "examples_html": null
+  },
+  {
+    "id": 951,
+    "source_text": "die Fassung bewahren",
+    "target_text": "сохранять самообладание",
+    "examples_html": null
+  },
+  {
+    "id": 950,
+    "source_text": "Ruhe bewahren",
+    "target_text": "Сохранять спокойствие",
+    "examples_html": null
+  },
+  {
+    "id": 949,
+    "source_text": "Bescheidenheit",
+    "target_text": "Застенчивость",
+    "examples_html": null
+  },
+  {
+    "id": 948,
+    "source_text": "Seufzen",
+    "target_text": "Вздыхать",
+    "examples_html": null
+  },
+  {
+    "id": 947,
+    "source_text": "Heftig zischt",
+    "target_text": "Яростно шипит",
+    "examples_html": null
+  },
+  {
+    "id": 946,
+    "source_text": "Обычный, мы окружены мальчиками",
+    "target_text": "Normal, wir sind von Jungen umgeben",
+    "examples_html": null
+  },
+  {
+    "id": 945,
+    "source_text": "Anschiben",
+    "target_text": "Подталкивать",
+    "examples_html": null
+  },
+  {
+    "id": 944,
+    "source_text": "Verband.",
+    "target_text": "Ассоциация.",
+    "examples_html": null
+  },
+  {
+    "id": 943,
+    "source_text": "Fass ihn bitte nicht an",
+    "target_text": "Пожалуйста, не трогай его",
+    "examples_html": null
+  },
+  {
+    "id": 942,
+    "source_text": "Mit demselben Motiv.",
+    "target_text": "С тем же мотивом.",
+    "examples_html": null
+  },
+  {
+    "id": 941,
+    "source_text": "Verwirrt",
+    "target_text": "Сбитый с толку",
+    "examples_html": null
+  },
+  {
+    "id": 940,
+    "source_text": "Wenn ich es vorher gewusst hätte, hätte ich etwas anderes geplant",
+    "target_text": "Если бы я знал это заранее, я бы спланировал что-то другое",
+    "examples_html": null
+  },
+  {
+    "id": 939,
+    "source_text": "Hautnah zu erleben.",
+    "target_text": "Чтобы испытать это на собственном опыте.",
+    "examples_html": null
+  },
+  {
+    "id": 938,
+    "source_text": "Aufwendig.",
+    "target_text": "Требующий больших затрат.",
+    "examples_html": null
+  },
+  {
+    "id": 937,
+    "source_text": "Klagen",
+    "target_text": "Жаловаться",
+    "examples_html": null
+  },
+  {
+    "id": 936,
+    "source_text": "Erworben.",
+    "target_text": "Приобретенный.",
+    "examples_html": null
+  },
+  {
+    "id": 935,
+    "source_text": "Konsequenz ankündigen.",
+    "target_text": "Объявить о последствиях.",
+    "examples_html": null
+  },
+  {
+    "id": 934,
+    "source_text": "Он меня принудил силой поехать в магазин.",
+    "target_text": "Er hat mich gezwungen, mit Gewalt in den Laden zu gehen.",
+    "examples_html": null
+  },
+  {
+    "id": 933,
+    "source_text": "Жалко вас останавливать",
+    "target_text": "Es tut mir leid, Sie aufzuhalten",
+    "examples_html": null
+  },
+  {
+    "id": 932,
+    "source_text": "Я очень этому рад.",
+    "target_text": "Darüber freue ich mich sehr.",
+    "examples_html": null
+  },
+  {
+    "id": 931,
+    "source_text": "von Westen nahen Regen oder Gewitter heran",
+    "target_text": "с запада приближается дождь или гроза",
+    "examples_html": null
+  },
+  {
+    "id": 930,
+    "source_text": "Denk dran",
+    "target_text": "Помни об этом",
+    "examples_html": null
+  },
+  {
+    "id": 929,
+    "source_text": "Rühren.",
+    "target_text": "Перемешивание.",
+    "examples_html": null
+  },
+  {
+    "id": 928,
+    "source_text": "Das machte mich darauf aufmerksam.",
+    "target_text": "Это заставило меня обратить на это внимание.",
+    "examples_html": null
+  },
+  {
+    "id": 927,
+    "source_text": "Prächtig",
+    "target_text": "Великолепно",
+    "examples_html": null
+  },
+  {
+    "id": 926,
+    "source_text": "mächtigen Turm.",
+    "target_text": "мощная башня.",
+    "examples_html": null
+  },
+  {
+    "id": 925,
+    "source_text": "Puste",
+    "target_text": "Дыхание",
+    "examples_html": null
+  },
+  {
+    "id": 924,
+    "source_text": "Willst du rüber oder nicht?",
+    "target_text": "Ты хочешь туда пойти или нет?",
+    "examples_html": null
+  },
+  {
+    "id": 923,
+    "source_text": "Unmittelbar.",
+    "target_text": "Непосредственный.",
+    "examples_html": null
+  },
+  {
+    "id": 922,
+    "source_text": "Ich setze mich dafür ein, das wir das zusammen zu machen",
+    "target_text": "Я выступаю за то, чтобы мы сделали это вместе",
+    "examples_html": null
+  },
+  {
+    "id": 921,
+    "source_text": "Werk",
+    "target_text": "Завод",
+    "examples_html": null
+  },
+  {
+    "id": 920,
+    "source_text": "Lässt keine Wünsche offen.",
+    "target_text": "Не оставляет желать лучшего.",
+    "examples_html": null
+  },
+  {
+    "id": 919,
+    "source_text": "Genesen",
+    "target_text": "Выздороветь",
+    "examples_html": null
+  },
+  {
+    "id": 918,
+    "source_text": "Rettich",
+    "target_text": "Редька",
+    "examples_html": null
+  },
+  {
+    "id": 917,
+    "source_text": "Tut es wohl, tut es nicht",
+    "target_text": "Хорошо ли это, не так ли",
+    "examples_html": null
+  },
+  {
+    "id": 916,
+    "source_text": "Schläger.",
+    "target_text": "Ракетка.",
+    "examples_html": null
+  },
+  {
+    "id": 915,
+    "source_text": "Ausgeschlossen.",
+    "target_text": "Исключительно.",
+    "examples_html": null
+  },
+  {
+    "id": 914,
+    "source_text": "Es hat mich gefreut.",
+    "target_text": "Это меня обрадовало.",
+    "examples_html": null
+  },
+  {
+    "id": 913,
+    "source_text": "Fotos als Andenken aufbewahren.",
+    "target_text": "Храните фотографии на память.",
+    "examples_html": null
+  },
+  {
+    "id": 912,
+    "source_text": "Ich bewahre mich meiner Meinung.",
+    "target_text": "Я придерживаюсь своего мнения.",
+    "examples_html": null
+  },
+  {
+    "id": 911,
+    "source_text": "Einen Schatz bewahren.",
+    "target_text": "Хранить сокровище.",
+    "examples_html": null
+  },
+  {
+    "id": 910,
+    "source_text": "Hubschrauber",
+    "target_text": "Вертолет",
+    "examples_html": null
+  },
+  {
+    "id": 909,
+    "source_text": "Sträucher beschneiden.",
+    "target_text": "Обрезать кусты.",
+    "examples_html": null
+  },
+  {
+    "id": 908,
+    "source_text": "Entsprechen.",
+    "target_text": "Соответствие.",
+    "examples_html": null
+  },
+  {
+    "id": 907,
+    "source_text": "Retten",
+    "target_text": "Спасание",
+    "examples_html": null
+  },
+  {
+    "id": 906,
+    "source_text": "Nachrücker.",
+    "target_text": "Отстающий.",
+    "examples_html": null
+  },
+  {
+    "id": 905,
+    "source_text": "Steuerbetrug.",
+    "target_text": "Налоговое мошенничество.",
+    "examples_html": null
+  },
+  {
+    "id": 904,
+    "source_text": "Einbrechen.",
+    "target_text": "Взломать.",
+    "examples_html": null
+  },
+  {
+    "id": 903,
+    "source_text": "Hefte, Stifte, Mappen",
+    "target_text": "Тетради, ручки, папки",
+    "examples_html": null
+  },
+  {
+    "id": 902,
+    "source_text": "ungewiss.",
+    "target_text": "неопределенный.",
+    "examples_html": null
+  },
+  {
+    "id": 901,
+    "source_text": "Tüftelt.",
+    "target_text": "Мастерить.",
+    "examples_html": null
+  },
+  {
+    "id": 900,
+    "source_text": "Die Ursache eines Problems ermitteln.",
+    "target_text": "Определить причину проблемы.",
+    "examples_html": null
+  },
+  {
+    "id": 899,
+    "source_text": "ermitteln",
+    "target_text": "определять",
+    "examples_html": null
+  },
+  {
+    "id": 898,
+    "source_text": "anwenden",
+    "target_text": "применять",
+    "examples_html": null
+  },
+  {
+    "id": 897,
+    "source_text": "ich nehme an",
+    "target_text": "я полагаю",
+    "examples_html": null
+  },
+  {
+    "id": 896,
+    "source_text": "er wird wohl schon zu Hause sein",
+    "target_text": "я думаю, он уже будет дома",
+    "examples_html": null
+  },
+  {
+    "id": 895,
+    "source_text": "vorhersage",
+    "target_text": "предсказание",
+    "examples_html": null
+  },
+  {
+    "id": 894,
+    "source_text": "Kreieren.",
+    "target_text": "Создавать.",
+    "examples_html": null
+  },
+  {
+    "id": 893,
+    "source_text": "Begehrlichkeit erzeugen können.",
+    "target_text": "Могут вызывать желание.",
+    "examples_html": null
+  },
+  {
+    "id": 892,
+    "source_text": "Aufmerksamkeit.",
+    "target_text": "Внимание.",
+    "examples_html": null
+  },
+  {
+    "id": 891,
+    "source_text": "Anziehungskraft.",
+    "target_text": "Притяжение.",
+    "examples_html": null
+  },
+  {
+    "id": 890,
+    "source_text": "Wurzel",
+    "target_text": "Корень",
+    "examples_html": null
+  },
+  {
+    "id": 889,
+    "source_text": "Plansch",
+    "target_text": "Брызги",
+    "examples_html": null
+  },
+  {
+    "id": 888,
+    "source_text": "An diesem wissenden Blick kann man einfach nicht vorbei.",
+    "target_text": "Вы просто не можете пройти мимо этого знающего взгляда.",
+    "examples_html": null
+  },
+  {
+    "id": 887,
+    "source_text": "Stieß ich an einem Nachmittag im Zentral-Park auf jemanden.",
+    "target_text": "Однажды днем я столкнулся с кем-то в Центральном парке.",
+    "examples_html": null
+  },
+  {
+    "id": 886,
+    "source_text": "Mir wird schwindelig, wenn ich Sie ansehe.",
+    "target_text": "У меня кружится голова, когда я смотрю на нее.",
+    "examples_html": null
+  },
+  {
+    "id": 885,
+    "source_text": "Auftakt.",
+    "target_text": "Вступление.",
+    "examples_html": null
+  },
+  {
+    "id": 884,
+    "source_text": "Schlagwort.",
+    "target_text": "Ключевое слово.",
+    "examples_html": null
+  },
+  {
+    "id": 883,
+    "source_text": "Umdenken.",
+    "target_text": "Переосмысливать.",
+    "examples_html": null
+  },
+  {
+    "id": 882,
+    "source_text": "Petersilie",
+    "target_text": "Петрушка",
+    "examples_html": null
+  },
+  {
+    "id": 881,
+    "source_text": "Einschätzung.",
+    "target_text": "Оценка.",
+    "examples_html": null
+  },
+  {
+    "id": 880,
+    "source_text": "Trit den Ball",
+    "target_text": "Бей по мячу",
+    "examples_html": null
+  },
+  {
+    "id": 879,
+    "source_text": "Хватит спать",
+    "target_text": "Hör auf zu schlafen",
+    "examples_html": null
+  },
+  {
+    "id": 878,
+    "source_text": "Как вежливо с твоей стороны.",
+    "target_text": "Wie höflich von dir.",
+    "examples_html": null
+  },
+  {
+    "id": 877,
+    "source_text": "Hinterher.",
+    "target_text": "Впоследствии.",
+    "examples_html": null
+  },
+  {
+    "id": 876,
+    "source_text": "Schweiß verdunsten kann.",
+    "target_text": "Пот может испаряться.",
+    "examples_html": null
+  },
+  {
+    "id": 875,
+    "source_text": "Vorhanden.",
+    "target_text": "Имеющийся.",
+    "examples_html": null
+  },
+  {
+    "id": 874,
+    "source_text": "Schwitzen.",
+    "target_text": "Потеть.",
+    "examples_html": null
+  },
+  {
+    "id": 873,
+    "source_text": "Belohnung.",
+    "target_text": "Награда.",
+    "examples_html": null
+  },
+  {
+    "id": 872,
+    "source_text": "Reihenfolge",
+    "target_text": "Последовательность",
+    "examples_html": null
+  },
+  {
+    "id": 871,
+    "source_text": "es ist normal wenn man vor einem Auftritt ein bisschen aufgeregt ist",
+    "target_text": "нормально быть немного взволнованным перед выступлением",
+    "examples_html": null
+  },
+  {
+    "id": 870,
+    "source_text": "vorgeben",
+    "target_text": "задавать",
+    "examples_html": null
+  },
+  {
+    "id": 869,
+    "source_text": "summen",
+    "target_text": "суммы",
+    "examples_html": null
+  },
+  {
+    "id": 868,
+    "source_text": "klatschen",
+    "target_text": "хлопать",
+    "examples_html": null
+  },
+  {
+    "id": 867,
+    "source_text": "pfeifen",
+    "target_text": "насвистывать",
+    "examples_html": null
+  },
+  {
+    "id": 866,
+    "source_text": "Schüssel",
+    "target_text": "Миска",
+    "examples_html": null
+  },
+  {
+    "id": 865,
+    "source_text": "auf die Sprünge helfen",
+    "target_text": "помогать на скачках",
+    "examples_html": null
+  },
+  {
+    "id": 864,
+    "source_text": "bezirk",
+    "target_text": "округ",
+    "examples_html": null
+  },
+  {
+    "id": 863,
+    "source_text": "Schachtel",
+    "target_text": "Коробка",
+    "examples_html": null
+  },
+  {
+    "id": 862,
+    "source_text": "meckern",
+    "target_text": "брюзжать",
+    "examples_html": null
+  },
+  {
+    "id": 861,
+    "source_text": "zurechtkommen",
+    "target_text": "справляться",
+    "examples_html": null
+  },
+  {
+    "id": 860,
+    "source_text": "verabschieden sich",
+    "target_text": "попрощаться",
+    "examples_html": null
+  },
+  {
+    "id": 859,
+    "source_text": "seltsam",
+    "target_text": "Странно",
+    "examples_html": null
+  },
+  {
+    "id": 858,
+    "source_text": "Du kannst mich mal",
+    "target_text": "Ты можешь меня как-нибудь",
+    "examples_html": null
+  },
+  {
+    "id": 857,
+    "source_text": "Denk mal über.",
+    "target_text": "Подумай над этим.",
+    "examples_html": null
+  },
+  {
+    "id": 856,
+    "source_text": "Schubladendenken",
+    "target_text": "Мышление ящика",
+    "examples_html": null
+  },
+  {
+    "id": 855,
+    "source_text": "Etwas etikettieren.",
+    "target_text": "Пометить что-нибудь.",
+    "examples_html": null
+  },
+  {
+    "id": 854,
+    "source_text": "Einen Korb kriegen",
+    "target_text": "Получить корзину",
+    "examples_html": null
+  },
+  {
+    "id": 853,
+    "source_text": "Krass",
+    "target_text": "Вопиющий",
+    "examples_html": null
+  },
+  {
+    "id": 852,
+    "source_text": "Geduld",
+    "target_text": "Терпение",
+    "examples_html": null
+  },
+  {
+    "id": 851,
+    "source_text": "sich einsetzen",
+    "target_text": "использовать",
+    "examples_html": null
+  },
+  {
+    "id": 850,
+    "source_text": "überlegen",
+    "target_text": "обдумать",
+    "examples_html": null
+  },
+  {
+    "id": 849,
+    "source_text": "Klimawandel",
+    "target_text": "Изменение климата",
+    "examples_html": null
+  },
+  {
+    "id": 848,
+    "source_text": "Förderung",
+    "target_text": "Содействие",
+    "examples_html": null
+  },
+  {
+    "id": 847,
+    "source_text": "Ich mag Ihr Gesicht",
+    "target_text": "Мне нравится ее лицо",
+    "examples_html": null
+  },
+  {
+    "id": 846,
+    "source_text": "zugängig",
+    "target_text": "доступный",
+    "examples_html": null
+  },
+  {
+    "id": 845,
+    "source_text": "Planschbecken",
+    "target_text": "Лягушатник",
+    "examples_html": null
+  },
+  {
+    "id": 844,
+    "source_text": "Becken",
+    "target_text": "Таз",
+    "examples_html": null
+  },
+  {
+    "id": 843,
+    "source_text": "zerstören",
+    "target_text": "разрушать",
+    "examples_html": null
+  },
+  {
+    "id": 842,
+    "source_text": "Ich drücke dir die Daumen.",
+    "target_text": "Я скрещиваю пальцы на тебе.",
+    "examples_html": null
+  },
+  {
+    "id": 841,
+    "source_text": "verschlumpfen",
+    "target_text": "проглатывать",
+    "examples_html": null
+  },
+  {
+    "id": 840,
+    "source_text": "ausrotten",
+    "target_text": "искоренить",
+    "examples_html": null
+  },
+  {
+    "id": 839,
+    "source_text": "es fählt mir nicht so leicht",
+    "target_text": "мне это не удается так легко",
+    "examples_html": null
+  },
+  {
+    "id": 838,
+    "source_text": "graben",
+    "target_text": "копать",
+    "examples_html": null
+  },
+  {
+    "id": 837,
+    "source_text": "insofern richten wir uns darauf ein",
+    "target_text": "в этом смысле мы ориентируемся на это",
+    "examples_html": null
+  },
+  {
+    "id": 836,
+    "source_text": "muss man das aushalten?",
+    "target_text": "нужно ли это терпеть?",
+    "examples_html": null
+  },
+  {
+    "id": 835,
+    "source_text": "verhöhen seine Opfer",
+    "target_text": "издеваться над своими жертвами",
+    "examples_html": null
+  },
+  {
+    "id": 834,
+    "source_text": "unübersichtlich",
+    "target_text": "запутанный",
+    "examples_html": null
+  },
+  {
+    "id": 833,
+    "source_text": "Sie war fix und fertig",
+    "target_text": "Она была исправлена и готова",
+    "examples_html": null
+  },
+  {
+    "id": 832,
+    "source_text": "völlige Erschöpfung oder Ausgelaugtsein",
+    "target_text": "полное истощение или истощение",
+    "examples_html": null
+  },
+  {
+    "id": 831,
+    "source_text": "Ast",
+    "target_text": "Ветка",
+    "examples_html": null
+  },
+  {
+    "id": 830,
+    "source_text": "Albtraum",
+    "target_text": "Страшный сон",
+    "examples_html": null
+  },
+  {
+    "id": 829,
+    "source_text": "Zurufen",
+    "target_text": "Возгласы",
+    "examples_html": null
+  },
+  {
+    "id": 828,
+    "source_text": "beitrag",
+    "target_text": "вклад",
+    "examples_html": null
+  },
+  {
+    "id": 827,
+    "source_text": "übertreiben",
+    "target_text": "утрировать",
+    "examples_html": null
+  },
+  {
+    "id": 826,
+    "source_text": "das kommt darauf an",
+    "target_text": "это зависит от обстоятельств",
+    "examples_html": null
+  },
+  {
+    "id": 825,
+    "source_text": "besser aus dem Weg gehen",
+    "target_text": "лучше держаться подальше от дороги",
+    "examples_html": null
+  },
+  {
+    "id": 824,
+    "source_text": "die vor kurzem ins Leben gerufen wurde",
+    "target_text": "который был недавно запущен",
+    "examples_html": null
+  },
+  {
+    "id": 823,
+    "source_text": "eklig",
+    "target_text": "отвратительный",
+    "examples_html": null
+  },
+  {
+    "id": 822,
+    "source_text": "ich schlafe halt mal gerne durch",
+    "target_text": "я люблю поспать до конца",
+    "examples_html": null
+  },
+  {
+    "id": 821,
+    "source_text": "Einschätzungen",
+    "target_text": "Оценки",
+    "examples_html": null
+  },
+  {
+    "id": 820,
+    "source_text": "wirken entgegen",
+    "target_text": "противодействовать",
+    "examples_html": null
+  },
+  {
+    "id": 819,
+    "source_text": "verzögern",
+    "target_text": "задерживать",
+    "examples_html": null
+  },
+  {
+    "id": 818,
+    "source_text": "Erschöpfung",
+    "target_text": "Истощение",
+    "examples_html": null
+  },
+  {
+    "id": 817,
+    "source_text": "Wahnvorstellungen",
+    "target_text": "Заблуждения",
+    "examples_html": null
+  },
+  {
+    "id": 816,
+    "source_text": "überschätzen",
+    "target_text": "переоценивать",
+    "examples_html": null
+  },
+  {
+    "id": 815,
+    "source_text": "Не могу его поймать",
+    "target_text": "Ich kann ihn nicht fangen",
+    "examples_html": null
+  },
+  {
+    "id": 814,
+    "source_text": "Он слушает внимательно",
+    "target_text": "Er hört aufmerksam zu",
+    "examples_html": null
+  },
+  {
+    "id": 813,
+    "source_text": "es geht darum",
+    "target_text": "речь идет о",
+    "examples_html": null
+  },
+  {
+    "id": 812,
+    "source_text": "das reicht mir",
+    "target_text": "мне этого достаточно",
+    "examples_html": null
+  },
+  {
+    "id": 811,
+    "source_text": "vorwürfen",
+    "target_text": "упрек",
+    "examples_html": null
+  },
+  {
+    "id": 810,
+    "source_text": "Ich hole Dich gleich wieder ein.",
+    "target_text": "Я скоро вернусь за тобой.",
+    "examples_html": null
+  },
+  {
+    "id": 809,
+    "source_text": "Zufall",
+    "target_text": "Случай",
+    "examples_html": null
+  },
+  {
+    "id": 808,
+    "source_text": "er ließ mich meistens aussuchen",
+    "target_text": "в основном он позволял мне выбирать",
+    "examples_html": null
+  },
+  {
+    "id": 807,
+    "source_text": "kehre den Boden mit dem Besen",
+    "target_text": "подметите пол с помощью метлы",
+    "examples_html": null
+  },
+  {
+    "id": 806,
+    "source_text": "gemeinsam",
+    "target_text": "совместно",
+    "examples_html": null
+  },
+  {
+    "id": 805,
+    "source_text": "es vergeht kein Tag, ohne dass ich trainiere",
+    "target_text": "не проходит и дня, чтобы я не тренировался",
+    "examples_html": null
+  },
+  {
+    "id": 804,
+    "source_text": "ich gehe morgens nie aus dem Haus ohne meine Kaffee zu trinken",
+    "target_text": "я никогда не выхожу из дома по утрам, не выпив кофе",
+    "examples_html": null
+  },
+  {
+    "id": 803,
+    "source_text": "zum Staunen.",
+    "target_text": "к изумлению.",
+    "examples_html": null
+  },
+  {
+    "id": 802,
+    "source_text": "Handlungsspielraum.",
+    "target_text": "Свобода действий.",
+    "examples_html": null
+  },
+  {
+    "id": 801,
+    "source_text": "Einnahmen.",
+    "target_text": "Доходы.",
+    "examples_html": null
+  },
+  {
+    "id": 800,
+    "source_text": "Vorstand der Stiftung.",
+    "target_text": "Правление фонда.",
+    "examples_html": null
+  },
+  {
+    "id": 799,
+    "source_text": "Austräger",
+    "target_text": "Разносчик",
+    "examples_html": null
+  },
+  {
+    "id": 798,
+    "source_text": "verkörpern",
+    "target_text": "воплощать",
+    "examples_html": null
+  },
+  {
+    "id": 797,
+    "source_text": "Ohne zu zögern",
+    "target_text": "Без колебаний",
+    "examples_html": null
+  },
+  {
+    "id": 796,
+    "source_text": "Ich lasse von ihm das Handy geben",
+    "target_text": "Я попрошу его дать мне телефон",
+    "examples_html": null
+  },
+  {
+    "id": 795,
+    "source_text": "An die arbeit",
+    "target_text": "За работу",
+    "examples_html": null
+  },
+  {
+    "id": 794,
+    "source_text": "Die zeit ist um",
+    "target_text": "Время пришло",
+    "examples_html": null
+  },
+  {
+    "id": 793,
+    "source_text": "Was nun kommen würde?",
+    "target_text": "Что же теперь будет дальше?",
+    "examples_html": null
+  },
+  {
+    "id": 792,
+    "source_text": "Eine ganze Weile.",
+    "target_text": "долгое время.",
+    "examples_html": null
+  },
+  {
+    "id": 791,
+    "source_text": "Viel konnte sie allerdings nicht erkennen.",
+    "target_text": "Однако многого она не могла понять.",
+    "examples_html": null
+  },
+  {
+    "id": 790,
+    "source_text": "Feststellen.",
+    "target_text": "Обнаружить.",
+    "examples_html": null
+  },
+  {
+    "id": 789,
+    "source_text": "teich",
+    "target_text": "пруд",
+    "examples_html": null
+  },
+  {
+    "id": 788,
+    "source_text": "lehnt diese Anfrage ab",
+    "target_text": "отклоняет этот запрос",
+    "examples_html": null
+  },
+  {
+    "id": 787,
+    "source_text": "doppelmoral",
+    "target_text": "двойная мораль",
+    "examples_html": null
+  },
+  {
+    "id": 786,
+    "source_text": "den tentakel abzuschneiden",
+    "target_text": "отрезать щупальце",
+    "examples_html": null
+  },
+  {
+    "id": 785,
+    "source_text": "beschleunigung",
+    "target_text": "ускорение",
+    "examples_html": null
+  },
+  {
+    "id": 784,
+    "source_text": "es geht voran",
+    "target_text": "это идет вперед",
+    "examples_html": null
+  },
+  {
+    "id": 783,
+    "source_text": "unabhängig",
+    "target_text": "независимый",
+    "examples_html": null
+  },
+  {
+    "id": 782,
+    "source_text": "wir brauchen das gegenteil",
+    "target_text": "нам нужно обратное",
+    "examples_html": null
+  },
+  {
+    "id": 781,
+    "source_text": "Wechselgeld",
+    "target_text": "Разменные деньги",
+    "examples_html": null
+  },
+  {
+    "id": 780,
+    "source_text": "was am Ende zählt ist die Zufriedenheit",
+    "target_text": "в конце концов, главное - это удовлетворение",
+    "examples_html": null
+  },
+  {
+    "id": 779,
+    "source_text": "wie lassen sich die Kosten aufteilen damit es für alle gerecht ist",
+    "target_text": "как распределить расходы, чтобы это было справедливо для всех",
+    "examples_html": null
+  },
+  {
+    "id": 778,
+    "source_text": "bisher",
+    "target_text": "до сих пор",
+    "examples_html": null
+  },
+  {
+    "id": 777,
+    "source_text": "befriedigend",
+    "target_text": "удовлетворительный",
+    "examples_html": null
+  },
+  {
+    "id": 776,
+    "source_text": "die Selbstbedienung",
+    "target_text": "самообслуживание",
+    "examples_html": null
+  },
+  {
+    "id": 775,
+    "source_text": "durchdacht",
+    "target_text": "продуманный",
+    "examples_html": null
+  },
+  {
+    "id": 774,
+    "source_text": "den Ball fangen",
+    "target_text": "поймать мяч",
+    "examples_html": null
+  },
+  {
+    "id": 773,
+    "source_text": "Adler",
+    "target_text": "Орел",
+    "examples_html": null
+  },
+  {
+    "id": 772,
+    "source_text": "verfassungswidrig",
+    "target_text": "неконституционный",
+    "examples_html": null
+  },
+  {
+    "id": 771,
+    "source_text": "Freizügigkeit",
+    "target_text": "Свобода перемещения",
+    "examples_html": null
+  },
+  {
+    "id": 770,
+    "source_text": "die Unantastbarkeit der Menschenwürde",
+    "target_text": "неприкосновенность человеческого достоинства",
+    "examples_html": null
+  },
+  {
+    "id": 769,
+    "source_text": "Zwangsarbeit",
+    "target_text": "Принудительный труд",
+    "examples_html": null
+  },
+  {
+    "id": 768,
+    "source_text": "äußern",
+    "target_text": "озвучить",
+    "examples_html": null
+  },
+  {
+    "id": 767,
+    "source_text": "die Prügelstrafe die Folter die Todesstrafe die Geldstrafe",
+    "target_text": "избиение , пытки , смертная казнь , штраф",
+    "examples_html": null
+  },
+  {
+    "id": 766,
+    "source_text": "Verfassung",
+    "target_text": "Конституции",
+    "examples_html": null
+  },
+  {
+    "id": 765,
+    "source_text": "Du willst sie streicheln, aber ich glaube, der Hund hat Angst vor dir.",
+    "target_text": "Ты хочешь погладить ее, но я думаю, что собака тебя боится.",
+    "examples_html": null
+  },
+  {
+    "id": 764,
+    "source_text": "Erscheinen",
+    "target_text": "Появиться",
+    "examples_html": null
+  },
+  {
+    "id": 763,
+    "source_text": "Schieben",
+    "target_text": "Перемещение",
+    "examples_html": null
+  },
+  {
+    "id": 762,
+    "source_text": "Schrien",
+    "target_text": "Кричали",
+    "examples_html": null
+  },
+  {
+    "id": 761,
+    "source_text": "Verschwunden.",
+    "target_text": "Исчезнувший.",
+    "examples_html": null
+  },
+  {
+    "id": 760,
+    "source_text": "Befehlen",
+    "target_text": "Приказывать",
+    "examples_html": null
+  },
+  {
+    "id": 759,
+    "source_text": "Steuerhebel",
+    "target_text": "Рычаг управления",
+    "examples_html": null
+  },
+  {
+    "id": 758,
+    "source_text": "Umgeben",
+    "target_text": "Окружать",
+    "examples_html": null
+  },
+  {
+    "id": 757,
+    "source_text": "Sieht aus als sei nichts geschehen.",
+    "target_text": "Похоже, ничего не произошло.",
+    "examples_html": null
+  },
+  {
+    "id": 756,
+    "source_text": "Zipfel",
+    "target_text": "Вершина",
+    "examples_html": null
+  },
+  {
+    "id": 755,
+    "source_text": "enttäuscht",
+    "target_text": "разочарованный",
+    "examples_html": null
+  },
+  {
+    "id": 754,
+    "source_text": "die halten bestimmt nicht lange",
+    "target_text": "они наверняка не продержатся долго",
+    "examples_html": null
+  },
+  {
+    "id": 753,
+    "source_text": "da bin ich deine Meinung",
+    "target_text": "вот где я придерживаюсь твоего мнения",
+    "examples_html": null
+  },
+  {
+    "id": 752,
+    "source_text": "in welchem Land wurden sie hergestellt (produzieren)",
+    "target_text": "в какой стране они были произведены (произведены)",
+    "examples_html": null
+  },
+  {
+    "id": 751,
+    "source_text": "Juckreiz",
+    "target_text": "Зуд",
+    "examples_html": null
+  },
+  {
+    "id": 750,
+    "source_text": "Tränende Augen",
+    "target_text": "Слезящиеся глаза",
+    "examples_html": null
+  },
+  {
+    "id": 749,
+    "source_text": "Niesattacken",
+    "target_text": "Приступы чихания",
+    "examples_html": null
+  },
+  {
+    "id": 748,
+    "source_text": "abwehren",
+    "target_text": "отразить",
+    "examples_html": null
+  },
+  {
+    "id": 747,
+    "source_text": "Blütenpollen",
+    "target_text": "Цветочная пыльца",
+    "examples_html": null
+  },
+  {
+    "id": 746,
+    "source_text": "Einatmen",
+    "target_text": "Вдыхание",
+    "examples_html": null
+  },
+  {
+    "id": 745,
+    "source_text": "Umbau",
+    "target_text": "Преобразование",
+    "examples_html": null
+  },
+  {
+    "id": 744,
+    "source_text": "Abgemacht",
+    "target_text": "Договорились",
+    "examples_html": null
+  },
+  {
+    "id": 743,
+    "source_text": "zarte",
+    "target_text": "нежный",
+    "examples_html": null
+  },
+  {
+    "id": 742,
+    "source_text": "Ente",
+    "target_text": "Утка",
+    "examples_html": null
+  },
+  {
+    "id": 741,
+    "source_text": "zungenbrecher",
+    "target_text": "Скороговорка",
+    "examples_html": null
+  },
+  {
+    "id": 740,
+    "source_text": "das Auf und Ab",
+    "target_text": "взлеты и падения",
+    "examples_html": null
+  },
+  {
+    "id": 739,
+    "source_text": "aus irgendeinem Grund habe ich ihn vergessen",
+    "target_text": "по какой-то причине я забыл о нем",
+    "examples_html": null
+  },
+  {
+    "id": 738,
+    "source_text": "Hauspflichten",
+    "target_text": "Домашние обязанности",
+    "examples_html": null
+  },
+  {
+    "id": 737,
+    "source_text": "Er wischt selbst seine Hände ab",
+    "target_text": "Он сам вытирает руки",
+    "examples_html": null
+  },
+  {
+    "id": 736,
+    "source_text": "Wasserhahn",
+    "target_text": "Водопроводный кран",
+    "examples_html": null
+  },
+  {
+    "id": 735,
+    "source_text": "doch was zieht die Städter aufs Land?",
+    "target_text": "но что привлекает горожан в сельскую местность?",
+    "examples_html": null
+  },
+  {
+    "id": 734,
+    "source_text": "vor einigen Jahren",
+    "target_text": "несколько лет назад",
+    "examples_html": null
+  },
+  {
+    "id": 733,
+    "source_text": "der Empfang",
+    "target_text": "прием",
+    "examples_html": null
+  },
+  {
+    "id": 732,
+    "source_text": "auswendig",
+    "target_text": "наизусть",
+    "examples_html": null
+  },
+  {
+    "id": 731,
+    "source_text": "allmählich",
+    "target_text": "постепенно",
+    "examples_html": null
+  },
+  {
+    "id": 730,
+    "source_text": "Он немного подустал",
+    "target_text": "Er ist etwas müde geworden",
+    "examples_html": null
+  },
+  {
+    "id": 729,
+    "source_text": "Winzig",
+    "target_text": "Крошечный",
+    "examples_html": null
+  },
+  {
+    "id": 728,
+    "source_text": "Alles andere ergibt sich von alleine 🙂",
+    "target_text": "Все остальное возникает само собой 🙂",
+    "examples_html": null
+  },
+  {
+    "id": 727,
+    "source_text": "ich bin morgens von meiner Frau geweckt",
+    "target_text": "утром меня разбудила жена",
+    "examples_html": null
+  },
+  {
+    "id": 726,
+    "source_text": "Wissenschaft",
+    "target_text": "Наука",
+    "examples_html": null
+  },
+  {
+    "id": 725,
+    "source_text": "miterleben",
+    "target_text": "сопереживать",
+    "examples_html": null
+  },
+  {
+    "id": 724,
+    "source_text": "ich habe hier das Gefühl wirklich gebraucht zu werden",
+    "target_text": "я чувствую, что здесь я действительно нужен",
+    "examples_html": null
+  },
+  {
+    "id": 723,
+    "source_text": "nach der Schule hatte sie sich gefreut endlich von dort wegzuziehen können",
+    "target_text": "после школы она была рада, что наконец-то смогла уехать оттуда",
+    "examples_html": null
+  },
+  {
+    "id": 722,
+    "source_text": "sie hatte ohnehin vorgehabt, es zu tun",
+    "target_text": "в любом случае она намеревалась это сделать",
+    "examples_html": null
+  },
+  {
+    "id": 721,
+    "source_text": "wenn ich keinen Dienst habe",
+    "target_text": "если у меня нет службы",
+    "examples_html": null
+  },
+  {
+    "id": 720,
+    "source_text": "Versorgung",
+    "target_text": "Обеспечение",
+    "examples_html": null
+  },
+  {
+    "id": 719,
+    "source_text": "Nachwuchs",
+    "target_text": "Отпрыск",
+    "examples_html": null
+  },
+  {
+    "id": 718,
+    "source_text": "das wurde weniger, als viele von uns später geheiratet haben",
+    "target_text": "это стало меньше, когда многие из нас позже поженились",
+    "examples_html": null
+  },
+  {
+    "id": 717,
+    "source_text": "На вырост",
+    "target_text": "auf Zuwachs",
+    "examples_html": null
+  },
+  {
+    "id": 716,
+    "source_text": "jede Reise öffnet ein neues Fenster",
+    "target_text": "каждая поездка открывает новое окно",
+    "examples_html": null
+  },
+  {
+    "id": 715,
+    "source_text": "die Jacke lässt sich leicht verpacken",
+    "target_text": "куртка легко упаковывается",
+    "examples_html": null
+  },
+  {
+    "id": 714,
+    "source_text": "wasserdichte",
+    "target_text": "водонепроницаемость",
+    "examples_html": null
+  },
+  {
+    "id": 713,
+    "source_text": "veröffentlichen",
+    "target_text": "опубликовать",
+    "examples_html": null
+  },
+  {
+    "id": 712,
+    "source_text": "der Beitrag",
+    "target_text": "вклад",
+    "examples_html": null
+  },
+  {
+    "id": 711,
+    "source_text": "klagen",
+    "target_text": "жаловаться",
+    "examples_html": null
+  },
+  {
+    "id": 710,
+    "source_text": "Begriff",
+    "target_text": "Обозначение",
+    "examples_html": null
+  },
+  {
+    "id": 709,
+    "source_text": "Langweiler",
+    "target_text": "Скучающий",
+    "examples_html": null
+  },
+  {
+    "id": 708,
+    "source_text": "teilweise",
+    "target_text": "частично",
+    "examples_html": null
+  },
+  {
+    "id": 707,
+    "source_text": "was hältst du davon?",
+    "target_text": "что ты думаешь об этом?",
+    "examples_html": null
+  },
+  {
+    "id": 706,
+    "source_text": "Geheimnis",
+    "target_text": "Секрет",
+    "examples_html": null
+  },
+  {
+    "id": 705,
+    "source_text": "Ankündigen",
+    "target_text": "Объявлять",
+    "examples_html": null
+  },
+  {
+    "id": 704,
+    "source_text": "Wie unsere Quellen berichtet.",
+    "target_text": "Как сообщают наши источники.",
+    "examples_html": null
+  },
+  {
+    "id": 703,
+    "source_text": "Erben",
+    "target_text": "Унаследуют",
+    "examples_html": null
+  },
+  {
+    "id": 702,
+    "source_text": "Verwaist.",
+    "target_text": "Осиротелый.",
+    "examples_html": null
+  },
+  {
+    "id": 701,
+    "source_text": "Dringend.",
+    "target_text": "Срочный.",
+    "examples_html": null
+  },
+  {
+    "id": 700,
+    "source_text": "Zuverlässig.",
+    "target_text": "Надежный.",
+    "examples_html": null
+  },
+  {
+    "id": 699,
+    "source_text": "anlegen",
+    "target_text": "надеть",
+    "examples_html": null
+  },
+  {
+    "id": 698,
+    "source_text": "Betreuung.",
+    "target_text": "Забота.",
+    "examples_html": null
+  },
+  {
+    "id": 697,
+    "source_text": "Лужа",
+    "target_text": "Pfütze",
+    "examples_html": null
+  },
+  {
+    "id": 696,
+    "source_text": "Satt",
+    "target_text": "Сытый",
+    "examples_html": null
+  },
+  {
+    "id": 695,
+    "source_text": "Wehen",
+    "target_text": "Схватка",
+    "examples_html": null
+  },
+  {
+    "id": 694,
+    "source_text": "Schlecht gelaunt, oder?",
+    "target_text": "Плохое настроение, не так ли?",
+    "examples_html": null
+  },
+  {
+    "id": 693,
+    "source_text": "Bewusst",
+    "target_text": "Сознательно",
+    "examples_html": null
+  },
+  {
+    "id": 692,
+    "source_text": "Pflücken.",
+    "target_text": "Собирать.",
+    "examples_html": null
+  },
+  {
+    "id": 691,
+    "source_text": "Abschnitt.",
+    "target_text": "Раздел.",
+    "examples_html": null
+  },
+  {
+    "id": 690,
+    "source_text": "Rückschlag.",
+    "target_text": "Неудача.",
+    "examples_html": null
+  },
+  {
+    "id": 689,
+    "source_text": "gängige Ansicht",
+    "target_text": "общий вид",
+    "examples_html": null
+  },
+  {
+    "id": 688,
+    "source_text": "Zerlegen.",
+    "target_text": "Разбирать.",
+    "examples_html": null
+  },
+  {
+    "id": 687,
+    "source_text": "Unverschämt.",
+    "target_text": "Наглый.",
+    "examples_html": null
+  },
+  {
+    "id": 686,
+    "source_text": "Gibt's doch nicht",
+    "target_text": "Разве это не так",
+    "examples_html": null
+  },
+  {
+    "id": 685,
+    "source_text": "Grantig",
+    "target_text": "Ворчливый",
+    "examples_html": null
+  },
+  {
+    "id": 684,
+    "source_text": "Beseitigt werden mussten.",
+    "target_text": "Должны были быть устранены.",
+    "examples_html": null
+  },
+  {
+    "id": 683,
+    "source_text": "Krawall.",
+    "target_text": "Дебош.",
+    "examples_html": null
+  },
+  {
+    "id": 682,
+    "source_text": "Ebenfalls.",
+    "target_text": "Также.",
+    "examples_html": null
+  },
+  {
+    "id": 681,
+    "source_text": "Kontakte knüpfen",
+    "target_text": "Устанавливать контакты",
+    "examples_html": null
+  },
+  {
+    "id": 680,
+    "source_text": "Umfeld",
+    "target_text": "Среда",
+    "examples_html": null
+  },
+  {
+    "id": 679,
+    "source_text": "Papierkram",
+    "target_text": "Бумажки",
+    "examples_html": null
+  },
+  {
+    "id": 678,
+    "source_text": "Gegend",
+    "target_text": "Окрестности",
+    "examples_html": null
+  },
+  {
+    "id": 677,
+    "source_text": "Verwaltung",
+    "target_text": "Управление",
+    "examples_html": null
+  },
+  {
+    "id": 676,
+    "source_text": "in meine Abwesenheit",
+    "target_text": "в мое отсутствие",
+    "examples_html": null
+  },
+  {
+    "id": 675,
+    "source_text": "Untergeordnete",
+    "target_text": "Нижестоящий",
+    "examples_html": null
+  },
+  {
+    "id": 674,
+    "source_text": "Vertreter",
+    "target_text": "Представитель",
+    "examples_html": null
+  },
+  {
+    "id": 673,
+    "source_text": "betreffen",
+    "target_text": "касаться",
+    "examples_html": null
+  },
+  {
+    "id": 672,
+    "source_text": "leiden",
+    "target_text": "страдать",
+    "examples_html": null
+  },
+  {
+    "id": 671,
+    "source_text": "ich leide jetzt schon",
+    "target_text": "я уже сейчас страдаю",
+    "examples_html": null
+  },
+  {
+    "id": 670,
+    "source_text": "der Abschied wird mir schwerfallen",
+    "target_text": "расставание будет для меня тяжелым",
+    "examples_html": null
+  },
+  {
+    "id": 669,
+    "source_text": "ich hoffe das bleibt auch so",
+    "target_text": "я надеюсь, что так и останется",
+    "examples_html": null
+  },
+  {
+    "id": 668,
+    "source_text": "keine Massen von Urlaubern",
+    "target_text": "никаких толп отдыхающих",
+    "examples_html": null
+  },
+  {
+    "id": 667,
+    "source_text": "auf der Spur",
+    "target_text": "по следу",
+    "examples_html": null
+  },
+  {
+    "id": 666,
+    "source_text": "Ich habe die Insel schon ziemlich gut erkundet",
+    "target_text": "Я уже довольно хорошо изучил остров",
+    "examples_html": null
+  },
+  {
+    "id": 665,
+    "source_text": "Tagesablauf",
+    "target_text": "Распорядок дня",
+    "examples_html": null
+  },
+  {
+    "id": 664,
+    "source_text": "vorzugsweise auf einem Bauernhof",
+    "target_text": "желательно на ферме",
+    "examples_html": null
+  },
+  {
+    "id": 663,
+    "source_text": "vorzugsweise",
+    "target_text": "предпочтительно",
+    "examples_html": null
+  },
+  {
+    "id": 662,
+    "source_text": "ich fahre einfach los und lasse mich überraschen",
+    "target_text": "я просто уезжаю и позволяю застать себя врасплох",
+    "examples_html": null
+  },
+  {
+    "id": 661,
+    "source_text": "Ich habe mein Fahrrad nicht angeschnallt.",
+    "target_text": "Я не пристегнул свой велосипед.",
+    "examples_html": null
+  },
+  {
+    "id": 660,
+    "source_text": "Ursprünglich.",
+    "target_text": "Первоначальный.",
+    "examples_html": null
+  },
+  {
+    "id": 659,
+    "source_text": "fleissig",
+    "target_text": "трудолюбивый",
+    "examples_html": null
+  },
+  {
+    "id": 658,
+    "source_text": "wie viel Ruhe können Sie sich leisten?",
+    "target_text": "сколько отдыха вы можете себе позволить?",
+    "examples_html": null
+  },
+  {
+    "id": 657,
+    "source_text": "Beschluss.",
+    "target_text": "Решение.",
+    "examples_html": null
+  },
+  {
+    "id": 656,
+    "source_text": "Streicheln.",
+    "target_text": "Гладить.",
+    "examples_html": null
+  },
+  {
+    "id": 655,
+    "source_text": "Zweifeln",
+    "target_text": "Сомнение",
+    "examples_html": null
+  },
+  {
+    "id": 654,
+    "source_text": "Ich scherze",
+    "target_text": "Я шучу",
+    "examples_html": null
+  },
+  {
+    "id": 653,
+    "source_text": "eifersüchtig",
+    "target_text": "ревнивый",
+    "examples_html": null
+  },
+  {
+    "id": 652,
+    "source_text": "durchgedacht",
+    "target_text": "продуманный",
+    "examples_html": null
+  },
+  {
+    "id": 651,
+    "source_text": "die Zeit reicht nicht",
+    "target_text": "времени недостаточно",
+    "examples_html": null
+  },
+  {
+    "id": 650,
+    "source_text": "denn wir haben wenig davon",
+    "target_text": "потому что у нас этого мало",
+    "examples_html": null
+  },
+  {
+    "id": 649,
+    "source_text": "denn wir stehen ständig vor einem riesigen Angebot an Möglichkeiten",
+    "target_text": "потому что мы постоянно сталкиваемся с огромным спектром возможностей",
+    "examples_html": null
+  },
+  {
+    "id": 648,
+    "source_text": "reichen",
+    "target_text": "хватать",
+    "examples_html": null
+  },
+  {
+    "id": 647,
+    "source_text": "Klagen über",
+    "target_text": "Жаловаться на",
+    "examples_html": null
+  },
+  {
+    "id": 646,
+    "source_text": "Kaum jemand behauptet, zu viel Zeit zu haben",
+    "target_text": "Вряд ли кто-то утверждает, что у него слишком много времени",
+    "examples_html": null
+  },
+  {
+    "id": 645,
+    "source_text": "Huete ist freie Zeit knapp",
+    "target_text": "У вас мало свободного времени",
+    "examples_html": null
+  },
+  {
+    "id": 644,
+    "source_text": "Zeit auf eine angenehme Art verbringen",
+    "target_text": "Приятно проводить время",
+    "examples_html": null
+  },
+  {
+    "id": 643,
+    "source_text": "die Zeit vergeht",
+    "target_text": "время летит незаметно",
+    "examples_html": null
+  },
+  {
+    "id": 642,
+    "source_text": "Aus irgendeinem Grund, ihm hier spazieren gehen wollen",
+    "target_text": "По какой-то причине ему хочется прогуляться здесь",
+    "examples_html": null
+  },
+  {
+    "id": 641,
+    "source_text": "Чтото против изжоги",
+    "target_text": "Etwas gegen Sodbrennen",
+    "examples_html": null
+  },
+  {
+    "id": 640,
+    "source_text": "Etwas in Anspruch nehmen",
+    "target_text": "Требовать чего-то",
+    "examples_html": null
+  },
+  {
+    "id": 639,
+    "source_text": "Wie man eine Blühwiese anlegt.",
+    "target_text": "Как создать цветущий луг.",
+    "examples_html": null
+  },
+  {
+    "id": 638,
+    "source_text": "Abholbereit",
+    "target_text": "Готовый к отправке",
+    "examples_html": null
+  },
+  {
+    "id": 637,
+    "source_text": "Beschädigung.",
+    "target_text": "Повреждение.",
+    "examples_html": null
+  },
+  {
+    "id": 636,
+    "source_text": "Mit großer Bestürzung nehmen wir Abschied",
+    "target_text": "С большим огорчением мы прощаемся",
+    "examples_html": null
+  },
+  {
+    "id": 635,
+    "source_text": "Osterglöckchen.",
+    "target_text": "Пасхальные колокольчики.",
+    "examples_html": null
+  },
+  {
+    "id": 634,
+    "source_text": "Streber",
+    "target_text": "Карьерист",
+    "examples_html": null
+  },
+  {
+    "id": 633,
+    "source_text": "Зануда",
+    "target_text": "Spielverderber",
+    "examples_html": null
+  },
+  {
+    "id": 632,
+    "source_text": "ich habe dich lieb",
+    "target_text": "я любил тебя",
+    "examples_html": null
+  },
+  {
+    "id": 631,
+    "source_text": "Ich fühle mich pudelwohl.",
+    "target_text": "Я чувствую себя как пудель.",
+    "examples_html": null
+  },
+  {
+    "id": 630,
+    "source_text": "Betrachten",
+    "target_text": "Рассмотрение",
+    "examples_html": null
+  },
+  {
+    "id": 629,
+    "source_text": "Gehört zum Beispiel dazu",
+    "target_text": "Относится, например, к",
+    "examples_html": null
+  },
+  {
+    "id": 628,
+    "source_text": "Man hat nie jemanden von Angesicht zu Angesicht beschimpft.",
+    "target_text": "Вы никогда никого не оскорбляли лицом к лицу.",
+    "examples_html": null
+  },
+  {
+    "id": 627,
+    "source_text": "Als Leiter braucht man ein dickes Fell.",
+    "target_text": "В качестве проводника нужна густая шерсть.",
+    "examples_html": null
+  },
+  {
+    "id": 626,
+    "source_text": "Ich kann gut damit umgehen.",
+    "target_text": "Я прекрасно с этим справляюсь.",
+    "examples_html": null
+  },
+  {
+    "id": 625,
+    "source_text": "Süchtig",
+    "target_text": "Привыкание",
+    "examples_html": null
+  },
+  {
+    "id": 624,
+    "source_text": "zurückkehren",
+    "target_text": "возвращаться",
+    "examples_html": null
+  },
+  {
+    "id": 623,
+    "source_text": "Verteidigung",
+    "target_text": "Оборона",
+    "examples_html": null
+  },
+  {
+    "id": 622,
+    "source_text": "düster",
+    "target_text": "мрачный",
+    "examples_html": null
+  },
+  {
+    "id": 621,
+    "source_text": "mehr Fortschritt wagen",
+    "target_text": "осмелитесь на больший прогресс",
+    "examples_html": null
+  },
+  {
+    "id": 620,
+    "source_text": "Для маленького",
+    "target_text": "Für den Kleinen",
+    "examples_html": null
+  },
+  {
+    "id": 619,
+    "source_text": "Lach und sach",
+    "target_text": "Смейся и говори",
+    "examples_html": null
+  },
+  {
+    "id": 618,
+    "source_text": "Ich habe wider meinen eigenen Plan gehandelt.",
+    "target_text": "Я действовал вопреки своему собственному плану.",
+    "examples_html": null
+  },
+  {
+    "id": 617,
+    "source_text": "Ich widerspreche dir.",
+    "target_text": "Я не согласен с тобой.",
+    "examples_html": null
+  },
+  {
+    "id": 616,
+    "source_text": "Мне нужно сегодня чуть пораньше уйти.",
+    "target_text": "Ich muss heute früh gehen.",
+    "examples_html": null
+  },
+  {
+    "id": 615,
+    "source_text": "Auf Basis der Ergebnisse.",
+    "target_text": "На основе полученных результатов.",
+    "examples_html": null
+  },
+  {
+    "id": 614,
+    "source_text": "Der Konflikt, manche inzwischen für unlösbar halten.",
+    "target_text": "Конфликт, который некоторые сейчас считают неразрешимым.",
+    "examples_html": null
+  },
+  {
+    "id": 613,
+    "source_text": "Während diese Ausgabe entstanden ist.",
+    "target_text": "В то время как этот вопрос возник.",
+    "examples_html": null
+  },
+  {
+    "id": 612,
+    "source_text": "Голыми ногами",
+    "target_text": "Mit nackten Füßen",
+    "examples_html": null
+  },
+  {
+    "id": 611,
+    "source_text": "Im Gegensatz zum",
+    "target_text": "В отличие от",
+    "examples_html": null
+  },
+  {
+    "id": 610,
+    "source_text": "Passend zum Zeitgeist",
+    "target_text": "Соответствующий духу времени",
+    "examples_html": null
+  },
+  {
+    "id": 609,
+    "source_text": "galt als schwer erziehbar",
+    "target_text": "считался трудновоспитуемым",
+    "examples_html": null
+  },
+  {
+    "id": 608,
+    "source_text": "minderjährig und volljährig",
+    "target_text": "несовершеннолетние и совершеннолетние",
+    "examples_html": null
+  },
+  {
+    "id": 607,
+    "source_text": "sodass meine Frau und ich ab und zu mal zusammen ausgehen können",
+    "target_text": "чтобы мы с женой могли время от времени встречаться",
+    "examples_html": null
+  },
+  {
+    "id": 606,
+    "source_text": "betreuen",
+    "target_text": "присматривать",
+    "examples_html": null
+  },
+  {
+    "id": 605,
+    "source_text": "Schelm.",
+    "target_text": "Проказник.",
+    "examples_html": null
+  },
+  {
+    "id": 604,
+    "source_text": "отвлекся",
+    "target_text": "ablenkte",
+    "examples_html": null
+  },
+  {
+    "id": 603,
+    "source_text": "чан",
+    "target_text": "Bottich",
+    "examples_html": null
+  },
+  {
+    "id": 602,
+    "source_text": "Mensch, bist du wachsen!",
+    "target_text": "Человек, ты растешь!",
+    "examples_html": null
+  },
+  {
+    "id": 601,
+    "source_text": "Kinderbetreuung",
+    "target_text": "Забота о детях",
+    "examples_html": null
+  },
+  {
+    "id": 600,
+    "source_text": "abgewöhnen",
+    "target_text": "отучать",
+    "examples_html": null
+  },
+  {
+    "id": 599,
+    "source_text": "zornig",
+    "target_text": "сердитый",
+    "examples_html": null
+  },
+  {
+    "id": 598,
+    "source_text": "wenn man sich dem Rhythmus des Kindes anpasst",
+    "target_text": "приспосабливаясь к ритму ребенка",
+    "examples_html": null
+  },
+  {
+    "id": 597,
+    "source_text": "Aber hier befinden wir uns an der Wiege der Menschheit.",
+    "target_text": "Но здесь мы находимся у колыбели человечества.",
+    "examples_html": null
+  },
+  {
+    "id": 596,
+    "source_text": "Zart",
+    "target_text": "Нежный",
+    "examples_html": null
+  },
+  {
+    "id": 595,
+    "source_text": "Meine zarte Frau.",
+    "target_text": "Моя нежная жена.",
+    "examples_html": null
+  },
+  {
+    "id": 594,
+    "source_text": "Löwenzahn.",
+    "target_text": "Одуванчик.",
+    "examples_html": null
+  },
+  {
+    "id": 593,
+    "source_text": "Одуванчик.",
+    "target_text": "Pusteblume.",
+    "examples_html": null
+  },
+  {
+    "id": 592,
+    "source_text": "Hagebutte.",
+    "target_text": "Шиповник.",
+    "examples_html": null
+  },
+  {
+    "id": 591,
+    "source_text": "Ist Ihnen nicht kalt?",
+    "target_text": "Вам не холодно?",
+    "examples_html": null
+  },
+  {
+    "id": 590,
+    "source_text": "Längst überholt.",
+    "target_text": "Давно устаревший.",
+    "examples_html": null
+  },
+  {
+    "id": 589,
+    "source_text": "Landwirtschaftsmeister.",
+    "target_text": "Чемпион по сельскому хозяйству.",
+    "examples_html": null
+  },
+  {
+    "id": 588,
+    "source_text": "betonen",
+    "target_text": "подчеркивать",
+    "examples_html": null
+  },
+  {
+    "id": 587,
+    "source_text": "vorhanden",
+    "target_text": "имеющийся",
+    "examples_html": null
+  },
+  {
+    "id": 586,
+    "source_text": "Ausdrücklich",
+    "target_text": "Специально",
+    "examples_html": null
+  },
+  {
+    "id": 585,
+    "source_text": "Ausdruck",
+    "target_text": "Выражение",
+    "examples_html": null
+  },
+  {
+    "id": 584,
+    "source_text": "Die Rede ist von Veränderungen .",
+    "target_text": "Речь идет об изменениях .",
+    "examples_html": null
+  },
+  {
+    "id": 583,
+    "source_text": "Клясться",
+    "target_text": "Schwören",
+    "examples_html": null
+  },
+  {
+    "id": 582,
+    "source_text": "Es wird der Tisch schön gedeckt und gut gegessen.",
+    "target_text": "Стол красиво накрыт и хорошо накормлен.",
+    "examples_html": null
+  },
+  {
+    "id": 581,
+    "source_text": "fangen",
+    "target_text": "ловить",
+    "examples_html": null
+  },
+  {
+    "id": 580,
+    "source_text": "Verdächtige",
+    "target_text": "Подозрительный",
+    "examples_html": null
+  },
+  {
+    "id": 579,
+    "source_text": "verhaften",
+    "target_text": "арестовывать",
+    "examples_html": null
+  },
+  {
+    "id": 578,
+    "source_text": "setzen wir fort",
+    "target_text": "давайте продолжим",
+    "examples_html": null
+  },
+  {
+    "id": 577,
+    "source_text": "Flüssige Küken.",
+    "target_text": "Жидкие цыплята.",
+    "examples_html": null
+  },
+  {
+    "id": 576,
+    "source_text": "ich hatte schlechtes Gewissen",
+    "target_text": "у меня была плохая совесть",
+    "examples_html": null
+  },
+  {
+    "id": 575,
+    "source_text": "das kommt überhaupt nicht infrage",
+    "target_text": "об этом вообще не может быть и речи",
+    "examples_html": null
+  },
+  {
+    "id": 574,
+    "source_text": "Können Sie nicht mal ein Auge zudrücken?",
+    "target_text": "Ты даже не можешь закрыть глаза?",
+    "examples_html": null
+  },
+  {
+    "id": 573,
+    "source_text": "Es wird bestimmt nie wieder vorkommen",
+    "target_text": "Это наверняка больше никогда не повторится",
+    "examples_html": null
+  },
+  {
+    "id": 572,
+    "source_text": "beschränkung",
+    "target_text": "ограничение",
+    "examples_html": null
+  },
+  {
+    "id": 571,
+    "source_text": "Allerwichtigste",
+    "target_text": "Самое важное",
+    "examples_html": null
+  },
+  {
+    "id": 570,
+    "source_text": "Geldstrafe",
+    "target_text": "Штраф",
+    "examples_html": null
+  },
+  {
+    "id": 569,
+    "source_text": "Mit meinem Mobiltelefon am Steuer erwischt",
+    "target_text": "Пойман за рулем с моим мобильным телефоном",
+    "examples_html": null
+  },
+  {
+    "id": 568,
+    "source_text": "daher verspäte ich mich um etwa eine Stunde",
+    "target_text": "поэтому я опаздываю примерно на час",
+    "examples_html": null
+  },
+  {
+    "id": 567,
+    "source_text": "drohen",
+    "target_text": "угрожать",
+    "examples_html": null
+  },
+  {
+    "id": 566,
+    "source_text": "ich habe mich fast vorgenommen mich mehr um den Haushalt zu kümmern",
+    "target_text": "я почти решил больше заботиться о домашнем хозяйстве",
+    "examples_html": null
+  },
+  {
+    "id": 565,
+    "source_text": "betrügen",
+    "target_text": "изменять",
+    "examples_html": null
+  },
+  {
+    "id": 564,
+    "source_text": "Spalte",
+    "target_text": "Столбец",
+    "examples_html": null
+  },
+  {
+    "id": 563,
+    "source_text": "Reihe",
+    "target_text": "Строка",
+    "examples_html": null
+  },
+  {
+    "id": 562,
+    "source_text": "Haushaltsjahr.",
+    "target_text": "Бюджетный год.",
+    "examples_html": null
+  },
+  {
+    "id": 561,
+    "source_text": "Hochauflösende Bilder.",
+    "target_text": "Изображения с высоким разрешением.",
+    "examples_html": null
+  },
+  {
+    "id": 560,
+    "source_text": "Obere Schicht.",
+    "target_text": "Верхний слой.",
+    "examples_html": null
+  },
+  {
+    "id": 559,
+    "source_text": "anhand",
+    "target_text": "посредством",
+    "examples_html": null
+  },
+  {
+    "id": 558,
+    "source_text": "Ermitteln.",
+    "target_text": "Определять.",
+    "examples_html": null
+  },
+  {
+    "id": 557,
+    "source_text": "Ich halte das für das Beste",
+    "target_text": "Я думаю, что это к лучшему",
+    "examples_html": null
+  },
+  {
+    "id": 556,
+    "source_text": "Vor und Nachteile bewerten",
+    "target_text": "Оценивать плюсы и минусы",
+    "examples_html": null
+  },
+  {
+    "id": 555,
+    "source_text": "Ich habe grosse Zweifel daran",
+    "target_text": "У меня есть большие сомнения по этому поводу",
+    "examples_html": null
+  },
+  {
+    "id": 554,
+    "source_text": "Инженер а точнее программист",
+    "target_text": "Ein Ingenieur, genauer gesagt ein Programmierer",
+    "examples_html": null
+  },
+  {
+    "id": 553,
+    "source_text": "Und von dort habe ich deutsch gelernt",
+    "target_text": "И оттуда я выучил немецкий",
+    "examples_html": null
+  },
+  {
+    "id": 552,
+    "source_text": "Ich habe 5 Jahre lang für eine deutsche Firma gearbeitet",
+    "target_text": "Я проработал в немецкой компании 5 лет",
+    "examples_html": null
+  },
+  {
+    "id": 551,
+    "source_text": "Verhalten",
+    "target_text": "Поведение",
+    "examples_html": null
+  },
+  {
+    "id": 550,
+    "source_text": "Hat er sich heute gut benommen?",
+    "target_text": "Хорошо ли он вел себя сегодня?",
+    "examples_html": null
+  },
+  {
+    "id": 549,
+    "source_text": "das unterscheidet uns von Union",
+    "target_text": "это то, что отличает нас от Союза",
+    "examples_html": null
+  },
+  {
+    "id": 548,
+    "source_text": "Der Unfall hat sich vermeiden lassen.",
+    "target_text": "Аварии удалось избежать.",
+    "examples_html": null
+  },
+  {
+    "id": 547,
+    "source_text": "Es wird oft nicht aufgepasst.",
+    "target_text": "На это часто не обращают внимания.",
+    "examples_html": null
+  },
+  {
+    "id": 546,
+    "source_text": "С этим я всегда согласна.",
+    "target_text": "Dem stimme ich immer zu.",
+    "examples_html": null
+  },
+  {
+    "id": 545,
+    "source_text": "Neuigkeit",
+    "target_text": "Новости",
+    "examples_html": null
+  },
+  {
+    "id": 544,
+    "source_text": "ist es soweit",
+    "target_text": "пришло ли время",
+    "examples_html": null
+  },
+  {
+    "id": 543,
+    "source_text": "Und unabhängig von Zeit und Ort verfügbar.",
+    "target_text": "И доступны независимо от времени и места.",
+    "examples_html": null
+  },
+  {
+    "id": 542,
+    "source_text": "Schublade",
+    "target_text": "Выдвижной ящик",
+    "examples_html": null
+  },
+  {
+    "id": 541,
+    "source_text": "Schlecht gelaunt.",
+    "target_text": "Плохое настроение.",
+    "examples_html": null
+  },
+  {
+    "id": 540,
+    "source_text": "Maßnahmen.",
+    "target_text": "Меры.",
+    "examples_html": null
+  },
+  {
+    "id": 539,
+    "source_text": "Herd",
+    "target_text": "Плита",
+    "examples_html": null
+  },
+  {
+    "id": 538,
+    "source_text": "schweigen",
+    "target_text": "молчать",
+    "examples_html": null
+  },
+  {
+    "id": 537,
+    "source_text": "verschlingen",
+    "target_text": "поглощать",
+    "examples_html": null
+  },
+  {
+    "id": 536,
+    "source_text": "erheblichen",
+    "target_text": "значительные",
+    "examples_html": null
+  },
+  {
+    "id": 535,
+    "source_text": "Einsteiger",
+    "target_text": "Beginner",
+    "examples_html": null
+  },
+  {
+    "id": 534,
+    "source_text": "Einsatz",
+    "target_text": "Use",
+    "examples_html": null
+  },
+  {
+    "id": 533,
+    "source_text": "Dehnen",
+    "target_text": "Stretch",
+    "examples_html": null
+  },
+  {
+    "id": 532,
+    "source_text": "Begleiter",
+    "target_text": "Компаньон",
+    "examples_html": null
+  },
+  {
+    "id": 531,
+    "source_text": "Moorgebiet",
+    "target_text": "Болотистая местность",
+    "examples_html": null
+  },
+  {
+    "id": 530,
+    "source_text": "Ohne dass ich wirklich Lust hatte, bereite ich mich zur Party vor.",
+    "target_text": "Не испытывая особого желания, я готовлюсь к вечеринке.",
+    "examples_html": null
+  },
+  {
+    "id": 529,
+    "source_text": "Ich habe das Spiel verstanden, auch ohne dass du es mir erklärst.",
+    "target_text": "Я понял игру, даже без твоего объяснения.",
+    "examples_html": null
+  },
+  {
+    "id": 528,
+    "source_text": "Das hat dich aber heftig erwischt.",
+    "target_text": "Но это сильно задело тебя.",
+    "examples_html": null
+  },
+  {
+    "id": 527,
+    "source_text": "Zweifel",
+    "target_text": "Сомнение",
+    "examples_html": null
+  },
+  {
+    "id": 526,
+    "source_text": "ich war erstaunt",
+    "target_text": "я был поражен",
+    "examples_html": null
+  },
+  {
+    "id": 525,
+    "source_text": "Erstaunen",
+    "target_text": "Удивите",
+    "examples_html": null
+  },
+  {
+    "id": 524,
+    "source_text": "wir könnten raus Feiern statt den ganzen Tag im Haus zu bleiben",
+    "target_text": "мы могли бы устроить вечеринку на улице, а не сидеть дома весь день.",
+    "examples_html": null
+  },
+  {
+    "id": 523,
+    "source_text": "Redewendung",
+    "target_text": "Выражение",
+    "examples_html": null
+  },
+  {
+    "id": 522,
+    "source_text": "стал более плотно заниматься музыкой",
+    "target_text": "ich habe mich intensiver mit Musik beschäftigt",
+    "examples_html": null
+  },
+  {
+    "id": 521,
+    "source_text": "Danke fürs Bescheid.",
+    "target_text": "Спасибо, что предупредили.",
+    "examples_html": null
+  },
+  {
+    "id": 520,
+    "source_text": "Der Ton",
+    "target_text": "звук",
+    "examples_html": null
+  },
+  {
+    "id": 519,
+    "source_text": "spöttisch",
+    "target_text": "насмешливый",
+    "examples_html": null
+  },
+  {
+    "id": 518,
+    "source_text": "zulässig",
+    "target_text": "допустимый",
+    "examples_html": null
+  },
+  {
+    "id": 517,
+    "source_text": "riskanter Fahrweise",
+    "target_text": "более рискованный стиль вождения",
+    "examples_html": null
+  },
+  {
+    "id": 516,
+    "source_text": "Nachlassen",
+    "target_text": "Ослабление",
+    "examples_html": null
+  },
+  {
+    "id": 515,
+    "source_text": "verzögert",
+    "target_text": "отложенный",
+    "examples_html": null
+  },
+  {
+    "id": 514,
+    "source_text": "geringe Menge",
+    "target_text": "небольшое количество",
+    "examples_html": null
+  },
+  {
+    "id": 513,
+    "source_text": "umgehend",
+    "target_text": "немедленно",
+    "examples_html": null
+  },
+  {
+    "id": 512,
+    "source_text": "einzuschätzen",
+    "target_text": "оценивать",
+    "examples_html": null
+  },
+  {
+    "id": 511,
+    "source_text": "Schalter.",
+    "target_text": "Выключатель.",
+    "examples_html": null
+  },
+  {
+    "id": 510,
+    "source_text": "Sie brauchen sich nicht so aufregen.",
+    "target_text": "Вам не нужно так расстраиваться.",
+    "examples_html": null
+  },
+  {
+    "id": 509,
+    "source_text": "Und wahrscheinlich sei ein weiterer Grund.",
+    "target_text": "И, вероятно, была еще одна причина.",
+    "examples_html": null
+  },
+  {
+    "id": 508,
+    "source_text": "Erleichterung.",
+    "target_text": "Облегчение.",
+    "examples_html": null
+  },
+  {
+    "id": 507,
+    "source_text": "Unterkunft.",
+    "target_text": "Проживание.",
+    "examples_html": null
+  },
+  {
+    "id": 506,
+    "source_text": "beschädigen",
+    "target_text": "повредить",
+    "examples_html": null
+  },
+  {
+    "id": 505,
+    "source_text": "Он немножечко в шоке от того, что происходит.",
+    "target_text": "Er ist ein bisschen schockiert über das, was vor sich geht.",
+    "examples_html": null
+  },
+  {
+    "id": 504,
+    "source_text": "Ну что, Давайте познакомимся.",
+    "target_text": "Nun, Lassen Sie uns uns kennenlernen.",
+    "examples_html": null
+  },
+  {
+    "id": 503,
+    "source_text": "Давно вы сюда переехали?",
+    "target_text": "Wie lange sind Sie schon hierher gezogen?",
+    "examples_html": null
+  },
+  {
+    "id": 502,
+    "source_text": "Reibe",
+    "target_text": "Терка",
+    "examples_html": null
+  },
+  {
+    "id": 501,
+    "source_text": "Schritt für Schritt.",
+    "target_text": "шаг за шагом.",
+    "examples_html": null
+  },
+  {
+    "id": 500,
+    "source_text": "Die Art und Weise funktioniert tatsächlich nicht so gut",
+    "target_text": "Способ на самом деле работает не так хорошо",
+    "examples_html": null
+  },
+  {
+    "id": 499,
+    "source_text": "Как он сегодня себя вел?",
+    "target_text": "Wie hat er sich heute verhalten?",
+    "examples_html": null
+  },
+  {
+    "id": 498,
+    "source_text": "Schwebt das Raumschiff völlig schwerelos.",
+    "target_text": "Космический корабль парит в полной невесомости.",
+    "examples_html": null
+  },
+  {
+    "id": 497,
+    "source_text": "Völlig losgelöst von der Erde.",
+    "target_text": "Полностью оторванный от Земли.",
+    "examples_html": null
+  },
+  {
+    "id": 496,
+    "source_text": "Was wäre es, wenn es andersrum gewesen wäre?",
+    "target_text": "Что бы это было, если бы все было по-другому?",
+    "examples_html": null
+  },
+  {
+    "id": 495,
+    "source_text": "Laut der Studie.",
+    "target_text": "Согласно исследованию.",
+    "examples_html": null
+  },
+  {
+    "id": 494,
+    "source_text": "Dadurch aber die Umwelt stärker belastet wird.",
+    "target_text": "Но это создает большую нагрузку на окружающую среду.",
+    "examples_html": null
+  },
+  {
+    "id": 493,
+    "source_text": "Der Forscher.",
+    "target_text": "исследователь.",
+    "examples_html": null
+  },
+  {
+    "id": 492,
+    "source_text": "Die Forschenden sind der Meinung.",
+    "target_text": "Исследователи придерживаются этого мнения.",
+    "examples_html": null
+  },
+  {
+    "id": 491,
+    "source_text": "Das löst eine Kettenreaktion aus.",
+    "target_text": "Это запускает цепную реакцию.",
+    "examples_html": null
+  },
+  {
+    "id": 490,
+    "source_text": "Häufiger Spurwechsel?",
+    "target_text": "Частая смена полосы движения?",
+    "examples_html": null
+  },
+  {
+    "id": 489,
+    "source_text": "Elster",
+    "target_text": "Сорока",
+    "examples_html": null
+  },
+  {
+    "id": 488,
+    "source_text": "Humor macht Köpfe auf.",
+    "target_text": "Юмор поднимает настроение.",
+    "examples_html": null
+  },
+  {
+    "id": 487,
+    "source_text": "das vorkommen mir spanisch",
+    "target_text": "это кажется мне испанским",
+    "examples_html": null
+  },
+  {
+    "id": 486,
+    "source_text": "ценный сотрудник",
+    "target_text": "ein wertvoller Mitarbeiter",
+    "examples_html": null
+  },
+  {
+    "id": 485,
+    "source_text": "Maßnahmen",
+    "target_text": "Меры",
+    "examples_html": null
+  },
+  {
+    "id": 484,
+    "source_text": "das Haus dessen Tür total kaputt ist kostet nur 3000 €",
+    "target_text": "дом, дверь которого полностью сломана, стоит всего 3000 евро",
+    "examples_html": null
+  },
+  {
+    "id": 483,
+    "source_text": "der Tisch dessen Beine aus Metall sind ist ein Designertisch",
+    "target_text": "стол с металлическими ножками - это дизайнерский стол",
+    "examples_html": null
+  },
+  {
+    "id": 482,
+    "source_text": "du solltest Hausaufgaben machen anstatt den ganzen Tag Computerspiele zu spielen",
+    "target_text": "тебе следует делать домашнее задание, а не играть в компьютерные игры весь день",
+    "examples_html": null
+  },
+  {
+    "id": 481,
+    "source_text": "meine Tochter ist eingeschlafen ohne dass ich ihr ein Lied vorgesungen habe",
+    "target_text": "моя дочь заснула без того, чтобы я спел ей песню",
+    "examples_html": null
+  },
+  {
+    "id": 480,
+    "source_text": "ich spiele in eurem Team damit beide Teams gleich stark sind",
+    "target_text": "я играю в вашей команде, чтобы обе команды были одинаково сильны",
+    "examples_html": null
+  },
+  {
+    "id": 479,
+    "source_text": "steigende Preise",
+    "target_text": "рост цен",
+    "examples_html": null
+  },
+  {
+    "id": 478,
+    "source_text": "behaupten",
+    "target_text": "утверждать",
+    "examples_html": null
+  },
+  {
+    "id": 477,
+    "source_text": "begleiten",
+    "target_text": "сопровождать",
+    "examples_html": null
+  },
+  {
+    "id": 476,
+    "source_text": "hat bisher ganz gut funktionieren",
+    "target_text": "до сих пор работал довольно хорошо",
+    "examples_html": null
+  },
+  {
+    "id": 475,
+    "source_text": "gehweg",
+    "target_text": "тротуар",
+    "examples_html": null
+  },
+  {
+    "id": 474,
+    "source_text": "umkehren",
+    "target_text": "перевернуть",
+    "examples_html": null
+  },
+  {
+    "id": 473,
+    "source_text": "Was du heute kannst besorgen, das verschiebe nicht auf morgen.",
+    "target_text": "То, что ты можешь получить сегодня, не откладывай на завтра.",
+    "examples_html": null
+  },
+  {
+    "id": 472,
+    "source_text": "das erste, was mir einfällt.",
+    "target_text": "первое, что приходит в голову.",
+    "examples_html": null
+  },
+  {
+    "id": 471,
+    "source_text": "der Kindergarten",
+    "target_text": "детский сад",
+    "examples_html": null
+  },
+  {
+    "id": 470,
+    "source_text": "der Vorrang",
+    "target_text": "приоритет",
+    "examples_html": null
+  },
+  {
+    "id": 469,
+    "source_text": "der Boden.",
+    "target_text": "почва.",
+    "examples_html": null
+  },
+  {
+    "id": 468,
+    "source_text": "verschlucken",
+    "target_text": "проглотить",
+    "examples_html": null
+  },
+  {
+    "id": 467,
+    "source_text": "Er ist wie vom Erdboden verschluckt.",
+    "target_text": "Он словно поглощен землей.",
+    "examples_html": null
+  },
+  {
+    "id": 466,
+    "source_text": "Für mich, das war ein ziemlich großes Ereignis.",
+    "target_text": "Для меня это было довольно большое событие.",
+    "examples_html": null
+  },
+  {
+    "id": 465,
+    "source_text": "Презентацию проводили в другой стране",
+    "target_text": "Die Präsentation wurde in einem anderen Land durchgeführt",
+    "examples_html": null
+  },
+  {
+    "id": 464,
+    "source_text": "zurzeit",
+    "target_text": "на сегодня",
+    "examples_html": null
+  },
+  {
+    "id": 463,
+    "source_text": "der Betreff, die Anrede, die Einleitung, der Schluss",
+    "target_text": "тема, приветствие, введение, заключение",
+    "examples_html": null
+  },
+  {
+    "id": 462,
+    "source_text": "Betreff, Anrede, Einleitung, Schluss",
+    "target_text": "Тема, приветствие, введение, заключение",
+    "examples_html": null
+  },
+  {
+    "id": 461,
+    "source_text": "das Computerprogramm das gestern abgestürzt ist",
+    "target_text": "компьютерная программа, которая вчера вышла из строя",
+    "examples_html": null
+  },
+  {
+    "id": 460,
+    "source_text": "Du darfst eintreten.",
+    "target_text": "Тебе разрешено войти.",
+    "examples_html": null
+  },
+  {
+    "id": 459,
+    "source_text": "Er steht auf dem Hügel.",
+    "target_text": "Он стоит на вершине холма.",
+    "examples_html": null
+  },
+  {
+    "id": 458,
+    "source_text": "Hügel",
+    "target_text": "Холм",
+    "examples_html": null
+  },
+  {
+    "id": 457,
+    "source_text": "Eimer",
+    "target_text": "Ведро",
+    "examples_html": null
+  },
+  {
+    "id": 456,
+    "source_text": "ein paar Tipps/Ratschläge geben",
+    "target_text": "дать несколько советов / советов",
+    "examples_html": null
+  },
+  {
+    "id": 455,
+    "source_text": "leider hat es nicht geklapp",
+    "target_text": "к сожалению, это не сработало",
+    "examples_html": null
+  },
+  {
+    "id": 454,
+    "source_text": "mit so vielen kleinen Geschäften",
+    "target_text": "с таким количеством маленьких магазинов",
+    "examples_html": null
+  },
+  {
+    "id": 453,
+    "source_text": "zählen",
+    "target_text": "подсчитать",
+    "examples_html": null
+  },
+  {
+    "id": 452,
+    "source_text": "Du liebe Zeit",
+    "target_text": "Ты любишь время",
+    "examples_html": null
+  },
+  {
+    "id": 451,
+    "source_text": "Hoppe, hoppe Reiter, wenn er fällt dann schreit er, fällt er in den Graben, fressen ihn die Raben, fällt er in den Sumpf, macht der Reiter PLUMPS.",
+    "target_text": "Прыгай, прыгай всадник, когда он падает, то кричит, падает в канаву, вороны его съедают, он падает в болото, и всадник ПАДАЕТ.",
+    "examples_html": null
+  },
+  {
+    "id": 450,
+    "source_text": "Ich gehe die Treppe hoch.",
+    "target_text": "Я поднимаюсь по лестнице.",
+    "examples_html": null
+  },
+  {
+    "id": 449,
+    "source_text": "Straßenabschnitt.",
+    "target_text": "Участок дороги.",
+    "examples_html": null
+  },
+  {
+    "id": 448,
+    "source_text": "Vereist",
+    "target_text": "Обледенелый",
+    "examples_html": null
+  },
+  {
+    "id": 447,
+    "source_text": "schiefgehen",
+    "target_text": "пойти не так",
+    "examples_html": null
+  },
+  {
+    "id": 446,
+    "source_text": "pannen und missgeschicke",
+    "target_text": "неудачи и неудачи",
+    "examples_html": null
+  },
+  {
+    "id": 445,
+    "source_text": "колонки",
+    "target_text": "Spalten",
+    "examples_html": null
+  },
+  {
+    "id": 444,
+    "source_text": "ist das voll! lass uns da anstellen wo die Schlange am kürzesten ist",
+    "target_text": "полно, полно! давайте встанем в очередь там, где очередь самая короткая",
+    "examples_html": null
+  },
+  {
+    "id": 443,
+    "source_text": "deine Brille liegt bestimmt dort wo du sie auch sonst hinlegst",
+    "target_text": "твои очки наверняка лежат там, куда ты их обычно кладешь",
+    "examples_html": null
+  },
+  {
+    "id": 442,
+    "source_text": "gibt es noch etwas was Ihnen zu diesem Thema einfällt",
+    "target_text": "есть ли что-нибудь еще, что вы можете придумать по этому поводу",
+    "examples_html": null
+  },
+  {
+    "id": 441,
+    "source_text": "leider nicht obwohl ich überall gesucht habe wo asiatische Lebensmittel verkauft werden",
+    "target_text": "к сожалению, нет, хотя я искал везде, где продаются азиатские продукты",
+    "examples_html": null
+  },
+  {
+    "id": 440,
+    "source_text": "hör also auf damit",
+    "target_text": "так что прекрати это",
+    "examples_html": null
+  },
+  {
+    "id": 439,
+    "source_text": "das ist genau das was mich so ärgert",
+    "target_text": "это как раз то, что меня так раздражает",
+    "examples_html": null
+  },
+  {
+    "id": 438,
+    "source_text": "du findest du sowieso alles, was ich für dich tue, falsch!",
+    "target_text": "ты все равно думаешь, что все, что я для тебя делаю, неправильно!",
+    "examples_html": null
+  },
+  {
+    "id": 437,
+    "source_text": "überall wo sie Häuser sehen waren früher Felder",
+    "target_text": "везде, где вы видите дома, раньше были поля",
+    "examples_html": null
+  },
+  {
+    "id": 436,
+    "source_text": "es gibt da etwas was ich dir sagen möchte ich liebe dich",
+    "target_text": "есть кое-что, что я хочу тебе сказать, я люблю тебя",
+    "examples_html": null
+  },
+  {
+    "id": 435,
+    "source_text": "es gibt nichts was dich heute zufrieden macht, oder?",
+    "target_text": "нет ничего, что могло бы сделать тебя счастливым сегодня, не так ли?",
+    "examples_html": null
+  },
+  {
+    "id": 434,
+    "source_text": "С другими он ведет себя всегда хорошо",
+    "target_text": "Mit anderen verhält er sich immer gut",
+    "examples_html": null
+  },
+  {
+    "id": 433,
+    "source_text": "Wenn ich unvermindert weiterfahre.",
+    "target_text": "Если я буду продолжать в том же духе.",
+    "examples_html": null
+  },
+  {
+    "id": 432,
+    "source_text": "UnÜbersichtlichen Kurven.",
+    "target_text": "Запутанные повороты.",
+    "examples_html": null
+  },
+  {
+    "id": 431,
+    "source_text": "Fahrbahnverengung",
+    "target_text": "Сужение проезжей части",
+    "examples_html": null
+  },
+  {
+    "id": 430,
+    "source_text": "Sie sind weniger beweglich.",
+    "target_text": "Они менее подвижны.",
+    "examples_html": null
+  },
+  {
+    "id": 429,
+    "source_text": "Ausweichbewegungen.",
+    "target_text": "Уклончивые движения.",
+    "examples_html": null
+  },
+  {
+    "id": 428,
+    "source_text": "Beschränken.",
+    "target_text": "Ограничивать.",
+    "examples_html": null
+  },
+  {
+    "id": 427,
+    "source_text": "Vorausschauendes Fahren.",
+    "target_text": "Предусмотрительное вождение.",
+    "examples_html": null
+  },
+  {
+    "id": 426,
+    "source_text": "Verkehrsverhältnisse.",
+    "target_text": "Дорожные условия.",
+    "examples_html": null
+  },
+  {
+    "id": 425,
+    "source_text": "Schert nach links aus",
+    "target_text": "Сдвиг влево",
+    "examples_html": null
+  },
+  {
+    "id": 424,
+    "source_text": "Von hinten kommende Fahrzeugführer sehen mich erst spät.",
+    "target_text": "Водители, идущие сзади, не видят меня до позднего вечера.",
+    "examples_html": null
+  },
+  {
+    "id": 423,
+    "source_text": "Fahrzeugführer sehrn mich erst spät.",
+    "target_text": "Водители машин не обращают на меня внимания до позднего вечера.",
+    "examples_html": null
+  },
+  {
+    "id": 422,
+    "source_text": "Vielleicht wird es sich lohnen.",
+    "target_text": "Может быть, это того стоит.",
+    "examples_html": null
+  },
+  {
+    "id": 421,
+    "source_text": "Ziegel.",
+    "target_text": "Кирпич.",
+    "examples_html": null
+  },
+  {
+    "id": 420,
+    "source_text": "Einsatz.",
+    "target_text": "Применение.",
+    "examples_html": null
+  },
+  {
+    "id": 419,
+    "source_text": "ich hab es eilig man",
+    "target_text": "я спешу, человек",
+    "examples_html": null
+  },
+  {
+    "id": 418,
+    "source_text": "vermutungen",
+    "target_text": "догадки",
+    "examples_html": null
+  },
+  {
+    "id": 417,
+    "source_text": "Привези хорошее настроение и твою улыбку!",
+    "target_text": "Bring gute Laune und dein Lächeln mit!",
+    "examples_html": null
+  },
+  {
+    "id": 416,
+    "source_text": "zusagen und absagen",
+    "target_text": "обещания и отказы",
+    "examples_html": null
+  },
+  {
+    "id": 415,
+    "source_text": "geh bloß nicht in den Film es lohnt sich überhaupt nicht",
+    "target_text": "только не ходи в кино, это того не стоит",
+    "examples_html": null
+  },
+  {
+    "id": 414,
+    "source_text": "habe bloß 5 € bei mir kannst du mir etwas leihen",
+    "target_text": "у меня всего 5 евро, не могли бы вы одолжить мне что-нибудь",
+    "examples_html": null
+  },
+  {
+    "id": 413,
+    "source_text": "ausrufen",
+    "target_text": "выкрикнуть",
+    "examples_html": null
+  },
+  {
+    "id": 412,
+    "source_text": "die Tatsache, dass die Erde eine Kugel ist",
+    "target_text": "тот факт, что Земля - это сфера",
+    "examples_html": null
+  },
+  {
+    "id": 411,
+    "source_text": "umformen",
+    "target_text": "трансформировать",
+    "examples_html": null
+  },
+  {
+    "id": 410,
+    "source_text": "als kleines Kind fand ich es nicht gut dass ich immer so viel essen musste",
+    "target_text": "когда я был маленьким, мне не нравилось, что мне всегда приходилось есть так много",
+    "examples_html": null
+  },
+  {
+    "id": 409,
+    "source_text": "als kleinen Kind fand ich es schade dass ich nicht lesen konnte",
+    "target_text": "когда я был маленьким, мне было жаль, что я не умел читать",
+    "examples_html": null
+  },
+  {
+    "id": 408,
+    "source_text": "er bedauert dass er sie den ganzen Tag alleine gelassen hat",
+    "target_text": "он сожалеет, что оставил ее одну на весь день",
+    "examples_html": null
+  },
+  {
+    "id": 407,
+    "source_text": "er bedauert dass er sie deshalb nicht getroffen hat",
+    "target_text": "он сожалеет, что не встретил ее из-за этого",
+    "examples_html": null
+  },
+  {
+    "id": 406,
+    "source_text": "er bedauert dass er sich dann verspätet hat",
+    "target_text": "он сожалеет, что опоздал тогда",
+    "examples_html": null
+  },
+  {
+    "id": 405,
+    "source_text": "es bedauert, dass er es vergessen hat",
+    "target_text": "сожалеет, что забыл",
+    "examples_html": null
+  },
+  {
+    "id": 404,
+    "source_text": "Eine Erhöhung der Risikobereitschaft.",
+    "target_text": "Повышение аппетита к риску.",
+    "examples_html": null
+  },
+  {
+    "id": 403,
+    "source_text": "Eine Fehleinschätzung von Geschwindigkeit.",
+    "target_text": "Неправильная оценка скорости.",
+    "examples_html": null
+  },
+  {
+    "id": 402,
+    "source_text": "Schwere Augenlieder.",
+    "target_text": "Тяжелые веки.",
+    "examples_html": null
+  },
+  {
+    "id": 401,
+    "source_text": "Ich halte einen möglichst geringen Seitenabstand ein.",
+    "target_text": "Я придерживаюсь минимально возможного бокового интервала.",
+    "examples_html": null
+  },
+  {
+    "id": 400,
+    "source_text": "Es geht darum, Emotionen zu wecken, Stress abzubauen.",
+    "target_text": "Речь идет о пробуждении эмоций, снятии стресса.",
+    "examples_html": null
+  },
+  {
+    "id": 399,
+    "source_text": "Zum Sitzen nicht geeignet.",
+    "target_text": "Не подходит для сидения.",
+    "examples_html": null
+  },
+  {
+    "id": 398,
+    "source_text": "Einbahnstraße.",
+    "target_text": "Улица с односторонним движением.",
+    "examples_html": null
+  },
+  {
+    "id": 397,
+    "source_text": "Entzug der Fahrerlaubnis.",
+    "target_text": "Лишение водительских прав.",
+    "examples_html": null
+  },
+  {
+    "id": 396,
+    "source_text": "Unter Einwirkung von Drogen sein.",
+    "target_text": "Находиться под действием наркотиков.",
+    "examples_html": null
+  },
+  {
+    "id": 395,
+    "source_text": "Weil meine Geschwindigkeit unterschätzt werden kann.",
+    "target_text": "Потому что мою скорость можно недооценить.",
+    "examples_html": null
+  },
+  {
+    "id": 394,
+    "source_text": "Ich bin leicht zu übersehen.",
+    "target_text": "Меня легко упустить из виду.",
+    "examples_html": null
+  },
+  {
+    "id": 393,
+    "source_text": "Es ist besonders gefährdet.",
+    "target_text": "Это особенно опасно.",
+    "examples_html": null
+  },
+  {
+    "id": 392,
+    "source_text": "Seine Geschwindigkeit stark verringert.",
+    "target_text": "Его скорость значительно снизилась.",
+    "examples_html": null
+  },
+  {
+    "id": 391,
+    "source_text": "Plötzlich beschleunigt",
+    "target_text": "Внезапно ускоренный",
+    "examples_html": null
+  },
+  {
+    "id": 390,
+    "source_text": "Wann wird ein überholender gefährdet?",
+    "target_text": "Когда обгоняющий подвергается риску?",
+    "examples_html": null
+  },
+  {
+    "id": 389,
+    "source_text": "Geschwindigkeit rechtzeitig anpassen.",
+    "target_text": "Своевременно корректируйте скорость.",
+    "examples_html": null
+  },
+  {
+    "id": 388,
+    "source_text": "Pferdekutsche.",
+    "target_text": "Конный экипаж.",
+    "examples_html": null
+  },
+  {
+    "id": 387,
+    "source_text": "Rutschen.",
+    "target_text": "Скользить.",
+    "examples_html": null
+  },
+  {
+    "id": 386,
+    "source_text": "Rutschgefahr.",
+    "target_text": "Опасность скольжения.",
+    "examples_html": null
+  },
+  {
+    "id": 385,
+    "source_text": "Unsichere Fahrweise",
+    "target_text": "Небезопасный стиль вождения",
+    "examples_html": null
+  },
+  {
+    "id": 384,
+    "source_text": "Wichtige Verkehrszeichen.",
+    "target_text": "Важные дорожные знаки.",
+    "examples_html": null
+  },
+  {
+    "id": 383,
+    "source_text": "Ja, weil der Lastzug die Sicht auf den Querverkehr verdeckt.",
+    "target_text": "Да, потому что грузовой поезд закрывает обзор на перекрестке.",
+    "examples_html": null
+  },
+  {
+    "id": 382,
+    "source_text": "Leichtsinnig.",
+    "target_text": "Несерьезный.",
+    "examples_html": null
+  },
+  {
+    "id": 381,
+    "source_text": "Dass starkes Bremsen erforderlich werden kann.",
+    "target_text": "Что может потребоваться сильное торможение.",
+    "examples_html": null
+  },
+  {
+    "id": 380,
+    "source_text": "Treten.",
+    "target_text": "Вступить.",
+    "examples_html": null
+  },
+  {
+    "id": 379,
+    "source_text": "anhalten",
+    "target_text": "останавливаться",
+    "examples_html": null
+  },
+  {
+    "id": 378,
+    "source_text": "Der LKW wird anhalten.",
+    "target_text": "Грузовик остановится.",
+    "examples_html": null
+  },
+  {
+    "id": 377,
+    "source_text": "Worauf müssen Sie sich einstellen?",
+    "target_text": "К чему вам нужно готовиться?",
+    "examples_html": null
+  },
+  {
+    "id": 376,
+    "source_text": "Man nicht in die Schublade gesteckt wird.",
+    "target_text": "Человек не должен быть помещен в ящик.",
+    "examples_html": null
+  },
+  {
+    "id": 375,
+    "source_text": "Dass die beiden ihre Flohmarktfunde bei Marie abladen mussten, bevor sie weiterkonnten",
+    "target_text": "Что им двоим пришлось выгрузить свои находки с блошиного рынка в доме Мари, прежде чем они смогли продолжить",
+    "examples_html": null
+  },
+  {
+    "id": 374,
+    "source_text": "Ich habe so viel Papier unter den Arm geklemmt",
+    "target_text": "У меня так много бумаги, зажатой под мышкой,",
+    "examples_html": null
+  },
+  {
+    "id": 373,
+    "source_text": "Vor dem mehrere Bücher Kisten standen.",
+    "target_text": "Перед которым стояло несколько ящиков с книгами.",
+    "examples_html": null
+  },
+  {
+    "id": 372,
+    "source_text": "Deuten",
+    "target_text": "Намекать",
+    "examples_html": null
+  },
+  {
+    "id": 371,
+    "source_text": "Deren Magen eben deutlich hörbar gekrümmelt hatte.",
+    "target_text": "Чей желудок только что явственно заурчал.",
+    "examples_html": null
+  },
+  {
+    "id": 370,
+    "source_text": "Kannst du auf dem Rückweg etwas zu essen bringen?",
+    "target_text": "Ты можешь принести что-нибудь поесть на обратном пути?",
+    "examples_html": null
+  },
+  {
+    "id": 369,
+    "source_text": "Trotzdem konnte ich es kaum erwarten.",
+    "target_text": "Тем не менее, я не мог дождаться этого.",
+    "examples_html": null
+  },
+  {
+    "id": 368,
+    "source_text": "Necken",
+    "target_text": "Дразнить",
+    "examples_html": null
+  },
+  {
+    "id": 367,
+    "source_text": "Stöbern.",
+    "target_text": "Копаться.",
+    "examples_html": null
+  },
+  {
+    "id": 366,
+    "source_text": "Strömten Auf den Hof.",
+    "target_text": "Стекались во двор.",
+    "examples_html": null
+  },
+  {
+    "id": 365,
+    "source_text": "Strömten.",
+    "target_text": "Течь.",
+    "examples_html": null
+  },
+  {
+    "id": 364,
+    "source_text": "Ich bin zu eingespannt.",
+    "target_text": "Я слишком зажат.",
+    "examples_html": null
+  },
+  {
+    "id": 363,
+    "source_text": "Gegebenenfalls.",
+    "target_text": "При случае.",
+    "examples_html": null
+  },
+  {
+    "id": 362,
+    "source_text": "Schwindel",
+    "target_text": "Головокружение",
+    "examples_html": null
+  },
+  {
+    "id": 361,
+    "source_text": "Übelkeit",
+    "target_text": "Тошнота",
+    "examples_html": null
+  },
+  {
+    "id": 360,
+    "source_text": "Turnhalle",
+    "target_text": "Спортзал",
+    "examples_html": null
+  },
+  {
+    "id": 359,
+    "source_text": "Voraussichtlich.",
+    "target_text": "Предполагаемый.",
+    "examples_html": null
+  },
+  {
+    "id": 358,
+    "source_text": "Bereicherung.",
+    "target_text": "Обогащение.",
+    "examples_html": null
+  },
+  {
+    "id": 357,
+    "source_text": "Ausgelassen auf die Fahrbahn stürmen.",
+    "target_text": "Безудержно бросаться на проезжую часть.",
+    "examples_html": null
+  },
+  {
+    "id": 356,
+    "source_text": "Kinder verlassen das Schulgelände.",
+    "target_text": "Дети покидают территорию школы.",
+    "examples_html": null
+  },
+  {
+    "id": 355,
+    "source_text": "zügig",
+    "target_text": "быстро",
+    "examples_html": null
+  },
+  {
+    "id": 354,
+    "source_text": "Um sich mit der Situation vertraut zu machen.",
+    "target_text": "Чтобы ознакомиться с ситуацией.",
+    "examples_html": null
+  },
+  {
+    "id": 353,
+    "source_text": "Legenbleiben wegen Kraftstoffbleibens.",
+    "target_text": "Остановка из-за нехватки топлива.",
+    "examples_html": null
+  },
+  {
+    "id": 352,
+    "source_text": "Abwürgen des Motors.",
+    "target_text": "Остановка двигателя.",
+    "examples_html": null
+  },
+  {
+    "id": 351,
+    "source_text": "triftigen Grund.",
+    "target_text": "уважительная причина.",
+    "examples_html": null
+  },
+  {
+    "id": 350,
+    "source_text": "Auch wenn dies einen Umweg bedeutet.",
+    "target_text": "Даже если это означает обходной путь.",
+    "examples_html": null
+  },
+  {
+    "id": 349,
+    "source_text": "Ich lenke deutlich nach rechts.",
+    "target_text": "Я резко поворачиваю вправо.",
+    "examples_html": null
+  },
+  {
+    "id": 348,
+    "source_text": "Wovon hängt der einzuhaltende Abstand zum vorausfahrenden Fahrzeug ab?",
+    "target_text": "От чего зависит расстояние, которое необходимо соблюдать до впереди идущего транспортного средства?",
+    "examples_html": null
+  },
+  {
+    "id": 347,
+    "source_text": "Die Zugmaschine kann zwei breitere Anhänger mitführen.",
+    "target_text": "Тягач может перевозить два более широких прицепа.",
+    "examples_html": null
+  },
+  {
+    "id": 346,
+    "source_text": "Womit müssen Sie rechnen?",
+    "target_text": "Чего вам следует ожидать?",
+    "examples_html": null
+  },
+  {
+    "id": 345,
+    "source_text": "basteln",
+    "target_text": "мастерить",
+    "examples_html": null
+  },
+  {
+    "id": 344,
+    "source_text": "Widrigkeiten.",
+    "target_text": "Невзгоды.",
+    "examples_html": null
+  },
+  {
+    "id": 343,
+    "source_text": "Voraussetzung.",
+    "target_text": "Предпосылка.",
+    "examples_html": null
+  },
+  {
+    "id": 342,
+    "source_text": "betrachten",
+    "target_text": "рассматривать",
+    "examples_html": null
+  },
+  {
+    "id": 341,
+    "source_text": "Wenn sie sich etwas vorgenommen hat, dann zieht sie es auch durch.",
+    "target_text": "Если она что-то задумала, то выполнит и это.",
+    "examples_html": null
+  },
+  {
+    "id": 340,
+    "source_text": "murren",
+    "target_text": "роптать",
+    "examples_html": null
+  },
+  {
+    "id": 339,
+    "source_text": "blöd",
+    "target_text": "тупой",
+    "examples_html": null
+  },
+  {
+    "id": 338,
+    "source_text": "Einwand",
+    "target_text": "Протест",
+    "examples_html": null
+  },
+  {
+    "id": 337,
+    "source_text": "Zugeklebt",
+    "target_text": "Заклеенный",
+    "examples_html": null
+  },
+  {
+    "id": 336,
+    "source_text": "Umschlag",
+    "target_text": "Конверт",
+    "examples_html": null
+  },
+  {
+    "id": 335,
+    "source_text": "Палка",
+    "target_text": "Stock",
+    "examples_html": null
+  },
+  {
+    "id": 334,
+    "source_text": "Ich habe vor",
+    "target_text": "Я собираюсь",
+    "examples_html": null
+  },
+  {
+    "id": 333,
+    "source_text": "Vielen dank für ihre Mühe",
+    "target_text": "Большое спасибо за ваши усилия",
+    "examples_html": null
+  },
+  {
+    "id": 332,
+    "source_text": "Mir interesiert auch, wie die Öffnungszeiten sind?",
+    "target_text": "Меня также интересует, каковы часы работы?",
+    "examples_html": null
+  },
+  {
+    "id": 331,
+    "source_text": "Duft",
+    "target_text": "Аромат",
+    "examples_html": null
+  },
+  {
+    "id": 330,
+    "source_text": "prangen",
+    "target_text": "красоваться",
+    "examples_html": null
+  },
+  {
+    "id": 329,
+    "source_text": "prächtig",
+    "target_text": "роскошный",
+    "examples_html": null
+  },
+  {
+    "id": 328,
+    "source_text": "ziemlicher Angeber",
+    "target_text": "настоящий хвастун",
+    "examples_html": null
+  },
+  {
+    "id": 327,
+    "source_text": "Ich musste lachen",
+    "target_text": "Я не мог удержаться от смеха",
+    "examples_html": null
+  },
+  {
+    "id": 326,
+    "source_text": "Ein wandelndes Lexikon",
+    "target_text": "ходячая энциклопедия",
+    "examples_html": null
+  },
+  {
+    "id": 325,
+    "source_text": "schütteln",
+    "target_text": "трясти",
+    "examples_html": null
+  },
+  {
+    "id": 324,
+    "source_text": "Ist gut erhalten",
+    "target_text": "Хорошо сохранился",
+    "examples_html": null
+  },
+  {
+    "id": 323,
+    "source_text": "Im 15 Jahrhundert",
+    "target_text": "В 15 веке",
+    "examples_html": null
+  },
+  {
+    "id": 322,
+    "source_text": "schmunzeln",
+    "target_text": "ухмыляться",
+    "examples_html": null
+  },
+  {
+    "id": 321,
+    "source_text": "parat",
+    "target_text": "готовый",
+    "examples_html": null
+  },
+  {
+    "id": 320,
+    "source_text": "Spruch",
+    "target_text": "Фраза",
+    "examples_html": null
+  },
+  {
+    "id": 319,
+    "source_text": "erwidern",
+    "target_text": "возражать",
+    "examples_html": null
+  },
+  {
+    "id": 318,
+    "source_text": "begeistert",
+    "target_text": "взволнованный",
+    "examples_html": null
+  },
+  {
+    "id": 317,
+    "source_text": "umschauen sich",
+    "target_text": "оглядываться вокруг",
+    "examples_html": null
+  },
+  {
+    "id": 316,
+    "source_text": "betreten",
+    "target_text": "входить",
+    "examples_html": null
+  },
+  {
+    "id": 315,
+    "source_text": "immer noch",
+    "target_text": "по-прежнему",
+    "examples_html": null
+  },
+  {
+    "id": 314,
+    "source_text": "ragen",
+    "target_text": "возвышаться",
+    "examples_html": null
+  },
+  {
+    "id": 313,
+    "source_text": "Verlassen",
+    "target_text": "Покидать",
+    "examples_html": null
+  },
+  {
+    "id": 312,
+    "source_text": "Erlebnis",
+    "target_text": "Переживание",
+    "examples_html": null
+  },
+  {
+    "id": 311,
+    "source_text": "Neugierig",
+    "target_text": "Любопытный",
+    "examples_html": null
+  },
+  {
+    "id": 310,
+    "source_text": "Ein echter Hingucker",
+    "target_text": "Настоящая достопримечательность",
+    "examples_html": null
+  },
+  {
+    "id": 309,
+    "source_text": "Überlegen Sie noch einmal bitte.",
+    "target_text": "Подумайте еще раз, пожалуйста.",
+    "examples_html": null
+  },
+  {
+    "id": 308,
+    "source_text": "Der schadet aber auch uns Menschen.",
+    "target_text": "Но это вредит и нам, людям.",
+    "examples_html": null
+  },
+  {
+    "id": 307,
+    "source_text": "Jeder trägt dazu bei.",
+    "target_text": "Каждый вносит свой вклад.",
+    "examples_html": null
+  },
+  {
+    "id": 306,
+    "source_text": "Doch das stimmt nicht.",
+    "target_text": "Но это неправда.",
+    "examples_html": null
+  },
+  {
+    "id": 305,
+    "source_text": "Doch wäre es nicht viel schöner, wenn kein Müll rumlegen würde?",
+    "target_text": "Но разве не было бы намного лучше, если бы не было мусора?",
+    "examples_html": null
+  },
+  {
+    "id": 304,
+    "source_text": "engagieren",
+    "target_text": "ангажировать",
+    "examples_html": null
+  },
+  {
+    "id": 303,
+    "source_text": "erweitern",
+    "target_text": "расширять",
+    "examples_html": null
+  },
+  {
+    "id": 302,
+    "source_text": "sukzessive",
+    "target_text": "последовательно",
+    "examples_html": null
+  },
+  {
+    "id": 301,
+    "source_text": "Anwendungsbereich.",
+    "target_text": "Область применения.",
+    "examples_html": null
+  },
+  {
+    "id": 300,
+    "source_text": "Zahlreiche Vorteile.",
+    "target_text": "Многочисленные преимущества.",
+    "examples_html": null
+  },
+  {
+    "id": 299,
+    "source_text": "Das beschleunigt.",
+    "target_text": "Это ускоряет процесс.",
+    "examples_html": null
+  },
+  {
+    "id": 298,
+    "source_text": "erforderlich",
+    "target_text": "требуемый",
+    "examples_html": null
+  },
+  {
+    "id": 297,
+    "source_text": "Kannst du mich darauf hinweisen?",
+    "target_text": "Можешь ли ты указать мне на это?",
+    "examples_html": null
+  },
+  {
+    "id": 296,
+    "source_text": "Umfassende Hilfestellungen",
+    "target_text": "Всесторонняя помощь",
+    "examples_html": null
+  },
+  {
+    "id": 295,
+    "source_text": "Zugehörigen.",
+    "target_text": "Принадлежащие.",
+    "examples_html": null
+  },
+  {
+    "id": 294,
+    "source_text": "Verwaltung.",
+    "target_text": "Управление.",
+    "examples_html": null
+  },
+  {
+    "id": 293,
+    "source_text": "ereinfachen",
+    "target_text": "упрощать",
+    "examples_html": null
+  },
+  {
+    "id": 292,
+    "source_text": "einreichen",
+    "target_text": "представить",
+    "examples_html": null
+  },
+  {
+    "id": 291,
+    "source_text": "Anschließend.",
+    "target_text": "Последующий.",
+    "examples_html": null
+  },
+  {
+    "id": 290,
+    "source_text": "Überreichen.",
+    "target_text": "Передать.",
+    "examples_html": null
+  },
+  {
+    "id": 289,
+    "source_text": "Abenteuer.",
+    "target_text": "Приключение.",
+    "examples_html": null
+  },
+  {
+    "id": 288,
+    "source_text": "Я также был у врача в местной праксис",
+    "target_text": "Ich war auch beim Arzt in der örtlichen Praxis",
+    "examples_html": null
+  },
+  {
+    "id": 287,
+    "source_text": "Врач прописал мне антибиотики",
+    "target_text": "Der Arzt hat mir Antibiotika verschrieben",
+    "examples_html": null
+  },
+  {
+    "id": 286,
+    "source_text": "Wer damit nicht umgehen kann, muss es eben umgehen!",
+    "target_text": "Кто не может справиться с этим, должен справиться с этим!",
+    "examples_html": null
+  },
+  {
+    "id": 285,
+    "source_text": "Я думал что выздоровею до понедельника",
+    "target_text": "Ich dachte, ich würde mich bis Montag erholen",
+    "examples_html": null
+  },
+  {
+    "id": 284,
+    "source_text": "Einkuscheln",
+    "target_text": "Обниматься",
+    "examples_html": null
+  },
+  {
+    "id": 283,
+    "source_text": "Rummachen.",
+    "target_text": "Целоваться.",
+    "examples_html": null
+  },
+  {
+    "id": 282,
+    "source_text": "Капризный.",
+    "target_text": "Launisch.",
+    "examples_html": null
+  },
+  {
+    "id": 281,
+    "source_text": "Плаксивый.",
+    "target_text": "Weinerlich.",
+    "examples_html": null
+  },
+  {
+    "id": 280,
+    "source_text": "Качаться на качелях.",
+    "target_text": "Auf der Schaukel schwingen.",
+    "examples_html": null
+  },
+  {
+    "id": 279,
+    "source_text": "Krabbeln",
+    "target_text": "Ползать",
+    "examples_html": null
+  },
+  {
+    "id": 278,
+    "source_text": "Ich stimme Ihnen zu.",
+    "target_text": "Я согласен с вами.",
+    "examples_html": null
+  },
+  {
+    "id": 277,
+    "source_text": "Da muss ich widersprechen.",
+    "target_text": "Я должен с этим не согласиться.",
+    "examples_html": null
+  },
+  {
+    "id": 276,
+    "source_text": "Wie war das noch?",
+    "target_text": "Как это еще было?",
+    "examples_html": null
+  },
+  {
+    "id": 275,
+    "source_text": "Daraus errechnet sich ein Bedarf.",
+    "target_text": "Из этого вытекает необходимость.",
+    "examples_html": null
+  },
+  {
+    "id": 274,
+    "source_text": "Это приходит с опытом.",
+    "target_text": "Das kommt mit Erfahrung.",
+    "examples_html": null
+  },
+  {
+    "id": 273,
+    "source_text": "Auf der Suche nach Schätzen.",
+    "target_text": "В поисках сокровищ.",
+    "examples_html": null
+  },
+  {
+    "id": 272,
+    "source_text": "Zur Müllkippe verkommen",
+    "target_text": "Превращение в свалку",
+    "examples_html": null
+  },
+  {
+    "id": 271,
+    "source_text": "Ordnungswidrigkeit.",
+    "target_text": "Административное нарушение.",
+    "examples_html": null
+  },
+  {
+    "id": 270,
+    "source_text": "Die Verantwortung tragen.",
+    "target_text": "нести ответственность.",
+    "examples_html": null
+  },
+  {
+    "id": 269,
+    "source_text": "stopfen",
+    "target_text": "пичкать",
+    "examples_html": null
+  },
+  {
+    "id": 268,
+    "source_text": "Empfang des Rathauses.",
+    "target_text": "Прием в мэрии.",
+    "examples_html": null
+  },
+  {
+    "id": 267,
+    "source_text": "Kot",
+    "target_text": "Фекалии",
+    "examples_html": null
+  },
+  {
+    "id": 266,
+    "source_text": "Entsorgen",
+    "target_text": "Утилизировать",
+    "examples_html": null
+  },
+  {
+    "id": 265,
+    "source_text": "Mittlerweile.",
+    "target_text": "Между тем.",
+    "examples_html": null
+  },
+  {
+    "id": 264,
+    "source_text": "Keine Behinderung darstellen.",
+    "target_text": "Не представлять собой препятствие.",
+    "examples_html": null
+  },
+  {
+    "id": 263,
+    "source_text": "Haushalt.",
+    "target_text": "Домашнее хозяйство.",
+    "examples_html": null
+  },
+  {
+    "id": 262,
+    "source_text": "Unterschlupf suchen",
+    "target_text": "Искать убежище",
+    "examples_html": null
+  },
+  {
+    "id": 261,
+    "source_text": "Verhindern",
+    "target_text": "Предотвратить",
+    "examples_html": null
+  },
+  {
+    "id": 260,
+    "source_text": "wertvollen",
+    "target_text": "ценные",
+    "examples_html": null
+  },
+  {
+    "id": 259,
+    "source_text": "Beitrag",
+    "target_text": "Вклад",
+    "examples_html": null
+  },
+  {
+    "id": 258,
+    "source_text": "stachelig",
+    "target_text": "колючий",
+    "examples_html": null
+  },
+  {
+    "id": 257,
+    "source_text": "Zur Unterstützung des Vereins werden Personen gesucht.",
+    "target_text": "Ведется поиск людей для поддержки ассоциации.",
+    "examples_html": null
+  },
+  {
+    "id": 256,
+    "source_text": "Не смотря ни на что.",
+    "target_text": "Egal was passiert.",
+    "examples_html": null
+  },
+  {
+    "id": 255,
+    "source_text": "Grüß dich.",
+    "target_text": "Привет.",
+    "examples_html": null
+  },
+  {
+    "id": 254,
+    "source_text": "Mir zieht es an.",
+    "target_text": "Меня это привлекает.",
+    "examples_html": null
+  },
+  {
+    "id": 253,
+    "source_text": "Wir werden nach Hause gehen, um uns umzuziehen",
+    "target_text": "Мы пойдем домой, чтобы переодеться",
+    "examples_html": null
+  },
+  {
+    "id": 252,
+    "source_text": "Dank des ehrenamtlichen Einsatz des engagierten Teams.",
+    "target_text": "Благодаря самоотверженной работе преданной команды.",
+    "examples_html": null
+  },
+  {
+    "id": 251,
+    "source_text": "Der Ablauf ist gut organisiert.",
+    "target_text": "Процесс хорошо организован.",
+    "examples_html": null
+  },
+  {
+    "id": 250,
+    "source_text": "Eine seit langem bestehende Einrichtung.",
+    "target_text": "Давно существующее учреждение.",
+    "examples_html": null
+  },
+  {
+    "id": 249,
+    "source_text": "Ein wahrer Genuss.",
+    "target_text": "Настоящее наслаждение.",
+    "examples_html": null
+  },
+  {
+    "id": 248,
+    "source_text": "Klang",
+    "target_text": "Звук",
+    "examples_html": null
+  },
+  {
+    "id": 247,
+    "source_text": "kraftvoll",
+    "target_text": "энергичный",
+    "examples_html": null
+  },
+  {
+    "id": 246,
+    "source_text": "sanft",
+    "target_text": "мягко",
+    "examples_html": null
+  },
+  {
+    "id": 245,
+    "source_text": "Das reicht",
+    "target_text": "Этого достаточно",
+    "examples_html": null
+  },
+  {
+    "id": 244,
+    "source_text": "Der Angestellte wird befördert.",
+    "target_text": "Сотрудник получает повышение по службе.",
+    "examples_html": null
+  },
+  {
+    "id": 243,
+    "source_text": "Kann er entlassen werden?",
+    "target_text": "Может ли он быть уволен?",
+    "examples_html": null
+  },
+  {
+    "id": 242,
+    "source_text": "Belastung.",
+    "target_text": "Нагрузка.",
+    "examples_html": null
+  },
+  {
+    "id": 241,
+    "source_text": "Dienstleistung.",
+    "target_text": "Обслуживание.",
+    "examples_html": null
+  },
+  {
+    "id": 240,
+    "source_text": "Im Rahmen des Gesetzes",
+    "target_text": "В рамках закона",
+    "examples_html": null
+  },
+  {
+    "id": 239,
+    "source_text": "Im Chaos finde ich etwas, das meinem Auge eine bestimmte Freude und Schönheit vermittelt.",
+    "target_text": "В хаосе я нахожу что-то, что придает моему глазу особую радость и красоту.",
+    "examples_html": null
+  },
+  {
+    "id": 238,
+    "source_text": "Mich zieht es an.",
+    "target_text": "Меня это привлекает.",
+    "examples_html": null
+  },
+  {
+    "id": 237,
+    "source_text": "Was gefällt Ihnen persönlich am besten an Ihrer Heimat?",
+    "target_text": "Что лично вам больше всего нравится в вашей стране?",
+    "examples_html": null
+  },
+  {
+    "id": 236,
+    "source_text": "Es hat mich mit einem Gefühl überflutet.",
+    "target_text": "Это наполнило меня чувством.",
+    "examples_html": null
+  },
+  {
+    "id": 235,
+    "source_text": "Die Fotos entstanden im Vorbeigehen.",
+    "target_text": "Фотографии были сделаны мимоходом.",
+    "examples_html": null
+  },
+  {
+    "id": 234,
+    "source_text": "zufällig",
+    "target_text": "случайный",
+    "examples_html": null
+  },
+  {
+    "id": 233,
+    "source_text": "Was erwartet die Besucher?",
+    "target_text": "Что ждет посетителей?",
+    "examples_html": null
+  },
+  {
+    "id": 232,
+    "source_text": "Anblick.",
+    "target_text": "Вид.",
+    "examples_html": null
+  },
+  {
+    "id": 231,
+    "source_text": "unberührt",
+    "target_text": "нетронутый",
+    "examples_html": null
+  },
+  {
+    "id": 230,
+    "source_text": "Porzellan.",
+    "target_text": "Фарфор.",
+    "examples_html": null
+  },
+  {
+    "id": 229,
+    "source_text": "Diejenigen.",
+    "target_text": "Те.",
+    "examples_html": null
+  },
+  {
+    "id": 228,
+    "source_text": "Tätigen.",
+    "target_text": "Совершать.",
+    "examples_html": null
+  },
+  {
+    "id": 227,
+    "source_text": "Es ist lange her.",
+    "target_text": "Это было давно.",
+    "examples_html": null
+  },
+  {
+    "id": 226,
+    "source_text": "Ich bin meinen Worten treu.",
+    "target_text": "Я верен своим словам.",
+    "examples_html": null
+  },
+  {
+    "id": 225,
+    "source_text": "Großartig.",
+    "target_text": "Великолепный.",
+    "examples_html": null
+  },
+  {
+    "id": 224,
+    "source_text": "Leise",
+    "target_text": "Тихо",
+    "examples_html": null
+  },
+  {
+    "id": 223,
+    "source_text": "Still",
+    "target_text": "Молчаливый",
+    "examples_html": null
+  },
+  {
+    "id": 222,
+    "source_text": "Ich rufe dich zur Unterstützung auf",
+    "target_text": "Я призываю тебя к поддержке",
+    "examples_html": null
+  },
+  {
+    "id": 221,
+    "source_text": "Um Spenden bitten",
+    "target_text": "Просить пожертвования",
+    "examples_html": null
+  },
+  {
+    "id": 220,
+    "source_text": "Schicksal",
+    "target_text": "Судьба",
+    "examples_html": null
+  },
+  {
+    "id": 219,
+    "source_text": "Schicksalsschläge.",
+    "target_text": "Удар судьбы.",
+    "examples_html": null
+  },
+  {
+    "id": 218,
+    "source_text": "Fachpflegekräfte.",
+    "target_text": "Квалифицированные медсестры.",
+    "examples_html": null
+  },
+  {
+    "id": 217,
+    "source_text": "Der einzige Wahre.",
+    "target_text": "Единственный настоящий.",
+    "examples_html": null
+  },
+  {
+    "id": 216,
+    "source_text": "Einzig",
+    "target_text": "Единственный",
+    "examples_html": null
+  },
+  {
+    "id": 215,
+    "source_text": "Abiturjahrgänge",
+    "target_text": "Выпускные классы средней школы",
+    "examples_html": null
+  },
+  {
+    "id": 214,
+    "source_text": "Herrschen.",
+    "target_text": "Господствовать.",
+    "examples_html": null
+  },
+  {
+    "id": 213,
+    "source_text": "Spüren.",
+    "target_text": "Чувствовать.",
+    "examples_html": null
+  },
+  {
+    "id": 212,
+    "source_text": "Wohlbekannte.",
+    "target_text": "Хорошо известный.",
+    "examples_html": null
+  },
+  {
+    "id": 211,
+    "source_text": "tätigkeit",
+    "target_text": "деятельность",
+    "examples_html": null
+  },
+  {
+    "id": 210,
+    "source_text": "tätig",
+    "target_text": "деятельный",
+    "examples_html": null
+  },
+  {
+    "id": 209,
+    "source_text": "reizen",
+    "target_text": "раздражать",
+    "examples_html": null
+  },
+  {
+    "id": 208,
+    "source_text": "reifen",
+    "target_text": "зреть",
+    "examples_html": null
+  },
+  {
+    "id": 207,
+    "source_text": "Wirtschaft.",
+    "target_text": "Экономика.",
+    "examples_html": null
+  },
+  {
+    "id": 206,
+    "source_text": "bewerben",
+    "target_text": "подать заявление",
+    "examples_html": null
+  },
+  {
+    "id": 205,
+    "source_text": "Entschluss.",
+    "target_text": "Решение.",
+    "examples_html": null
+  },
+  {
+    "id": 204,
+    "source_text": "Einblick.",
+    "target_text": "Взгляд.",
+    "examples_html": null
+  },
+  {
+    "id": 203,
+    "source_text": "Rückblickend.",
+    "target_text": "Ретроспективный.",
+    "examples_html": null
+  },
+  {
+    "id": 202,
+    "source_text": "Fels",
+    "target_text": "Скала",
+    "examples_html": null
+  },
+  {
+    "id": 201,
+    "source_text": "Gebe es dir umsonst?",
+    "target_text": "Дарить его тебе даром?",
+    "examples_html": null
+  },
+  {
+    "id": 200,
+    "source_text": "Stufe",
+    "target_text": "Ступень",
+    "examples_html": null
+  },
+  {
+    "id": 199,
+    "source_text": "Stufenweise.",
+    "target_text": "Поэтапный.",
+    "examples_html": null
+  },
+  {
+    "id": 198,
+    "source_text": "Frist.",
+    "target_text": "Срок.",
+    "examples_html": null
+  },
+  {
+    "id": 197,
+    "source_text": "Überfall auf meinen Freund.",
+    "target_text": "Нападение на моего друга.",
+    "examples_html": null
+  },
+  {
+    "id": 196,
+    "source_text": "Ausschließlich.",
+    "target_text": "Исключительный.",
+    "examples_html": null
+  },
+  {
+    "id": 195,
+    "source_text": "Angrenzenden.",
+    "target_text": "Прилегающий.",
+    "examples_html": null
+  },
+  {
+    "id": 194,
+    "source_text": "Aufnahme.",
+    "target_text": "Запись.",
+    "examples_html": null
+  },
+  {
+    "id": 193,
+    "source_text": "Dreharbeiten",
+    "target_text": "Съемка",
+    "examples_html": null
+  },
+  {
+    "id": 192,
+    "source_text": "Zusatz.",
+    "target_text": "Добавление.",
+    "examples_html": null
+  },
+  {
+    "id": 191,
+    "source_text": "Verantwortlich.",
+    "target_text": "Ответствен.",
+    "examples_html": null
+  },
+  {
+    "id": 190,
+    "source_text": "Erblicken.",
+    "target_text": "Увидеть.",
+    "examples_html": null
+  },
+  {
+    "id": 189,
+    "source_text": "Gegenlicht der Sonne.",
+    "target_text": "Встречный свет солнца.",
+    "examples_html": null
+  },
+  {
+    "id": 188,
+    "source_text": "Begriff.",
+    "target_text": "Обозначение.",
+    "examples_html": null
+  },
+  {
+    "id": 187,
+    "source_text": "Verwenden.",
+    "target_text": "Использовать.",
+    "examples_html": null
+  },
+  {
+    "id": 186,
+    "source_text": "Ausdruck.",
+    "target_text": "Выражение.",
+    "examples_html": null
+  },
+  {
+    "id": 185,
+    "source_text": "vorgehen",
+    "target_text": "поступать",
+    "examples_html": null
+  },
+  {
+    "id": 184,
+    "source_text": "gerichtlich",
+    "target_text": "судебный",
+    "examples_html": null
+  },
+  {
+    "id": 183,
+    "source_text": "Vor einigen Jahren.",
+    "target_text": "Несколько лет назад.",
+    "examples_html": null
+  },
+  {
+    "id": 182,
+    "source_text": "Altweibersommer",
+    "target_text": "Бабье лето",
+    "examples_html": null
+  },
+  {
+    "id": 181,
+    "source_text": "Hierzulande.",
+    "target_text": "В этой стране.",
+    "examples_html": null
+  },
+  {
+    "id": 180,
+    "source_text": "Gebiet.",
+    "target_text": "Область.",
+    "examples_html": null
+  },
+  {
+    "id": 179,
+    "source_text": "Kennzeichen.",
+    "target_text": "Номерной знак.",
+    "examples_html": null
+  },
+  {
+    "id": 178,
+    "source_text": "Kräftig.",
+    "target_text": "Могучий.",
+    "examples_html": null
+  },
+  {
+    "id": 177,
+    "source_text": "rudern",
+    "target_text": "загребать",
+    "examples_html": null
+  },
+  {
+    "id": 176,
+    "source_text": "meistern",
+    "target_text": "осваивать",
+    "examples_html": null
+  },
+  {
+    "id": 175,
+    "source_text": "Tatkräftigen",
+    "target_text": "Энергичные",
+    "examples_html": null
+  },
+  {
+    "id": 174,
+    "source_text": "Sinn.",
+    "target_text": "Смысл.",
+    "examples_html": null
+  },
+  {
+    "id": 173,
+    "source_text": "Umsonst.",
+    "target_text": "Напрасно.",
+    "examples_html": null
+  },
+  {
+    "id": 172,
+    "source_text": "kram.",
+    "target_text": "хлам.",
+    "examples_html": null
+  },
+  {
+    "id": 171,
+    "source_text": "Ich habe mir vorgenommen.",
+    "target_text": "Я сделал свой выбор.",
+    "examples_html": null
+  },
+  {
+    "id": 170,
+    "source_text": "Stock.",
+    "target_text": "Этаж.",
+    "examples_html": null
+  },
+  {
+    "id": 169,
+    "source_text": "Humpeln.",
+    "target_text": "Ковылять.",
+    "examples_html": null
+  },
+  {
+    "id": 168,
+    "source_text": "Übertreffen.",
+    "target_text": "Превышение.",
+    "examples_html": null
+  },
+  {
+    "id": 167,
+    "source_text": "Gegenseitig",
+    "target_text": "Взаимосвязанный",
+    "examples_html": null
+  },
+  {
+    "id": 166,
+    "source_text": "Hafen.",
+    "target_text": "Порт.",
+    "examples_html": null
+  },
+  {
+    "id": 165,
+    "source_text": "Staunen.",
+    "target_text": "Поражаться.",
+    "examples_html": null
+  },
+  {
+    "id": 164,
+    "source_text": "Zeitschleuse.",
+    "target_text": "Временной шлюз.",
+    "examples_html": null
+  },
+  {
+    "id": 163,
+    "source_text": "Kneif mich mal",
+    "target_text": "Ущипни меня разок",
+    "examples_html": null
+  },
+  {
+    "id": 162,
+    "source_text": "Anstoßen.",
+    "target_text": "Толкать.",
+    "examples_html": null
+  },
+  {
+    "id": 161,
+    "source_text": "Weisen",
+    "target_text": "Указывать",
+    "examples_html": null
+  },
+  {
+    "id": 160,
+    "source_text": "Murmeln",
+    "target_text": "Бормотать",
+    "examples_html": null
+  },
+  {
+    "id": 159,
+    "source_text": "Bewachsen.",
+    "target_text": "Заросший.",
+    "examples_html": null
+  },
+  {
+    "id": 158,
+    "source_text": "Neugierig.",
+    "target_text": "Любопытный.",
+    "examples_html": null
+  },
+  {
+    "id": 157,
+    "source_text": "Aufnehmen.",
+    "target_text": "Запись.",
+    "examples_html": null
+  },
+  {
+    "id": 156,
+    "source_text": "Gelegenheit.",
+    "target_text": "Возможность.",
+    "examples_html": null
+  },
+  {
+    "id": 155,
+    "source_text": "Zahlreicher",
+    "target_text": "Многочисленный",
+    "examples_html": null
+  },
+  {
+    "id": 154,
+    "source_text": "Dringend",
+    "target_text": "Неотложный",
+    "examples_html": null
+  },
+  {
+    "id": 153,
+    "source_text": "Kenntnisse.",
+    "target_text": "Знания.",
+    "examples_html": null
+  },
+  {
+    "id": 152,
+    "source_text": "Zunächst",
+    "target_text": "Прежде всего",
+    "examples_html": null
+  },
+  {
+    "id": 151,
+    "source_text": "anzunähern",
+    "target_text": "приближаться",
+    "examples_html": null
+  },
+  {
+    "id": 150,
+    "source_text": "Непонятно еще, кто кого пугает.",
+    "target_text": "Es ist noch unklar, wer wen erschreckt.",
+    "examples_html": null
+  },
+  {
+    "id": 149,
+    "source_text": "zwischendurch",
+    "target_text": "в промежутках",
+    "examples_html": null
+  },
+  {
+    "id": 148,
+    "source_text": "Auf dem Laufenden.",
+    "target_text": "В курсе событий.",
+    "examples_html": null
+  },
+  {
+    "id": 147,
+    "source_text": "Kaum",
+    "target_text": "Едва",
+    "examples_html": null
+  },
+  {
+    "id": 146,
+    "source_text": "vergeben",
+    "target_text": "простить",
+    "examples_html": null
+  },
+  {
+    "id": 145,
+    "source_text": "Verfahren",
+    "target_text": "Процесс",
+    "examples_html": null
+  },
+  {
+    "id": 144,
+    "source_text": "Queren",
+    "target_text": "Пересекать",
+    "examples_html": null
+  },
+  {
+    "id": 143,
+    "source_text": "Ebenfalls",
+    "target_text": "Также",
+    "examples_html": null
+  },
+  {
+    "id": 142,
+    "source_text": "Absichern",
+    "target_text": "Застраховать",
+    "examples_html": null
+  },
+  {
+    "id": 141,
+    "source_text": "Erfolgen",
+    "target_text": "Осуществляться",
+    "examples_html": null
+  },
+  {
+    "id": 140,
+    "source_text": "Fündigkeit",
+    "target_text": "Находчивость",
+    "examples_html": null
+  },
+  {
+    "id": 139,
+    "source_text": "Ersehnten",
+    "target_text": "Желанный",
+    "examples_html": null
+  },
+  {
+    "id": 138,
+    "source_text": "erhalten",
+    "target_text": "получить",
+    "examples_html": null
+  },
+  {
+    "id": 137,
+    "source_text": "votiere",
+    "target_text": "голосую",
+    "examples_html": null
+  },
+  {
+    "id": 136,
+    "source_text": "Umliegende",
+    "target_text": "Окрестный",
+    "examples_html": null
+  },
+  {
+    "id": 135,
+    "source_text": "Überzeugen",
+    "target_text": "Убеждать",
+    "examples_html": null
+  },
+  {
+    "id": 134,
+    "source_text": "Nachfrage",
+    "target_text": "Спрос",
+    "examples_html": null
+  },
+  {
+    "id": 133,
+    "source_text": "Ablehnen",
+    "target_text": "Отклонить",
+    "examples_html": null
+  },
+  {
+    "id": 132,
+    "source_text": "Aufgrund",
+    "target_text": "На основании",
+    "examples_html": null
+  },
+  {
+    "id": 131,
+    "source_text": "Sinnvoll",
+    "target_text": "Рациональный",
+    "examples_html": null
+  },
+  {
+    "id": 130,
+    "source_text": "Erachten",
+    "target_text": "Рассматривать",
+    "examples_html": null
+  },
+  {
+    "id": 129,
+    "source_text": "Äusserst",
+    "target_text": "Крайне",
+    "examples_html": null
+  },
+  {
+    "id": 128,
+    "source_text": "Ebene",
+    "target_text": "Уровень",
+    "examples_html": null
+  },
+  {
+    "id": 127,
+    "source_text": "Bedarf",
+    "target_text": "Потребность",
+    "examples_html": null
+  },
+  {
+    "id": 126,
+    "source_text": "schieben",
+    "target_text": "толкать",
+    "examples_html": null
+  },
+  {
+    "id": 125,
+    "source_text": "Entstehen",
+    "target_text": "Зарождение",
+    "examples_html": null
+  },
+  {
+    "id": 124,
+    "source_text": "Zunahme",
+    "target_text": "Прибавление",
+    "examples_html": null
+  },
+  {
+    "id": 123,
+    "source_text": "Anwohner",
+    "target_text": "Сосед",
+    "examples_html": null
+  },
+  {
+    "id": 122,
+    "source_text": "Empört",
+    "target_text": "Возмущенный",
+    "examples_html": null
+  },
+  {
+    "id": 121,
+    "source_text": "Vorhaben",
+    "target_text": "Начинание",
+    "examples_html": null
+  },
+  {
+    "id": 120,
+    "source_text": "Annehmen",
+    "target_text": "Принять",
+    "examples_html": null
+  },
+  {
+    "id": 119,
+    "source_text": "Gestalt",
+    "target_text": "Образ",
+    "examples_html": null
+  },
+  {
+    "id": 118,
+    "source_text": "Weise.",
+    "target_text": "Мудрый.",
+    "examples_html": null
+  },
+  {
+    "id": 117,
+    "source_text": "Morgige.",
+    "target_text": "Завтрашний.",
+    "examples_html": null
+  },
+  {
+    "id": 116,
+    "source_text": "Lockern",
+    "target_text": "Рыхление",
+    "examples_html": null
+  },
+  {
+    "id": 115,
+    "source_text": "Na los",
+    "target_text": "Ну",
+    "examples_html": null
+  },
+  {
+    "id": 114,
+    "source_text": "Dir ist nicht verziehen.",
+    "target_text": "Ты не прощен.",
+    "examples_html": null
+  },
+  {
+    "id": 113,
+    "source_text": "kriechen",
+    "target_text": "ползать",
+    "examples_html": null
+  },
+  {
+    "id": 112,
+    "source_text": "Ich holte tief Luft.",
+    "target_text": "Я сделал глубокий вдох.",
+    "examples_html": null
+  },
+  {
+    "id": 111,
+    "source_text": "Böse.",
+    "target_text": "Злой.",
+    "examples_html": null
+  },
+  {
+    "id": 110,
+    "source_text": "Jetzt hau ab.",
+    "target_text": "А теперь убирайся.",
+    "examples_html": null
+  },
+  {
+    "id": 109,
+    "source_text": "Husten.",
+    "target_text": "Кашель.",
+    "examples_html": null
+  },
+  {
+    "id": 108,
+    "source_text": "Gähnen.",
+    "target_text": "Зевать.",
+    "examples_html": null
+  },
+  {
+    "id": 107,
+    "source_text": "zuverlässig",
+    "target_text": "надежный",
+    "examples_html": null
+  },
+  {
+    "id": 106,
+    "source_text": "Anforderung",
+    "target_text": "Требование",
+    "examples_html": null
+  },
+  {
+    "id": 105,
+    "source_text": "Möglichkeit",
+    "target_text": "Возможность",
+    "examples_html": null
+  },
+  {
+    "id": 104,
+    "source_text": "Klingt interessant.",
+    "target_text": "Звучит интересно.",
+    "examples_html": null
+  },
+  {
+    "id": 103,
+    "source_text": "Worum handelt es sich?",
+    "target_text": "О чем это все?",
+    "examples_html": null
+  },
+  {
+    "id": 102,
+    "source_text": "Verdächtiges.",
+    "target_text": "Подозрительное.",
+    "examples_html": null
+  },
+  {
+    "id": 101,
+    "source_text": "Beute.",
+    "target_text": "Добыча.",
+    "examples_html": null
+  },
+  {
+    "id": 100,
+    "source_text": "Halunken.",
+    "target_text": "Негодяи.",
+    "examples_html": null
+  },
+  {
+    "id": 99,
+    "source_text": "Wem sagst du das!",
+    "target_text": "Who are you telling that to!",
+    "examples_html": null
+  },
+  {
+    "id": 98,
+    "source_text": "Bloß",
+    "target_text": "Просто",
+    "examples_html": null
+  },
+  {
+    "id": 97,
+    "source_text": "Bewerbung.",
+    "target_text": "Просьба.",
+    "examples_html": null
+  },
+  {
+    "id": 96,
+    "source_text": "Langweilig wird mir glaube ich nicht.",
+    "target_text": "Я не думаю, что мне будет скучно.",
+    "examples_html": null
+  },
+  {
+    "id": 95,
+    "source_text": "Zwingen.",
+    "target_text": "Принуждать.",
+    "examples_html": null
+  },
+  {
+    "id": 94,
+    "source_text": "Gewisser Weise.",
+    "target_text": "В некотором смысле.",
+    "examples_html": null
+  },
+  {
+    "id": 93,
+    "source_text": "blinzeln",
+    "target_text": "моргнуть",
+    "examples_html": null
+  },
+  {
+    "id": 92,
+    "source_text": "Flüstern.",
+    "target_text": "Шепот.",
+    "examples_html": null
+  },
+  {
+    "id": 91,
+    "source_text": "Winzig.",
+    "target_text": "Крошечный.",
+    "examples_html": null
+  },
+  {
+    "id": 90,
+    "source_text": "Niedrig",
+    "target_text": "Низкий",
+    "examples_html": null
+  },
+  {
+    "id": 89,
+    "source_text": "Bestehen.",
+    "target_text": "Состоять.",
+    "examples_html": null
+  },
+  {
+    "id": 88,
+    "source_text": "Übersprungen.",
+    "target_text": "Пропущенный.",
+    "examples_html": null
+  },
+  {
+    "id": 87,
+    "source_text": "Lebensumstand.",
+    "target_text": "Жизненные обстоятельства.",
+    "examples_html": null
+  },
+  {
+    "id": 86,
+    "source_text": "Bedürfnis.",
+    "target_text": "Потребность.",
+    "examples_html": null
+  },
+  {
+    "id": 85,
+    "source_text": "Однажды.",
+    "target_text": "Einmal.",
+    "examples_html": null
+  },
+  {
+    "id": 84,
+    "source_text": "Herausforderung",
+    "target_text": "Требованье",
+    "examples_html": null
+  },
+  {
+    "id": 83,
+    "source_text": "Fähigkeit.",
+    "target_text": "Способность.",
+    "examples_html": null
+  },
+  {
+    "id": 82,
+    "source_text": "Langfristig.",
+    "target_text": "Долгосрочный.",
+    "examples_html": null
+  },
+  {
+    "id": 81,
+    "source_text": "Entdecken.",
+    "target_text": "Обнаружить.",
+    "examples_html": null
+  },
+  {
+    "id": 80,
+    "source_text": "Erhalten.",
+    "target_text": "Получить.",
+    "examples_html": null
+  },
+  {
+    "id": 79,
+    "source_text": "Gedanke.",
+    "target_text": "Мысль.",
+    "examples_html": null
+  },
+  {
+    "id": 78,
+    "source_text": "Nachdenken",
+    "target_text": "Размышление",
+    "examples_html": null
+  },
+  {
+    "id": 77,
+    "source_text": "Es fiel ihr schwer.",
+    "target_text": "Ей было тяжело.",
+    "examples_html": null
+  },
+  {
+    "id": 76,
+    "source_text": "Besorgen.",
+    "target_text": "Опасаться.",
+    "examples_html": null
+  },
+  {
+    "id": 75,
+    "source_text": "Düster.",
+    "target_text": "Мрачный.",
+    "examples_html": null
+  },
+  {
+    "id": 74,
+    "source_text": "Das ist lange her",
+    "target_text": "Это было давно",
+    "examples_html": null
+  },
+  {
+    "id": 73,
+    "source_text": "Abschluss",
+    "target_text": "Заключение",
+    "examples_html": null
+  },
+  {
+    "id": 72,
+    "source_text": "Hingabe.",
+    "target_text": "Преданность.",
+    "examples_html": null
+  },
+  {
+    "id": 71,
+    "source_text": "Teilweise.",
+    "target_text": "Частично.",
+    "examples_html": null
+  },
+  {
+    "id": 70,
+    "source_text": "schlagen",
+    "target_text": "ударять",
+    "examples_html": null
+  },
+  {
+    "id": 69,
+    "source_text": "Erleben.",
+    "target_text": "Переживание.",
+    "examples_html": null
+  },
+  {
+    "id": 68,
+    "source_text": "Schätzen.",
+    "target_text": "Ценить.",
+    "examples_html": null
+  },
+  {
+    "id": 67,
+    "source_text": "Nachdenken.",
+    "target_text": "Размышление.",
+    "examples_html": null
+  },
+  {
+    "id": 66,
+    "source_text": "Quelle.",
+    "target_text": "Источник.",
+    "examples_html": null
+  },
+  {
+    "id": 65,
+    "source_text": "Entscheidung.",
+    "target_text": "Решение.",
+    "examples_html": null
+  },
+  {
+    "id": 64,
+    "source_text": "Anwendung.",
+    "target_text": "Применение.",
+    "examples_html": null
+  },
+  {
+    "id": 63,
+    "source_text": "Inhalt",
+    "target_text": "Содержимое",
+    "examples_html": null
+  },
+  {
+    "id": 62,
+    "source_text": "Künstlicher.",
+    "target_text": "Искусственный.",
+    "examples_html": null
+  },
+  {
+    "id": 61,
+    "source_text": "Verlassen.",
+    "target_text": "Оставлять.",
+    "examples_html": null
+  },
+  {
+    "id": 60,
+    "source_text": "Lebendig",
+    "target_text": "Оживленный",
+    "examples_html": null
+  },
+  {
+    "id": 59,
+    "source_text": "Verhalten.",
+    "target_text": "Поведение.",
+    "examples_html": null
+  },
+  {
+    "id": 58,
+    "source_text": "Überflüssig.",
+    "target_text": "Лишний.",
+    "examples_html": null
+  },
+  {
+    "id": 57,
+    "source_text": "Überholen.",
+    "target_text": "Обгон.",
+    "examples_html": null
+  },
+  {
+    "id": 56,
+    "source_text": "Gegenstand",
+    "target_text": "Предмет",
+    "examples_html": null
+  },
+  {
+    "id": 55,
+    "source_text": "Heimat.",
+    "target_text": "Родная страна.",
+    "examples_html": null
+  },
+  {
+    "id": 54,
+    "source_text": "Kichern",
+    "target_text": "Хихикать",
+    "examples_html": null
+  },
+  {
+    "id": 53,
+    "source_text": "Sondern.",
+    "target_text": "Но.",
+    "examples_html": null
+  },
+  {
+    "id": 52,
+    "source_text": "Zumindest.",
+    "target_text": "По меньшей мере.",
+    "examples_html": null
+  },
+  {
+    "id": 51,
+    "source_text": "Allerdings.",
+    "target_text": "Однако.",
+    "examples_html": null
+  },
+  {
+    "id": 50,
+    "source_text": "Manchmal",
+    "target_text": "Иногда",
+    "examples_html": null
+  },
+  {
+    "id": 49,
+    "source_text": "Ausweiten",
+    "target_text": "Расширять",
+    "examples_html": null
+  },
+  {
+    "id": 48,
+    "source_text": "Zuständig",
+    "target_text": "Соответствующий",
+    "examples_html": null
+  },
+  {
+    "id": 47,
+    "source_text": "Verlauf",
+    "target_text": "Течение",
+    "examples_html": null
+  },
+  {
+    "id": 46,
+    "source_text": "Mitteilen",
+    "target_text": "Сообщать",
+    "examples_html": null
+  },
+  {
+    "id": 45,
+    "source_text": "Stand",
+    "target_text": "Место",
+    "examples_html": null
+  },
+  {
+    "id": 44,
+    "source_text": "Eilig",
+    "target_text": "Наспех",
+    "examples_html": null
+  },
+  {
+    "id": 43,
+    "source_text": "Vollständig.",
+    "target_text": "Полный.",
+    "examples_html": null
+  },
+  {
+    "id": 42,
+    "source_text": "Urteil",
+    "target_text": "Вердикт",
+    "examples_html": null
+  },
+  {
+    "id": 41,
+    "source_text": "Festnehmen",
+    "target_text": "Арестовать",
+    "examples_html": null
+  },
+  {
+    "id": 40,
+    "source_text": "Wiese",
+    "target_text": "Луг",
+    "examples_html": null
+  },
+  {
+    "id": 39,
+    "source_text": "Schlagzeile",
+    "target_text": "Заголовок",
+    "examples_html": null
+  },
+  {
+    "id": 38,
+    "source_text": "Täter",
+    "target_text": "Преступник",
+    "examples_html": null
+  },
+  {
+    "id": 37,
+    "source_text": "Bewährung",
+    "target_text": "Условное осуждение",
+    "examples_html": null
+  },
+  {
+    "id": 36,
+    "source_text": "Offenbar",
+    "target_text": "Явный",
+    "examples_html": null
+  },
+  {
+    "id": 35,
+    "source_text": "Erledigung",
+    "target_text": "Разрешение",
+    "examples_html": null
+  },
+  {
+    "id": 34,
+    "source_text": "Drohten",
+    "target_text": "Угрожали",
+    "examples_html": null
+  },
+  {
+    "id": 33,
+    "source_text": "Gelten",
+    "target_text": "Считаться",
+    "examples_html": null
+  },
+  {
+    "id": 32,
+    "source_text": "zuständig",
+    "target_text": "соответствующий",
+    "examples_html": null
+  },
+  {
+    "id": 31,
+    "source_text": "Beobachten.",
+    "target_text": "Присматривать.",
+    "examples_html": null
+  },
+  {
+    "id": 30,
+    "source_text": "Sich irren.",
+    "target_text": "Ошибиться.",
+    "examples_html": null
+  },
+  {
+    "id": 29,
+    "source_text": "Sondern",
+    "target_text": "Но",
+    "examples_html": null
+  },
+  {
+    "id": 28,
+    "source_text": "Schütteln.",
+    "target_text": "Тряска.",
+    "examples_html": null
+  },
+  {
+    "id": 27,
+    "source_text": "Anhalten.",
+    "target_text": "Остановка.",
+    "examples_html": null
+  },
+  {
+    "id": 26,
+    "source_text": "Begleiten.",
+    "target_text": "Сопровождать.",
+    "examples_html": null
+  },
+  {
+    "id": 25,
+    "source_text": "Begeistern",
+    "target_text": "Вдохновить",
+    "examples_html": null
+  },
+  {
+    "id": 24,
+    "source_text": "Unternehmertum.",
+    "target_text": "Предпринимательство.",
+    "examples_html": null
+  },
+  {
+    "id": 23,
+    "source_text": "Unternehmen.",
+    "target_text": "Фирма.",
+    "examples_html": null
+  },
+  {
+    "id": 22,
+    "source_text": "Umfassen.",
+    "target_text": "Охватывать.",
+    "examples_html": null
+  },
+  {
+    "id": 21,
+    "source_text": "Aufenthalt.",
+    "target_text": "Пребывание.",
+    "examples_html": null
+  },
+  {
+    "id": 20,
+    "source_text": "Kreis.",
+    "target_text": "Круг.",
+    "examples_html": null
+  },
+  {
+    "id": 19,
+    "source_text": "Förderung.",
+    "target_text": "Содействие.",
+    "examples_html": null
+  },
+  {
+    "id": 18,
+    "source_text": "Bewerten.",
+    "target_text": "Оценить.",
+    "examples_html": null
+  },
+  {
+    "id": 17,
+    "source_text": "Unverbindlich.",
+    "target_text": "Без обязательств.",
+    "examples_html": null
+  },
+  {
+    "id": 16,
+    "source_text": "Auszug.",
+    "target_text": "Выписка.",
+    "examples_html": null
+  },
+  {
+    "id": 15,
+    "source_text": "Absprache.",
+    "target_text": "Договоренность.",
+    "examples_html": null
+  },
+  {
+    "id": 14,
+    "source_text": "Beschlossen.",
+    "target_text": "Решенный.",
+    "examples_html": null
+  },
+  {
+    "id": 13,
+    "source_text": "Aufgrund.",
+    "target_text": "На основании.",
+    "examples_html": null
+  },
+  {
+    "id": 12,
+    "source_text": "Angelegenheit.",
+    "target_text": "Дело.",
+    "examples_html": null
+  },
+  {
+    "id": 11,
+    "source_text": "Übernehmen.",
+    "target_text": "Брать на себя.",
+    "examples_html": null
+  },
+  {
+    "id": 10,
+    "source_text": "Während.",
+    "target_text": "В то время как.",
+    "examples_html": null
+  },
+  {
+    "id": 9,
+    "source_text": "Verordnung.",
+    "target_text": "Постановление.",
+    "examples_html": null
+  },
+  {
+    "id": 8,
+    "source_text": "Erlassen.",
+    "target_text": "Опубликовывать.",
+    "examples_html": null
+  },
+  {
+    "id": 7,
+    "source_text": "Verliehen.",
+    "target_text": "Награжден.",
+    "examples_html": null
+  },
+  {
+    "id": 6,
+    "source_text": "Sorgen.",
+    "target_text": "Заботиться.",
+    "examples_html": null
+  },
+  {
+    "id": 5,
+    "source_text": "Zwar",
+    "target_text": "Хотя",
+    "examples_html": null
+  },
+  {
+    "id": 4,
+    "source_text": "Voraussetzungen",
+    "target_text": "Предпосылки",
+    "examples_html": null
+  },
+  {
+    "id": 3,
+    "source_text": "Anspruch.",
+    "target_text": "Требование.",
+    "examples_html": null
+  },
+  {
+    "id": 2,
+    "source_text": "For some reason",
+    "target_text": "Aus irgendeinem Grund",
+    "examples_html": null
+  },
+  {
+    "id": 1,
+    "source_text": "Lets do this next monday",
+    "target_text": "Lass uns das nächsten Montag machen",
+    "examples_html": null
+  }
+]
