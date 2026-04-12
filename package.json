@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "scrape-public": "node scripts/scrape-public-collection-by-link.mjs",
+    "enrich": "node scripts/enrich-data.mjs"
   },
   "dependencies": {
     "dotenv": "^17.3.1",

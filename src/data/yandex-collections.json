@@ -1,5 +1,189 @@
 [
   {
+    "source_text": "Entscheidungen treffen",
+    "target_text": "Принимать решения"
+  },
+  {
+    "source_text": "Überforderung",
+    "target_text": "Чрезмерное требование"
+  },
+  {
+    "source_text": "warum Ihrer Meinung nach",
+    "target_text": "как вы думаете, почему"
+  },
+  {
+    "source_text": "steht zur Verfügung",
+    "target_text": "доступен"
+  },
+  {
+    "source_text": "im Vergleich zu",
+    "target_text": "сравнительно с"
+  },
+  {
+    "source_text": "Anteil",
+    "target_text": "Доля"
+  },
+  {
+    "source_text": "Wanze",
+    "target_text": "Клоп"
+  },
+  {
+    "source_text": "Backstube",
+    "target_text": "Пекарня"
+  },
+  {
+    "source_text": "tratschen",
+    "target_text": "сплетничать"
+  },
+  {
+    "source_text": "Durch den Wandel",
+    "target_text": "Через перемены"
+  },
+  {
+    "source_text": "Umbruch",
+    "target_text": "Перелом"
+  },
+  {
+    "source_text": "Erst, wenn wir uns das finanziell leisten können.",
+    "target_text": "Только тогда, когда мы сможем позволить себе это в финансовом отношении."
+  },
+  {
+    "source_text": "Ich hätte nicht gedacht.",
+    "target_text": "Я бы не подумал."
+  },
+  {
+    "source_text": "Ich habe es mir anders überlegt.",
+    "target_text": "Я передумал."
+  },
+  {
+    "source_text": "Auf der anderen Seite.",
+    "target_text": "С другой стороны."
+  },
+  {
+    "source_text": "Fortschritt",
+    "target_text": "Прогресс"
+  },
+  {
+    "source_text": "ожидать.",
+    "target_text": "erwarten."
+  },
+  {
+    "source_text": "Волк воет на луну.",
+    "target_text": "Der Wolf heult zum Mond."
+  },
+  {
+    "source_text": "geschminkt",
+    "target_text": "загримированный"
+  },
+  {
+    "source_text": "Anlaß",
+    "target_text": "Повод"
+  },
+  {
+    "source_text": "Aus gegebenem Anlass",
+    "target_text": "По случаю"
+  },
+  {
+    "source_text": "Auf die Bühne.",
+    "target_text": "На сцену."
+  },
+  {
+    "source_text": "тщательный",
+    "target_text": "sorgfältig"
+  },
+  {
+    "source_text": "Усердно.",
+    "target_text": "Fleißig."
+  },
+  {
+    "source_text": "Gönn",
+    "target_text": "Побаловать"
+  },
+  {
+    "source_text": "Ein großer Haufen",
+    "target_text": "Большая куча"
+  },
+  {
+    "source_text": "Pechvogel",
+    "target_text": "Неудачник"
+  },
+  {
+    "source_text": "Пятка",
+    "target_text": "Ferse"
+  },
+  {
+    "source_text": "Faust",
+    "target_text": "Кулак"
+  },
+  {
+    "source_text": "Immer noch.",
+    "target_text": "Все еще."
+  },
+  {
+    "source_text": "Есть в наличии",
+    "target_text": "Verfügbar"
+  },
+  {
+    "source_text": "Ну хотя бы два уже хорошо",
+    "target_text": "Nun, mindestens zwei sind schon gut"
+  },
+  {
+    "source_text": "Hütchen",
+    "target_text": "Шляпка"
+  },
+  {
+    "source_text": "Сегодня немного теплее, чем я предполагал.",
+    "target_text": "Heute ist es etwas wärmer, als ich dachte."
+  },
+  {
+    "source_text": "ursprünglich",
+    "target_text": "первоначальный"
+  },
+  {
+    "source_text": "Es würde nicht schaden.",
+    "target_text": "Это не повредило бы."
+  },
+  {
+    "source_text": "Sorgfältig",
+    "target_text": "Старательный"
+  },
+  {
+    "source_text": "Sich aus der Situation befreien",
+    "target_text": "Вырваться из сложившейся ситуации"
+  },
+  {
+    "source_text": "Was kümmert mich mein…",
+    "target_text": "Какое мне дело до моего…"
+  },
+  {
+    "source_text": "Er gibt an, dass er ein neues Auto hat",
+    "target_text": "Он заявляет, что у него новая машина"
+  },
+  {
+    "source_text": "Er hat mich verarscht.",
+    "target_text": "Он обманул меня."
+  },
+  {
+    "source_text": "Er geht mir auf den Sack.",
+    "target_text": "Он идет за мной по пятам."
+  },
+  {
+    "source_text": "Swutsch",
+    "target_text": "Прелесть"
+  },
+  {
+    "source_text": "Das ist eine Überlegung wert",
+    "target_text": "Это стоит того, чтобы подумать"
+  },
+  {
+    "source_text": "Nach reiflicher Überlegung",
+    "target_text": "После тщательного обдумывания"
+  },
+  {
+    "source_text": "Abzuraten",
+    "target_text": "Не рекомендуется"
+  },
+  {
     "source_text": "strampeln",
     "target_text": "дрыгать ногами"
   },
