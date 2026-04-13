@@ -117,6 +117,32 @@ button {
   letter-spacing: 0.02em;
 }
 
+.new-badge {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  padding: 8px 14px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: #f8fafc;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  z-index: 20;
+}
+
+.new-badge:hover {
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.new-badge.active {
+  background: rgba(59, 130, 246, 0.3);
+  border-color: rgba(59, 130, 246, 0.6);
+  color: #93c5fd;
+}
+
 .card-wrapper {
   position: relative;
   width: min(900px, 92vw);

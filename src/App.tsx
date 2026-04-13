@@ -29,10 +29,13 @@ function App() {
   const [deletedIds, setDeletedIds] = useState<Set<number>>(new Set())
   const [loaded, setLoaded] = useState(false)
 
-  const cards = useMemo(
-    () => allCards.filter((c) => !c.deleted && !deletedIds.has(c.id)),
-    [allCards, deletedIds]
-  )
+  const [newOnly, setNewOnly] = useState(false)
+
+  const cards = useMemo(() => {
+    const active = allCards.filter((c) => !c.deleted && !deletedIds.has(c.id))
+    if (!newOnly) return active
+    return [...active].sort((a, b) => b.id - a.id).slice(0, 100)
+  }, [allCards, deletedIds, newOnly])
 
   const [index, setIndex] = useState(() => {
     if (allCards.length === 0) {
@@ -178,6 +181,16 @@ function App() {
         <div className="index-badge">
           {displayIndex} / {total}
         </div>
+        <button
+          className={`new-badge${newOnly ? ' active' : ''}`}
+          type="button"
+          onClick={() => {
+            setNewOnly((v) => !v)
+            setIndex(0)
+          }}
+        >
+          Новое
+        </button>
         <div className="card-wrapper">
           <button
             className={`card ${isFlipped ? 'is-flipped' : ''} ${
