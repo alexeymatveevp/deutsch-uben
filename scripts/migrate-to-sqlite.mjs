@@ -31,7 +31,8 @@ CREATE TABLE cards (
   id            INTEGER PRIMARY KEY,
   source_text   TEXT NOT NULL UNIQUE,
   target_text   TEXT NOT NULL,
-  examples_html TEXT
+  examples_html TEXT,
+  deleted       INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX idx_cards_id_desc ON cards(id DESC);
 `
@@ -44,7 +45,6 @@ function main() {
 
   const source = rows.length
   const softDeleted = rows.filter((r) => r.deleted).length
-  const active = rows.filter((r) => !r.deleted)
 
   console.error(`Opening DB at ${DB_PATH}`)
   const db = new Database(DB_PATH)
@@ -52,21 +52,27 @@ function main() {
   db.exec(SCHEMA)
 
   const insert = db.prepare(
-    'INSERT INTO cards (id, source_text, target_text, examples_html) VALUES (?, ?, ?, ?)',
+    'INSERT INTO cards (id, source_text, target_text, examples_html, deleted) VALUES (?, ?, ?, ?, ?)',
   )
   const insertAll = db.transaction((items) => {
     for (const r of items) {
-      insert.run(r.id, r.source_text, r.target_text, r.examples_html ?? null)
+      insert.run(
+        r.id,
+        r.source_text,
+        r.target_text,
+        r.examples_html ?? null,
+        r.deleted ? 1 : 0,
+      )
     }
   })
-  insertAll(active)
+  insertAll(rows)
 
   const count = db.prepare('SELECT COUNT(*) AS n FROM cards').get().n
   db.close()
 
   console.error(`Inserted ${count} cards (source=${source}, soft_deleted=${softDeleted})`)
-  if (count !== source - softDeleted) {
-    console.error(`ERROR: expected ${source - softDeleted} rows, got ${count}`)
+  if (count !== source) {
+    console.error(`ERROR: expected ${source} rows, got ${count}`)
     process.exit(1)
   }
 }

@@ -27,7 +27,8 @@ export function openDb(): Database.Database {
       id            INTEGER PRIMARY KEY,
       source_text   TEXT NOT NULL UNIQUE,
       target_text   TEXT NOT NULL,
-      examples_html TEXT
+      examples_html TEXT,
+      deleted       INTEGER NOT NULL DEFAULT 0
     );
     CREATE INDEX IF NOT EXISTS idx_cards_id_desc ON cards(id DESC);
   `)
@@ -45,13 +46,17 @@ export function closeDb(): void {
 export function listCards(): TranslationCard[] {
   const db = openDb()
   return db
-    .prepare('SELECT id, source_text, target_text, examples_html FROM cards ORDER BY id DESC')
+    .prepare(
+      'SELECT id, source_text, target_text, examples_html FROM cards WHERE deleted = 0 ORDER BY id DESC',
+    )
     .all() as TranslationCard[]
 }
 
 export function deleteCardById(id: number): number {
   const db = openDb()
-  const info = db.prepare('DELETE FROM cards WHERE id = ?').run(id)
+  const info = db
+    .prepare('UPDATE cards SET deleted = 1 WHERE id = ? AND deleted = 0')
+    .run(id)
   return info.changes
 }
 
@@ -93,11 +98,11 @@ export function listCardsWithoutExamples(opts: {
     const placeholders = opts.ids.map(() => '?').join(',')
     return db
       .prepare(
-        `SELECT id, source_text, target_text, examples_html FROM cards WHERE id IN (${placeholders}) ORDER BY id DESC`,
+        `SELECT id, source_text, target_text, examples_html FROM cards WHERE id IN (${placeholders}) AND deleted = 0 ORDER BY id DESC`,
       )
       .all(...opts.ids) as TranslationCard[]
   }
-  const base = 'SELECT id, source_text, target_text, examples_html FROM cards WHERE examples_html IS NULL ORDER BY id DESC'
+  const base = 'SELECT id, source_text, target_text, examples_html FROM cards WHERE examples_html IS NULL AND deleted = 0 ORDER BY id DESC'
   if (opts.limit && opts.limit > 0) {
     return db.prepare(`${base} LIMIT ?`).all(opts.limit) as TranslationCard[]
   }
