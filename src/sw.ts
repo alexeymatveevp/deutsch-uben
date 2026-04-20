@@ -33,21 +33,26 @@ self.addEventListener('push', (event) => {
 
 self.addEventListener('notificationclick', (event) => {
   event.notification.close()
-  const target = (event.notification.data as { url?: string } | undefined)?.url ?? '/'
+  const raw = (event.notification.data as { url?: string } | undefined)?.url ?? ''
+  // Resolve against the SW's registration scope so a relative path like
+  // "learning/short" becomes e.g. https://host/deutsch-uben/learning/short
+  // under a deploy prefix, or https://host/learning/short at root.
+  const fullUrl = new URL(raw, self.registration.scope).toString()
   event.waitUntil(
     (async () => {
       const all = await self.clients.matchAll({ type: 'window', includeUncontrolled: true })
       for (const client of all) {
-        try {
-          const u = new URL(client.url)
-          if (u.pathname === target || client.url.endsWith(target)) {
-            if ('focus' in client) return client.focus()
-          }
-        } catch {
-          // ignore
+        if (client.url === fullUrl && 'focus' in client) return client.focus()
+      }
+      for (const client of all) {
+        if (client.url.startsWith(self.registration.scope) && 'focus' in client) {
+          const win = client as WindowClient
+          await win.focus()
+          if (typeof win.navigate === 'function') return win.navigate(fullUrl)
+          return undefined
         }
       }
-      if (self.clients.openWindow) return self.clients.openWindow(target)
+      if (self.clients.openWindow) return self.clients.openWindow(fullUrl)
       return undefined
     })(),
   )

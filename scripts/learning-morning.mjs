@@ -79,12 +79,15 @@ async function main() {
   }
   console.error(`Delivering to ${subs.length} subscription(s).`)
 
+  // URLs are sent relative (no leading slash) so the service worker can
+  // resolve them against its registration scope — handles any deploy prefix
+  // (e.g. /deutsch-uben/) without the cron needing to know about it.
   const payloads = []
   if (short > 0) {
     payloads.push({
       title: `${short} short review${short === 1 ? '' : 's'}`,
       body: 'Tap to review cards due today (short phase).',
-      url: '/learning/short',
+      url: 'learning/short',
       tag: 'learning-short',
     })
   }
@@ -92,7 +95,7 @@ async function main() {
     payloads.push({
       title: `${long} long review${long === 1 ? '' : 's'}`,
       body: 'Tap to review cards due today (long phase).',
-      url: '/learning/long',
+      url: 'learning/long',
       tag: 'learning-long',
     })
   }
