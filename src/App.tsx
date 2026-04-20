@@ -1,14 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-
-type TranslationCard = {
-  id: number
-  source_text: string
-  target_text: string
-  examples_html: string | null
-}
+import { useSearchParams } from 'react-router-dom'
+import LearningButton from './components/LearningButton'
+import { API_BASE, type LearningStatus, type TranslationCard } from './types'
 
 const STORAGE_KEY = 'deutsch-uben:last-card-index'
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? ''
 
 function clampIndex(index: number, length: number) {
   if (length <= 0) {
@@ -35,6 +30,7 @@ function App() {
   const [isFlipped, setIsFlipped] = useState(false)
   const [disableFlipTransition, setDisableFlipTransition] = useState(false)
   const pageRef = useRef<HTMLDivElement>(null)
+  const [searchParams, setSearchParams] = useSearchParams()
 
   useEffect(() => {
     let cancelled = false
@@ -59,8 +55,23 @@ function App() {
     }
   }, [])
 
+  // Honor ?card=<id> on first load, falling back to localStorage or random.
   useEffect(() => {
     if (indexRestored || allCards.length === 0) return
+    const cardParam = searchParams.get('card')
+    if (cardParam) {
+      const id = Number(cardParam)
+      const idx = allCards.findIndex((c) => c.id === id)
+      if (idx >= 0) {
+        setIndex(idx)
+        setIndexRestored(true)
+        // Clear the query param so refreshes don't re-jump.
+        const next = new URLSearchParams(searchParams)
+        next.delete('card')
+        setSearchParams(next, { replace: true })
+        return
+      }
+    }
     const raw = localStorage.getItem(STORAGE_KEY)
     const parsed = raw ? Number(raw) : NaN
     if (Number.isInteger(parsed) && parsed >= 0 && parsed < allCards.length) {
@@ -69,7 +80,7 @@ function App() {
       setIndex(Math.floor(Math.random() * allCards.length))
     }
     setIndexRestored(true)
-  }, [allCards.length, indexRestored])
+  }, [allCards, indexRestored, searchParams, setSearchParams])
 
   useEffect(() => {
     if (cards.length > 0 && index >= cards.length) {
@@ -134,6 +145,21 @@ function App() {
       }
     }, 500)
   }, [activeCard, index, total, isRipping])
+
+  const updateLearningStatus = useCallback((cardId: number, next: LearningStatus) => {
+    setAllCards((prev) =>
+      prev.map((c) =>
+        c.id === cardId
+          ? {
+              ...c,
+              learning_status: next,
+              // Don't try to mirror days here — server is the source of truth.
+              learning_days_remaining: next === null ? null : c.learning_days_remaining,
+            }
+          : c,
+      ),
+    )
+  }, [])
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -212,6 +238,11 @@ function App() {
               ))}
             </div>
           )}
+          <LearningButton
+            cardId={activeCard.id}
+            status={activeCard.learning_status}
+            onStatusChange={(next) => updateLearningStatus(activeCard.id, next)}
+          />
           <button
             className="delete-btn"
             type="button"

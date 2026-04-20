@@ -12,7 +12,10 @@
     "server:build": "tsc -p server",
     "server:start": "NODE_ENV=production node server/dist-server/index.js",
     "scrape-public": "tsx scripts/scrape-public-collection-by-link.mjs",
-    "enrich": "tsx scripts/enrich-data.mjs"
+    "enrich": "tsx scripts/enrich-data.mjs",
+    "learning:morning": "tsx scripts/learning-morning.mjs",
+    "learning:evening": "tsx scripts/learning-evening.mjs",
+    "vapid:gen": "web-push generate-vapid-keys --json"
   },
   "dependencies": {
     "better-sqlite3": "^12.9.0",
@@ -22,13 +25,16 @@
     "openai": "^6.33.0",
     "playwright": "^1.58.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.14.1",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/express": "^5.0.6",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
+    "@types/web-push": "^3.6.4",
     "@vitejs/plugin-react": "^4.2.1",
     "tsx": "^4.21.0",
     "typescript": "^5.4.5",
