@@ -20,6 +20,7 @@
 import 'dotenv/config'
 import { chromium } from 'playwright'
 import { insertCardsMissing, closeDb, getDbPath } from '../server/db.ts'
+import { enrichAllMissing } from './enrich-data.mjs'
 
 // ─── Hardcoded URL list for scheduled runs ────────────────────────────────────
 // Populate these with the collection URLs to scrape daily.
@@ -125,7 +126,7 @@ async function main() {
     await browser.close()
   }
 
-  console.error('\n── Summary ──')
+  console.error('\n── Scrape summary ──')
   console.error(`  URLs processed : ${urls.length - failures.length}/${urls.length}`)
   console.error(`  Scraped pairs  : ${totalScraped}`)
   console.error(`  New            : ${totalInserted}`)
@@ -134,6 +135,12 @@ async function main() {
     console.error(`  Failures       : ${failures.length}`)
     for (const f of failures) console.error(`    - ${f.url}: ${f.error}`)
     process.exitCode = 1
+  }
+
+  console.error('\n── Enriching missing cards ──')
+  const { processed, failed, skipped } = await enrichAllMissing('gpt-4o')
+  if (!skipped) {
+    console.error(`  Enriched: ${processed}, failed: ${failed}`)
   }
 }
 

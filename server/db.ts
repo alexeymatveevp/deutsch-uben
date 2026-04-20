@@ -62,7 +62,7 @@ export function deleteCardById(id: number): number {
 
 export function insertCardsMissing(
   pairs: ScrapedPair[],
-): { inserted: number; skipped: number } {
+): { inserted: number; skipped: number; insertedIds: number[] } {
   const db = openDb()
   const exists = db.prepare('SELECT 1 FROM cards WHERE source_text = ?')
   const maxIdStmt = db.prepare('SELECT COALESCE(MAX(id), 0) AS max_id FROM cards')
@@ -73,6 +73,7 @@ export function insertCardsMissing(
   const run = db.transaction((rows: ScrapedPair[]) => {
     let inserted = 0
     let skipped = 0
+    const insertedIds: number[] = []
     let nextId = (maxIdStmt.get() as { max_id: number }).max_id + 1
     for (const row of rows) {
       if (exists.get(row.source_text)) {
@@ -80,10 +81,11 @@ export function insertCardsMissing(
         continue
       }
       insert.run(nextId, row.source_text, row.target_text)
+      insertedIds.push(nextId)
       nextId++
       inserted++
     }
-    return { inserted, skipped }
+    return { inserted, skipped, insertedIds }
   })
 
   return run(pairs)
