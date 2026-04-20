@@ -1,20 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import allData from './data/data.json'
 
 type TranslationCard = {
   id: number
   source_text: string
   target_text: string
   examples_html: string | null
-  deleted?: boolean
 }
 
 const STORAGE_KEY = 'deutsch-uben:last-card-index'
-const PANTRY_ID = import.meta.env.VITE_PANTRY_ID as string | undefined
-const BASKET = 'deleted-cards'
-const PANTRY_URL = PANTRY_ID
-  ? `https://getpantry.cloud/apiv1/pantry/${PANTRY_ID}/basket/${BASKET}`
-  : null
+const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? ''
 
 function clampIndex(index: number, length: number) {
   if (length <= 0) {
@@ -25,56 +19,58 @@ function clampIndex(index: number, length: number) {
 }
 
 function App() {
-  const allCards = useMemo(() => allData as TranslationCard[], [])
-  const [deletedIds, setDeletedIds] = useState<Set<number>>(new Set())
+  const [allCards, setAllCards] = useState<TranslationCard[]>([])
   const [loaded, setLoaded] = useState(false)
+  const [loadError, setLoadError] = useState<string | null>(null)
 
   const [newOnly, setNewOnly] = useState(false)
 
   const cards = useMemo(() => {
-    const active = allCards.filter((c) => !c.deleted && !deletedIds.has(c.id))
-    if (!newOnly) return active
-    return [...active].sort((a, b) => b.id - a.id).slice(0, 100)
-  }, [allCards, deletedIds, newOnly])
+    if (!newOnly) return allCards
+    return [...allCards].sort((a, b) => b.id - a.id).slice(0, 100)
+  }, [allCards, newOnly])
 
-  const [index, setIndex] = useState(() => {
-    if (allCards.length === 0) {
-      return 0
-    }
-    const raw = localStorage.getItem(STORAGE_KEY)
-    const parsed = raw ? Number(raw) : NaN
-    if (Number.isInteger(parsed) && parsed >= 0 && parsed < allCards.length) {
-      return parsed
-    }
-    return Math.floor(Math.random() * allCards.length)
-  })
+  const [index, setIndex] = useState(0)
+  const [indexRestored, setIndexRestored] = useState(false)
   const [isFlipped, setIsFlipped] = useState(false)
   const [disableFlipTransition, setDisableFlipTransition] = useState(false)
   const pageRef = useRef<HTMLDivElement>(null)
 
-  // Fetch deleted IDs from Pantry on mount
   useEffect(() => {
-    if (!PANTRY_URL) {
-      setLoaded(true)
-      return
-    }
-    fetch(PANTRY_URL)
+    let cancelled = false
+    fetch(`${API_BASE}/api/cards`)
       .then((r) => {
-        if (!r.ok) throw new Error(r.statusText)
+        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
         return r.json()
       })
-      .then((data) => {
-        if (Array.isArray(data.ids)) {
-          setDeletedIds(new Set(data.ids))
-        }
+      .then((data: TranslationCard[]) => {
+        if (cancelled) return
+        setAllCards(data)
       })
-      .catch(() => {
-        // Basket may not exist yet — that's fine
+      .catch((err) => {
+        if (cancelled) return
+        setLoadError(err instanceof Error ? err.message : String(err))
       })
-      .finally(() => setLoaded(true))
+      .finally(() => {
+        if (!cancelled) setLoaded(true)
+      })
+    return () => {
+      cancelled = true
+    }
   }, [])
 
-  // Keep index in bounds when cards list changes
+  useEffect(() => {
+    if (indexRestored || allCards.length === 0) return
+    const raw = localStorage.getItem(STORAGE_KEY)
+    const parsed = raw ? Number(raw) : NaN
+    if (Number.isInteger(parsed) && parsed >= 0 && parsed < allCards.length) {
+      setIndex(parsed)
+    } else {
+      setIndex(Math.floor(Math.random() * allCards.length))
+    }
+    setIndexRestored(true)
+  }, [allCards.length, indexRestored])
+
   useEffect(() => {
     if (cards.length > 0 && index >= cards.length) {
       setIndex(clampIndex(index, cards.length))
@@ -124,29 +120,20 @@ function App() {
   const deleteCard = useCallback(() => {
     if (!activeCard || isRipping) return
     setIsRipping(true)
+    const doomedId = activeCard.id
 
     setTimeout(() => {
-      const newDeleted = new Set(deletedIds)
-      newDeleted.add(activeCard.id)
-      setDeletedIds(newDeleted)
+      setAllCards((prev) => prev.filter((c) => c.id !== doomedId))
       setIsRipping(false)
 
-      // Persist to Pantry
-      if (PANTRY_URL) {
-        fetch(PANTRY_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ids: [...newDeleted] }),
-        }).catch(() => {})
-      }
+      fetch(`${API_BASE}/api/cards/${doomedId}`, { method: 'DELETE' }).catch(() => {})
 
-      // Adjust index: if we're at the end, go back one
       const newTotal = total - 1
       if (newTotal > 0 && index >= newTotal) {
         setIndex(newTotal - 1)
       }
     }, 500)
-  }, [activeCard, deletedIds, index, total, isRipping])
+  }, [activeCard, index, total, isRipping])
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -163,6 +150,14 @@ function App() {
     return (
       <main className="app">
         <p style={{ color: '#94a3b8' }}>Loading…</p>
+      </main>
+    )
+  }
+
+  if (loadError) {
+    return (
+      <main className="app app-empty">
+        <p>Could not load cards: {loadError}</p>
       </main>
     )
   }

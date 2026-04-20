@@ -7,11 +7,17 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "scrape-public": "node scripts/scrape-public-collection-by-link.mjs",
-    "enrich": "node scripts/enrich-data.mjs"
+    "migrate": "node scripts/migrate-to-sqlite.mjs",
+    "server": "tsx watch server/index.ts",
+    "server:build": "tsc -p server",
+    "server:start": "NODE_ENV=production node server/dist-server/index.js",
+    "scrape-public": "tsx scripts/scrape-public-collection-by-link.mjs",
+    "enrich": "tsx scripts/enrich-data.mjs"
   },
   "dependencies": {
+    "better-sqlite3": "^12.9.0",
     "dotenv": "^17.3.1",
+    "express": "^5.2.1",
     "marked": "^17.0.5",
     "openai": "^6.33.0",
     "playwright": "^1.58.2",
@@ -19,9 +25,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.6",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
+    "tsx": "^4.21.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.0",
     "vite-plugin-pwa": "^0.20.0"

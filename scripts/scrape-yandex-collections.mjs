@@ -1,20 +1,18 @@
 #!/usr/bin/env node
 
-/**
- * Scrapes translation pairs from https://translate.yandex.ru/collections
- * Handles virtualized lists (role="listitem") by scrolling the container
- * in small steps and harvesting items before they get recycled.
- *
- * Usage:
- *   node scripts/scrape-yandex-collections.mjs [--merge] [--limit 200] [--output file] [--debug]
- *
- * Options:
- *   --merge    Merge results into src/data/yandex-collections.json (prepends new entries)
- *   --limit N  Stop after N translations (default: 0 = unlimited)
- *   --output   Write scraped JSON to this file instead of stdout
- *   --debug    Save debug screenshots at each stage
- */
+// ARCHIVED: this script is no longer part of the data pipeline.
+// It used to scrape https://translate.yandex.ru/collections and merge
+// results into src/data/yandex-collections.json. The app now stores
+// everything in SQLite and ingests new cards via
+// scripts/scrape-public-collection-by-link.mjs writing directly to the DB.
+// Kept in the repo for reference / historical context.
 
+console.error(
+  '[scrape-yandex-collections] archived — use scrape-public-collection-by-link.mjs instead.',
+)
+process.exit(0)
+
+/*
 import "dotenv/config";
 import { chromium } from "playwright";
 import { readFileSync, writeFileSync } from "fs";
@@ -313,3 +311,4 @@ main().catch((err) => {
   console.error("Fatal error:", err);
   process.exit(1);
 });
+*/
