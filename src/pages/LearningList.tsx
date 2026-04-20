@@ -39,6 +39,15 @@ export default function LearningList({ status }: Props) {
 
   return (
     <main className="app learning-page">
+      <button
+        type="button"
+        className="close-btn"
+        onClick={() => navigate('/')}
+        aria-label="Close"
+        title="Close"
+      >
+        ×
+      </button>
       <h1 className="learning-title">{title}</h1>
       {!loaded && <p className="learning-empty">Loading…</p>}
       {loaded && error && <p className="learning-empty">Could not load: {error}</p>}

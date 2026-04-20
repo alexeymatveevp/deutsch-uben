@@ -420,6 +420,32 @@ button {
   gap: 20px;
 }
 
+.close-btn {
+  position: fixed;
+  top: 72px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+  color: #94a3b8;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  z-index: 20;
+}
+
+.close-btn:hover {
+  color: #e2e8f0;
+  border-color: rgba(148, 163, 184, 0.8);
+  background: rgba(30, 41, 59, 0.9);
+}
+
 .learning-title {
   margin: 0;
   font-size: 22px;
