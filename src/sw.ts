@@ -35,25 +35,31 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close()
   const raw = (event.notification.data as { url?: string } | undefined)?.url ?? ''
   // Resolve against the SW's registration scope so a relative path like
-  // "learning/short" becomes e.g. https://host/deutsch-uben/learning/short
-  // under a deploy prefix, or https://host/learning/short at root.
+  // "learning" becomes e.g. https://host/deutsch-uben/learning under a
+  // deploy prefix, or https://host/learning at root.
   const fullUrl = new URL(raw, self.registration.scope).toString()
   event.waitUntil(
     (async () => {
       const all = await self.clients.matchAll({ type: 'window', includeUncontrolled: true })
+      // Prefer focusing an existing app window and ask it to navigate
+      // client-side via react-router. iOS PWAs ignore WindowClient.navigate(),
+      // but postMessage + in-app navigate() is reliable everywhere.
       for (const client of all) {
-        if (client.url === fullUrl && 'focus' in client) return client.focus()
-      }
-      for (const client of all) {
-        if (client.url.startsWith(self.registration.scope) && 'focus' in client) {
+        if (client.url.startsWith(self.registration.scope)) {
           const win = client as WindowClient
-          await win.focus()
-          if (typeof win.navigate === 'function') return win.navigate(fullUrl)
-          return undefined
+          try {
+            await win.focus()
+          } catch {
+            // ignore
+          }
+          win.postMessage({ type: 'sw-navigate', path: raw })
+          return
         }
       }
-      if (self.clients.openWindow) return self.clients.openWindow(fullUrl)
-      return undefined
+      // No existing window — open a fresh one at the target URL.
+      if (self.clients.openWindow) {
+        await self.clients.openWindow(fullUrl)
+      }
     })(),
   )
 })

@@ -13,6 +13,7 @@ import {
   startLearning,
   upsertPushSubscription,
 } from './db.js'
+import { sendReviewPush } from './push.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const PORT = Number(process.env.PORT ?? 3001)
@@ -134,6 +135,20 @@ app.post('/api/push/unsubscribe', (req, res) => {
   }
   removePushSubscription(body.endpoint)
   res.status(204).end()
+})
+
+// ─── Admin ───────────────────────────────────────────────────────────────────
+// WARNING: unauthenticated. Protect /api/admin/* at the reverse proxy if
+// deploying to a public network.
+
+app.post('/api/admin/notify', async (_req, res) => {
+  try {
+    const result = await sendReviewPush()
+    res.json(result)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'failed to send', message: (err as Error).message })
+  }
 })
 
 // ─── Static SPA in prod ──────────────────────────────────────────────────────

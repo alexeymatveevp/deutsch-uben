@@ -104,18 +104,11 @@ export default function Header() {
     <header className="app-header">
       <nav className="header-tabs">
         <NavLink
-          to="/learning/short"
+          to="/learning"
           className={({ isActive }) => `header-tab${isActive ? ' active' : ''}`}
           end
         >
-          Short
-        </NavLink>
-        <NavLink
-          to="/learning/long"
-          className={({ isActive }) => `header-tab${isActive ? ' active' : ''}`}
-          end
-        >
-          Long
+          Посмотреть сегодня
         </NavLink>
       </nav>
       <button

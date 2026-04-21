@@ -19,8 +19,24 @@
 
 import 'dotenv/config'
 import { chromium } from 'playwright'
-import { insertCardsMissing, closeDb, getDbPath } from '../server/db.ts'
+import { insertCardsMissing, startLearning, closeDb, getDbPath } from '../server/db.ts'
 import { enrichAllMissing } from './enrich-data.mjs'
+
+/**
+ * Starting countdown for a freshly-scraped card. Matches the server-side
+ * logic in server/index.ts so a card inserted before today's 9 AM
+ * Europe/Berlin cron doesn't get decremented to 0 and notified the same
+ * day — user wants the reminder *tomorrow*.
+ */
+function computeStartingLearningDays() {
+  const hourStr = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Europe/Berlin',
+    hour: 'numeric',
+    hour12: false,
+  }).format(new Date())
+  const hour = Number(hourStr)
+  return hour < 9 ? 2 : 1
+}
 
 // ─── Hardcoded URL list for scheduled runs ────────────────────────────────────
 // Populate these with the collection URLs to scrape daily.
@@ -104,7 +120,9 @@ async function main() {
   let totalScraped = 0
   let totalInserted = 0
   let totalSkipped = 0
+  let totalLearning = 0
   const failures = []
+  const learningDays = computeStartingLearningDays()
 
   try {
     for (const url of urls) {
@@ -112,9 +130,14 @@ async function main() {
         const pairs = await scrapePage(page, url)
         totalScraped += pairs.length
         if (pairs.length > 0) {
-          const { inserted, skipped } = insertCardsMissing(pairs)
+          const { inserted, skipped, insertedIds } = insertCardsMissing(pairs)
           totalInserted += inserted
           totalSkipped += skipped
+          // Auto-start learning on newly inserted cards so the user gets a
+          // review reminder the next morning.
+          for (const id of insertedIds) {
+            if (startLearning(id, learningDays) > 0) totalLearning++
+          }
           console.error(`  new: ${inserted}, duplicates: ${skipped}`)
         }
       } catch (err) {
@@ -127,12 +150,13 @@ async function main() {
   }
 
   console.error('\n── Scrape summary ──')
-  console.error(`  URLs processed : ${urls.length - failures.length}/${urls.length}`)
-  console.error(`  Scraped pairs  : ${totalScraped}`)
-  console.error(`  New            : ${totalInserted}`)
-  console.error(`  Duplicates     : ${totalSkipped}`)
+  console.error(`  URLs processed  : ${urls.length - failures.length}/${urls.length}`)
+  console.error(`  Scraped pairs   : ${totalScraped}`)
+  console.error(`  New             : ${totalInserted}`)
+  console.error(`  Duplicates      : ${totalSkipped}`)
+  console.error(`  Started learning: ${totalLearning} (days=${learningDays})`)
   if (failures.length > 0) {
-    console.error(`  Failures       : ${failures.length}`)
+    console.error(`  Failures        : ${failures.length}`)
     for (const f of failures) console.error(`    - ${f.url}: ${f.error}`)
     process.exitCode = 1
   }
