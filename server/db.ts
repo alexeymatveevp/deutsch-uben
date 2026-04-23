@@ -80,6 +80,14 @@ export function listCards(): TranslationCard[] {
     .all() as TranslationCard[]
 }
 
+export function getCardById(id: number): TranslationCard | null {
+  const db = openDb()
+  const row = db
+    .prepare(`SELECT ${CARD_COLS} FROM cards WHERE id = ? AND deleted = 0`)
+    .get(id) as TranslationCard | undefined
+  return row ?? null
+}
+
 export function deleteCardById(id: number): number {
   const db = openDb()
   const info = db

@@ -4,6 +4,7 @@ import { dirname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 import {
   deleteCardById,
+  getCardById,
   getDbPath,
   listCards,
   listLearningReady,
@@ -13,6 +14,7 @@ import {
   startLearning,
   upsertPushSubscription,
 } from './db.js'
+import { enrichCardById } from './enrich.js'
 import { sendReviewPush } from './push.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -75,6 +77,33 @@ app.post('/api/cards/:id/learning', (req, res) => {
     return
   }
   res.json({ learning_status: 'short', learning_days_remaining: days })
+})
+
+app.post('/api/cards/:id/regenerate', async (req, res) => {
+  const id = Number(req.params.id)
+  if (!Number.isInteger(id) || id <= 0) {
+    res.status(400).json({ error: 'invalid id' })
+    return
+  }
+  if (!getCardById(id)) {
+    res.status(404).json({ error: 'not found' })
+    return
+  }
+  try {
+    const { card, result } = await enrichCardById(id)
+    if (result.skipped) {
+      res.status(503).json({ error: 'enrichment unavailable (OPENAI_API_KEY not set)' })
+      return
+    }
+    if (!card) {
+      res.status(500).json({ error: 'enrichment failed', failed: result.failed })
+      return
+    }
+    res.json(card)
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'regenerate failed', message: (err as Error).message })
+  }
 })
 
 app.delete('/api/cards/:id/learning', (req, res) => {

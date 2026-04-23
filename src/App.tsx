@@ -127,6 +127,7 @@ function App() {
   }, [total])
 
   const [isRipping, setIsRipping] = useState(false)
+  const [isRegenerating, setIsRegenerating] = useState(false)
 
   const deleteCard = useCallback(() => {
     if (!activeCard || isRipping) return
@@ -145,6 +146,23 @@ function App() {
       }
     }, 500)
   }, [activeCard, index, total, isRipping])
+
+  const regenerateCard = useCallback(async () => {
+    if (!activeCard || isRegenerating) return
+    const cardId = activeCard.id
+    setIsRegenerating(true)
+    try {
+      const r = await fetch(`${API_BASE}/api/cards/${cardId}/regenerate`, { method: 'POST' })
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
+      const updated: TranslationCard = await r.json()
+      setAllCards((prev) => prev.map((c) => (c.id === cardId ? updated : c)))
+    } catch (err) {
+      console.error('Regenerate failed:', err)
+      alert('Regenerate failed — see console')
+    } finally {
+      setIsRegenerating(false)
+    }
+  }, [activeCard, isRegenerating])
 
   const updateLearningStatus = useCallback((cardId: number, next: LearningStatus) => {
     setAllCards((prev) =>
@@ -271,6 +289,17 @@ function App() {
           dangerouslySetInnerHTML={{ __html: activeCard.examples_html }}
         />
       )}
+      <div className="regenerate-row">
+        <button
+          type="button"
+          className={`regenerate-btn${isRegenerating ? ' busy' : ''}`}
+          onClick={regenerateCard}
+          disabled={isRegenerating}
+          title="Regenerate AI examples for this card"
+        >
+          {isRegenerating ? 'Regenerating…' : 'Regenerate'}
+        </button>
+      </div>
     </div>
   )
 }
