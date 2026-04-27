@@ -25,6 +25,7 @@ Bitte erstelle eine kurze, nützliche Lernkarte auf Deutsch. Verwende folgendes 
 5. **Synonyme / alternative Ausdrücke:**
    - **Wenn es ein einzelnes Wort ist:** Gib 2–4 Synonyme oder bedeutungsnahe Wörter an.
    - **Wenn es ein Ausdruck oder ein Satz ist:** Gib 2–3 andere Möglichkeiten, dasselbe zu sagen. Falls zutreffend, kennzeichne formellere Varianten mit *(formell)* und umgangssprachlichere mit *(umgangssprachlich)*.
+6. **Unterschiede zwischen den Synonymen:** Wähle mindestens 1–2 der oben genannten Synonyme und erkläre prägnant, worin sie sich vom Zielwort/Zielausdruck unterscheiden — z.B. in Bedeutungsnuance, Stilebene, Verwendungssituation, Konnotation oder Häufigkeit. Wenn hilfreich, gib einen kurzen Beispielsatz, der den Unterschied verdeutlicht. Ohne diese Erklärung sind Synonyme nur Wörter — der Lernende soll verstehen, *wann* man welches benutzt.
 
 Antworte nur auf Deutsch. Benutze Markdown-Formatierung.`
 }
