@@ -13,12 +13,12 @@
  */
 
 import 'dotenv/config'
-import { decrementCountdowns, closeDb, getDbPath } from '../server/db.ts'
+import { decrementCountdowns, closeDb, getDbUrl } from '../server/db.ts'
 import { sendReviewPush } from '../server/push.ts'
 
 async function main() {
-  console.error(`DB: ${getDbPath()}`)
-  const decremented = decrementCountdowns()
+  console.error(`DB: ${getDbUrl()}`)
+  const decremented = await decrementCountdowns()
   console.error(`Decremented ${decremented} countdown(s).`)
 
   const result = await sendReviewPush()
@@ -39,6 +39,6 @@ main()
     console.error('Fatal:', err)
     process.exitCode = 1
   })
-  .finally(() => {
-    closeDb()
+  .finally(async () => {
+    await closeDb()
   })

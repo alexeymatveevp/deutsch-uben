@@ -556,10 +556,13 @@ button {
 .regenerate-row {
   display: flex;
   justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
   padding: 0 24px 40px;
 }
 
-.regenerate-btn {
+.regenerate-btn,
+.replace-btn {
   padding: 10px 22px;
   border-radius: 999px;
   background: rgba(30, 41, 59, 0.6);
@@ -570,18 +573,37 @@ button {
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
 }
 
-.regenerate-btn:hover:not(:disabled) {
+.regenerate-btn:hover:not(:disabled),
+.replace-btn:hover:not(:disabled) {
   background: rgba(30, 41, 59, 0.9);
   border-color: rgba(148, 163, 184, 0.6);
   color: #e2e8f0;
 }
 
-.regenerate-btn:active:not(:disabled) {
+.regenerate-btn:active:not(:disabled),
+.replace-btn:active:not(:disabled) {
   transform: scale(0.98);
 }
 
 .regenerate-btn.busy,
-.regenerate-btn:disabled {
+.regenerate-btn:disabled,
+.replace-btn.busy,
+.replace-btn:disabled {
   opacity: 0.6;
   cursor: progress;
+}
+
+.replace-btn {
+  max-width: min(420px, 80vw);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(56, 89, 137, 0.55);
+  border-color: rgba(125, 168, 219, 0.45);
+  color: #e2e8f0;
+}
+
+.replace-btn:hover:not(:disabled) {
+  background: rgba(56, 89, 137, 0.9);
+  border-color: rgba(125, 168, 219, 0.7);
 }

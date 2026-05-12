@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Enriches cards in the SQLite database with LLM-generated German usage
+ * Enriches cards in the PostgreSQL database with LLM-generated German usage
  * examples. Thin CLI wrapper — the actual enrichment logic lives in
  * server/enrich.ts so it can also be invoked from the HTTP server.
  *
@@ -25,7 +25,7 @@
 
 import 'dotenv/config'
 import { fileURLToPath } from 'url'
-import { listCardsWithoutExamples, closeDb, getDbPath } from '../server/db.ts'
+import { listCardsWithoutExamples, closeDb, getDbUrl } from '../server/db.ts'
 import { buildPrompt, enrichItems, enrichCardsByIds, enrichAllMissing } from '../server/enrich.ts'
 
 // Re-export for existing importers (e.g. scrape-public-collection-by-link.mjs).
@@ -54,12 +54,12 @@ async function main() {
     return
   }
 
-  console.error(`DB: ${getDbPath()}`)
+  console.error(`DB: ${getDbUrl()}`)
 
   const candidates =
     opts.ids.length > 0
-      ? listCardsWithoutExamples({ ids: opts.ids })
-      : listCardsWithoutExamples({ limit: opts.limit > 0 ? opts.limit : undefined })
+      ? await listCardsWithoutExamples({ ids: opts.ids })
+      : await listCardsWithoutExamples({ limit: opts.limit > 0 ? opts.limit : undefined })
 
   if (candidates.length === 0) {
     console.error(
@@ -95,7 +95,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
       console.error('Fatal:', err)
       process.exitCode = 1
     })
-    .finally(() => {
-      closeDb()
+    .finally(async () => {
+      await closeDb()
     })
 }

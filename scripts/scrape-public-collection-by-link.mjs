@@ -2,8 +2,8 @@
 
 /**
  * Scrapes translation pairs from one or more public Yandex Translate
- * collection pages and writes new pairs directly into the SQLite database
- * at DATABASE_PATH.
+ * collection pages and writes new pairs directly into the PostgreSQL
+ * database at DATABASE_URL.
  *
  * Usage:
  *   tsx scripts/scrape-public-collection-by-link.mjs            # scrape the URLS list below
@@ -19,7 +19,7 @@
 
 import 'dotenv/config'
 import { chromium } from 'playwright'
-import { insertCardsMissing, startLearning, closeDb, getDbPath } from '../server/db.ts'
+import { insertCardsMissing, startLearning, closeDb, getDbUrl } from '../server/db.ts'
 import { enrichAllMissing } from './enrich-data.mjs'
 
 /**
@@ -104,7 +104,7 @@ async function main() {
     return
   }
 
-  console.error(`DB: ${getDbPath()}`)
+  console.error(`DB: ${getDbUrl()}`)
   console.error(`Scraping ${urls.length} URL(s)`)
 
   console.error('Launching browser…')
@@ -130,13 +130,13 @@ async function main() {
         const pairs = await scrapePage(page, url)
         totalScraped += pairs.length
         if (pairs.length > 0) {
-          const { inserted, skipped, insertedIds } = insertCardsMissing(pairs)
+          const { inserted, skipped, insertedIds } = await insertCardsMissing(pairs)
           totalInserted += inserted
           totalSkipped += skipped
           // Auto-start learning on newly inserted cards so the user gets a
           // review reminder the next morning.
           for (const id of insertedIds) {
-            if (startLearning(id, learningDays) > 0) totalLearning++
+            if ((await startLearning(id, learningDays)) > 0) totalLearning++
           }
           console.error(`  new: ${inserted}, duplicates: ${skipped}`)
         }
@@ -173,6 +173,6 @@ main()
     console.error('Fatal error:', err)
     process.exitCode = 1
   })
-  .finally(() => {
-    closeDb()
+  .finally(async () => {
+    await closeDb()
   })

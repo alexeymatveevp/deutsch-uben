@@ -3,9 +3,5 @@ dist
 .env
 .env.*
 .idea
-*.db
-*.db-journal
-*.db-wal
-*.db-shm
 server/dist-server
 *.tsbuildinfo

@@ -57,13 +57,13 @@ export async function sendReviewPush(): Promise<SendResult> {
   if (!configureWebPush()) {
     return { short: 0, long: 0, sent: 0, failed: 0, expired: 0, skipped: true }
   }
-  const { short, long } = listReadyToNotify()
+  const { short, long } = await listReadyToNotify()
   const payload = buildReviewPayload(short, long)
   if (!payload) {
     return { short, long, sent: 0, failed: 0, expired: 0, skipped: false }
   }
 
-  const subs = listPushSubscriptions()
+  const subs = await listPushSubscriptions()
   let sent = 0
   let failed = 0
   let expired = 0
@@ -77,7 +77,7 @@ export async function sendReviewPush(): Promise<SendResult> {
     } catch (err) {
       const e = err as { statusCode?: number; message?: string }
       if (e.statusCode === 404 || e.statusCode === 410) {
-        removePushSubscription(sub.endpoint)
+        await removePushSubscription(sub.endpoint)
         expired++
       } else {
         failed++

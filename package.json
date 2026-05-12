@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "migrate": "node scripts/migrate-to-sqlite.mjs",
     "server": "tsx watch server/index.ts",
     "server:build": "tsc -p server",
     "server:start": "NODE_ENV=production node server/dist-server/index.js",
@@ -18,11 +17,11 @@
     "vapid:gen": "web-push generate-vapid-keys --json"
   },
   "dependencies": {
-    "better-sqlite3": "^12.9.0",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "marked": "^17.0.5",
     "openai": "^6.33.0",
+    "pg": "^8.20.0",
     "playwright": "^1.58.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,8 +29,8 @@
     "web-push": "^3.6.7"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.13",
     "@types/express": "^5.0.6",
+    "@types/pg": "^8.20.0",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "@types/web-push": "^3.6.4",

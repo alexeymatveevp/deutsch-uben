@@ -128,6 +128,9 @@ function App() {
 
   const [isRipping, setIsRipping] = useState(false)
   const [isRegenerating, setIsRegenerating] = useState(false)
+  const [isReplacing, setIsReplacing] = useState(false)
+  const [selectionText, setSelectionText] = useState('')
+  const examplesRef = useRef<HTMLElement>(null)
 
   const deleteCard = useCallback(() => {
     if (!activeCard || isRipping) return
@@ -164,6 +167,39 @@ function App() {
     }
   }, [activeCard, isRegenerating])
 
+  const replaceWithSelection = useCallback(async () => {
+    if (!activeCard || isReplacing || !selectionText) return
+    const cardId = activeCard.id
+    const text = selectionText
+    setIsReplacing(true)
+    try {
+      const r = await fetch(`${API_BASE}/api/cards/${cardId}/replace`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+      })
+      if (r.status === 409) {
+        const data = await r.json().catch(() => ({}))
+        alert(
+          data?.existingId
+            ? `"${text}" already exists as card #${data.existingId}.`
+            : `"${text}" already exists.`,
+        )
+        return
+      }
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
+      const updated: TranslationCard = await r.json()
+      setAllCards((prev) => prev.map((c) => (c.id === cardId ? updated : c)))
+      window.getSelection()?.removeAllRanges()
+      setSelectionText('')
+    } catch (err) {
+      console.error('Replace failed:', err)
+      alert('Replace failed — see console')
+    } finally {
+      setIsReplacing(false)
+    }
+  }, [activeCard, isReplacing, selectionText])
+
   const updateLearningStatus = useCallback((cardId: number, next: LearningStatus) => {
     setAllCards((prev) =>
       prev.map((c) =>
@@ -189,6 +225,38 @@ function App() {
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
   }, [goNext, goPrev, deleteCard])
+
+  // Watch text selection inside the examples section so we can offer
+  // "Replace with …" when the user highlights a phrase to promote into
+  // the current card.
+  useEffect(() => {
+    const updateFromSelection = () => {
+      const root = examplesRef.current
+      const sel = window.getSelection()
+      if (!root || !sel || sel.rangeCount === 0 || sel.isCollapsed) {
+        setSelectionText('')
+        return
+      }
+      const range = sel.getRangeAt(0)
+      if (!root.contains(range.commonAncestorContainer)) {
+        setSelectionText('')
+        return
+      }
+      const text = sel.toString().trim().replace(/\s+/g, ' ')
+      if (!text || text.length > 200) {
+        setSelectionText('')
+        return
+      }
+      setSelectionText(text)
+    }
+    document.addEventListener('selectionchange', updateFromSelection)
+    return () => document.removeEventListener('selectionchange', updateFromSelection)
+  }, [])
+
+  // Clear any leftover selection state when navigating between cards.
+  useEffect(() => {
+    setSelectionText('')
+  }, [index])
 
   if (!loaded) {
     return (
@@ -285,6 +353,7 @@ function App() {
       </main>
       {activeCard.examples_html && (
         <section
+          ref={examplesRef}
           className="examples"
           dangerouslySetInnerHTML={{ __html: activeCard.examples_html }}
         />
@@ -294,11 +363,32 @@ function App() {
           type="button"
           className={`regenerate-btn${isRegenerating ? ' busy' : ''}`}
           onClick={regenerateCard}
-          disabled={isRegenerating}
+          disabled={isRegenerating || isReplacing}
           title="Regenerate AI examples for this card"
         >
           {isRegenerating ? 'Regenerating…' : 'Regenerate'}
         </button>
+        {selectionText && (
+          <button
+            type="button"
+            className={`replace-btn${isReplacing ? ' busy' : ''}`}
+            onMouseDown={(e) => {
+              // Prevent the mousedown from clearing the selection before the click fires.
+              e.preventDefault()
+            }}
+            onClick={replaceWithSelection}
+            disabled={isReplacing || isRegenerating}
+            title={`Replace this card with "${selectionText}" and regenerate examples`}
+          >
+            {isReplacing
+              ? 'Replacing…'
+              : `Replace with "${
+                  selectionText.length > 30
+                    ? `${selectionText.slice(0, 30)}…`
+                    : selectionText
+                }"`}
+          </button>
+        )}
       </div>
     </div>
   )

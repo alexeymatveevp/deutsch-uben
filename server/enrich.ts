@@ -64,7 +64,7 @@ export async function enrichItems(
       const markdown = response.choices[0].message.content ?? ''
       const html = await marked.parse(markdown)
 
-      updateExamplesHtml(item.id, html)
+      await updateExamplesHtml(item.id, html)
       console.error('  ✓ saved')
       processed++
     } catch (err) {
@@ -81,7 +81,7 @@ export async function enrichCardsByIds(
   model = 'gpt-4o',
 ): Promise<EnrichResult> {
   if (!ids || ids.length === 0) return { processed: 0, failed: 0, skipped: false }
-  const items = listCardsWithoutExamples({ ids })
+  const items = await listCardsWithoutExamples({ ids })
   if (items.length === 0) {
     console.error('No cards to enrich (already enriched or deleted).')
     return { processed: 0, failed: 0, skipped: false }
@@ -90,7 +90,7 @@ export async function enrichCardsByIds(
 }
 
 export async function enrichAllMissing(model = 'gpt-4o'): Promise<EnrichResult> {
-  const items = listCardsWithoutExamples()
+  const items = await listCardsWithoutExamples()
   if (items.length === 0) {
     console.error('No cards missing examples_html.')
     return { processed: 0, failed: 0, skipped: false }
@@ -109,6 +109,31 @@ export async function enrichCardById(
   model = 'gpt-4o',
 ): Promise<{ card: TranslationCard | null; result: EnrichResult }> {
   const result = await enrichCardsByIds([id], model)
-  const card = result.processed > 0 ? getCardById(id) : null
+  const card = result.processed > 0 ? await getCardById(id) : null
   return { card, result }
+}
+
+/**
+ * Translate a German word/phrase to Russian via OpenAI. Returns null if
+ * OPENAI_API_KEY is not configured or the API returns no usable text.
+ */
+export async function translateToRussian(
+  germanText: string,
+  model = 'gpt-4o',
+): Promise<string | null> {
+  if (!process.env.OPENAI_API_KEY) return null
+  const openai = new OpenAI()
+  const response = await openai.chat.completions.create({
+    model,
+    messages: [
+      {
+        role: 'user',
+        content: `Translate the following German word or phrase into Russian. Respond with ONLY the translation, no quotes, no explanation, no extra punctuation.\n\n${germanText}`,
+      },
+    ],
+    temperature: 0,
+    max_tokens: 100,
+  })
+  const text = response.choices[0]?.message?.content?.trim() ?? ''
+  return text || null
 }

@@ -12,19 +12,19 @@
  */
 
 import 'dotenv/config'
-import { transitionReady, closeDb, getDbPath } from '../server/db.ts'
+import { transitionReady, closeDb, getDbUrl } from '../server/db.ts'
 
-function main() {
-  console.error(`DB: ${getDbPath()}`)
-  const { shortToLong, longToNull } = transitionReady()
+async function main() {
+  console.error(`DB: ${getDbUrl()}`)
+  const { shortToLong, longToNull } = await transitionReady()
   console.error(`Transitions: short→long=${shortToLong}, long→done=${longToNull}`)
 }
 
-try {
-  main()
-} catch (err) {
-  console.error('Fatal:', err)
-  process.exitCode = 1
-} finally {
-  closeDb()
-}
+main()
+  .catch((err) => {
+    console.error('Fatal:', err)
+    process.exitCode = 1
+  })
+  .finally(async () => {
+    await closeDb()
+  })

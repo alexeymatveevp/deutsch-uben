@@ -1,5 +1,4 @@
-import Database from 'better-sqlite3'
-import { resolve } from 'path'
+import { Pool } from 'pg'
 
 export type LearningStatus = 'short' | 'long' | null
 
@@ -23,134 +22,155 @@ export type PushSubscriptionRow = {
   auth: string
 }
 
-const DB_PATH = resolve(process.env.DATABASE_PATH ?? './deutsch-uben.db')
-
-let instance: Database.Database | null = null
-
-function addColumnIfMissing(db: Database.Database, table: string, column: string, ddl: string) {
-  const info = db.prepare(`PRAGMA table_info(${table})`).all() as Array<{ name: string }>
-  if (!info.some((c) => c.name === column)) {
-    db.exec(`ALTER TABLE ${table} ADD COLUMN ${ddl}`)
-  }
+const DATABASE_URL = process.env.DATABASE_URL
+if (!DATABASE_URL) {
+  throw new Error('DATABASE_URL is required (postgresql://...)')
 }
 
-export function openDb(): Database.Database {
-  if (instance) return instance
-  const db = new Database(DB_PATH)
-  db.pragma('journal_mode = WAL')
-  db.pragma('foreign_keys = ON')
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS cards (
-      id            INTEGER PRIMARY KEY,
-      source_text   TEXT NOT NULL UNIQUE,
-      target_text   TEXT NOT NULL,
-      examples_html TEXT,
-      deleted       INTEGER NOT NULL DEFAULT 0
-    );
-    CREATE INDEX IF NOT EXISTS idx_cards_id_desc ON cards(id DESC);
+let pool: Pool | null = null
 
-    CREATE TABLE IF NOT EXISTS push_subscriptions (
-      id         INTEGER PRIMARY KEY AUTOINCREMENT,
-      endpoint   TEXT NOT NULL UNIQUE,
-      p256dh     TEXT NOT NULL,
-      auth       TEXT NOT NULL,
-      created_at TEXT NOT NULL DEFAULT (datetime('now'))
-    );
-  `)
-  addColumnIfMissing(db, 'cards', 'learning_status', 'learning_status TEXT')
-  addColumnIfMissing(db, 'cards', 'learning_days_remaining', 'learning_days_remaining INTEGER')
-  instance = db
-  return db
+export function openDb(): Pool {
+  if (pool) return pool
+  pool = new Pool({ connectionString: DATABASE_URL })
+  return pool
 }
 
-export function closeDb(): void {
-  if (instance) {
-    instance.close()
-    instance = null
+export async function closeDb(): Promise<void> {
+  if (pool) {
+    await pool.end()
+    pool = null
   }
 }
 
 const CARD_COLS =
   'id, source_text, target_text, examples_html, learning_status, learning_days_remaining'
 
-export function listCards(): TranslationCard[] {
+export async function listCards(): Promise<TranslationCard[]> {
   const db = openDb()
-  return db
-    .prepare(`SELECT ${CARD_COLS} FROM cards WHERE deleted = 0 ORDER BY id DESC`)
-    .all() as TranslationCard[]
-}
-
-export function getCardById(id: number): TranslationCard | null {
-  const db = openDb()
-  const row = db
-    .prepare(`SELECT ${CARD_COLS} FROM cards WHERE id = ? AND deleted = 0`)
-    .get(id) as TranslationCard | undefined
-  return row ?? null
-}
-
-export function deleteCardById(id: number): number {
-  const db = openDb()
-  const info = db
-    .prepare('UPDATE cards SET deleted = 1 WHERE id = ? AND deleted = 0')
-    .run(id)
-  return info.changes
-}
-
-export function insertCardsMissing(
-  pairs: ScrapedPair[],
-): { inserted: number; skipped: number; insertedIds: number[] } {
-  const db = openDb()
-  const exists = db.prepare('SELECT 1 FROM cards WHERE source_text = ?')
-  const maxIdStmt = db.prepare('SELECT COALESCE(MAX(id), 0) AS max_id FROM cards')
-  const insert = db.prepare(
-    'INSERT INTO cards (id, source_text, target_text, examples_html) VALUES (?, ?, ?, NULL)',
+  const { rows } = await db.query<TranslationCard>(
+    `SELECT ${CARD_COLS} FROM cards WHERE deleted = 0 ORDER BY id DESC`,
   )
+  return rows
+}
 
-  const run = db.transaction((rows: ScrapedPair[]) => {
+export async function getCardById(id: number): Promise<TranslationCard | null> {
+  const db = openDb()
+  const { rows } = await db.query<TranslationCard>(
+    `SELECT ${CARD_COLS} FROM cards WHERE id = $1 AND deleted = 0`,
+    [id],
+  )
+  return rows[0] ?? null
+}
+
+export async function deleteCardById(id: number): Promise<number> {
+  const db = openDb()
+  const res = await db.query(
+    'UPDATE cards SET deleted = 1 WHERE id = $1 AND deleted = 0',
+    [id],
+  )
+  return res.rowCount ?? 0
+}
+
+export async function insertCardsMissing(
+  pairs: ScrapedPair[],
+): Promise<{ inserted: number; skipped: number; insertedIds: number[] }> {
+  const db = openDb()
+  const client = await db.connect()
+  try {
+    await client.query('BEGIN')
+    const maxRes = await client.query<{ max_id: number }>(
+      'SELECT COALESCE(MAX(id), 0)::int AS max_id FROM cards',
+    )
+    let nextId = maxRes.rows[0].max_id + 1
     let inserted = 0
     let skipped = 0
     const insertedIds: number[] = []
-    let nextId = (maxIdStmt.get() as { max_id: number }).max_id + 1
-    for (const row of rows) {
-      if (exists.get(row.source_text)) {
+    for (const row of pairs) {
+      const existsRes = await client.query(
+        'SELECT 1 FROM cards WHERE source_text = $1',
+        [row.source_text],
+      )
+      if ((existsRes.rowCount ?? 0) > 0) {
         skipped++
         continue
       }
-      insert.run(nextId, row.source_text, row.target_text)
+      await client.query(
+        'INSERT INTO cards (id, source_text, target_text, examples_html) VALUES ($1, $2, $3, NULL)',
+        [nextId, row.source_text, row.target_text],
+      )
       insertedIds.push(nextId)
       nextId++
       inserted++
     }
+    await client.query('COMMIT')
     return { inserted, skipped, insertedIds }
-  })
-
-  return run(pairs)
+  } catch (err) {
+    await client.query('ROLLBACK')
+    throw err
+  } finally {
+    client.release()
+  }
 }
 
-export function listCardsWithoutExamples(opts: {
+export async function listCardsWithoutExamples(opts: {
   limit?: number
   ids?: number[]
-} = {}): TranslationCard[] {
+} = {}): Promise<TranslationCard[]> {
   const db = openDb()
   if (opts.ids && opts.ids.length > 0) {
-    const placeholders = opts.ids.map(() => '?').join(',')
-    return db
-      .prepare(
-        `SELECT ${CARD_COLS} FROM cards WHERE id IN (${placeholders}) AND deleted = 0 ORDER BY id DESC`,
-      )
-      .all(...opts.ids) as TranslationCard[]
+    const { rows } = await db.query<TranslationCard>(
+      `SELECT ${CARD_COLS} FROM cards WHERE id = ANY($1::int[]) AND deleted = 0 ORDER BY id DESC`,
+      [opts.ids],
+    )
+    return rows
   }
-  const base = `SELECT ${CARD_COLS} FROM cards WHERE examples_html IS NULL AND deleted = 0 ORDER BY id DESC`
   if (opts.limit && opts.limit > 0) {
-    return db.prepare(`${base} LIMIT ?`).all(opts.limit) as TranslationCard[]
+    const { rows } = await db.query<TranslationCard>(
+      `SELECT ${CARD_COLS} FROM cards WHERE examples_html IS NULL AND deleted = 0 ORDER BY id DESC LIMIT $1`,
+      [opts.limit],
+    )
+    return rows
   }
-  return db.prepare(base).all() as TranslationCard[]
+  const { rows } = await db.query<TranslationCard>(
+    `SELECT ${CARD_COLS} FROM cards WHERE examples_html IS NULL AND deleted = 0 ORDER BY id DESC`,
+  )
+  return rows
 }
 
-export function updateExamplesHtml(id: number, html: string): number {
+export async function updateExamplesHtml(id: number, html: string): Promise<number> {
   const db = openDb()
-  const info = db.prepare('UPDATE cards SET examples_html = ? WHERE id = ?').run(html, id)
-  return info.changes
+  const res = await db.query('UPDATE cards SET examples_html = $1 WHERE id = $2', [html, id])
+  return res.rowCount ?? 0
+}
+
+/** Find a non-deleted card whose source_text matches exactly. */
+export async function findCardBySourceText(sourceText: string): Promise<TranslationCard | null> {
+  const db = openDb()
+  const { rows } = await db.query<TranslationCard>(
+    `SELECT ${CARD_COLS} FROM cards WHERE source_text = $1 AND deleted = 0`,
+    [sourceText],
+  )
+  return rows[0] ?? null
+}
+
+/**
+ * Replace a card's source_text + target_text and clear examples_html so the
+ * card is ready for re-enrichment. Returns the number of rows updated (0 if
+ * the id is missing or already deleted).
+ */
+export async function replaceCardContent(
+  id: number,
+  sourceText: string,
+  targetText: string,
+): Promise<number> {
+  const db = openDb()
+  const res = await db.query(
+    `UPDATE cards
+     SET source_text = $1, target_text = $2, examples_html = NULL
+     WHERE id = $3 AND deleted = 0`,
+    [sourceText, targetText, id],
+  )
+  return res.rowCount ?? 0
 }
 
 // ─── Learning ────────────────────────────────────────────────────────────────
@@ -160,115 +180,116 @@ export function updateExamplesHtml(id: number, html: string): number {
  * morning cron (9:00 Europe/Berlin), otherwise 2 — so the user never gets a
  * same-day notification.
  */
-export function startLearning(id: number, days: number): number {
+export async function startLearning(id: number, days: number): Promise<number> {
   const db = openDb()
-  const info = db
-    .prepare(
-      `UPDATE cards SET learning_status = 'short', learning_days_remaining = ?
-       WHERE id = ? AND deleted = 0`,
-    )
-    .run(days, id)
-  return info.changes
+  const res = await db.query(
+    `UPDATE cards SET learning_status = 'short', learning_days_remaining = $1
+     WHERE id = $2 AND deleted = 0`,
+    [days, id],
+  )
+  return res.rowCount ?? 0
 }
 
-export function resetLearning(id: number): number {
+export async function resetLearning(id: number): Promise<number> {
   const db = openDb()
-  const info = db
-    .prepare(
-      `UPDATE cards SET learning_status = NULL, learning_days_remaining = NULL
-       WHERE id = ? AND deleted = 0`,
-    )
-    .run(id)
-  return info.changes
+  const res = await db.query(
+    `UPDATE cards SET learning_status = NULL, learning_days_remaining = NULL
+     WHERE id = $1 AND deleted = 0`,
+    [id],
+  )
+  return res.rowCount ?? 0
 }
 
 /** Cards in a given learning status that are due today (days=0). */
-export function listLearningReady(status: 'short' | 'long'): TranslationCard[] {
+export async function listLearningReady(status: 'short' | 'long'): Promise<TranslationCard[]> {
   const db = openDb()
-  return db
-    .prepare(
-      `SELECT ${CARD_COLS} FROM cards
-       WHERE learning_status = ? AND learning_days_remaining = 0 AND deleted = 0
-       ORDER BY id DESC`,
-    )
-    .all(status) as TranslationCard[]
+  const { rows } = await db.query<TranslationCard>(
+    `SELECT ${CARD_COLS} FROM cards
+     WHERE learning_status = $1 AND learning_days_remaining = 0 AND deleted = 0
+     ORDER BY id DESC`,
+    [status],
+  )
+  return rows
 }
 
 /** 9 AM morning job, step 1: decrement every active countdown by 1 (floor at 0). */
-export function decrementCountdowns(): number {
+export async function decrementCountdowns(): Promise<number> {
   const db = openDb()
-  const info = db
-    .prepare(
-      `UPDATE cards
-       SET learning_days_remaining = learning_days_remaining - 1
-       WHERE learning_days_remaining > 0
-         AND learning_status IS NOT NULL
-         AND deleted = 0`,
-    )
-    .run()
-  return info.changes
+  const res = await db.query(
+    `UPDATE cards
+     SET learning_days_remaining = learning_days_remaining - 1
+     WHERE learning_days_remaining > 0
+       AND learning_status IS NOT NULL
+       AND deleted = 0`,
+  )
+  return res.rowCount ?? 0
 }
 
 /** Cards ready to notify (days=0) grouped by status. */
-export function listReadyToNotify(): { short: number; long: number } {
+export async function listReadyToNotify(): Promise<{ short: number; long: number }> {
   const db = openDb()
-  const rows = db
-    .prepare(
-      `SELECT learning_status AS status, COUNT(*) AS n FROM cards
-       WHERE learning_days_remaining = 0 AND learning_status IS NOT NULL AND deleted = 0
-       GROUP BY learning_status`,
-    )
-    .all() as Array<{ status: 'short' | 'long'; n: number }>
+  const { rows } = await db.query<{ status: 'short' | 'long'; n: string }>(
+    `SELECT learning_status AS status, COUNT(*) AS n FROM cards
+     WHERE learning_days_remaining = 0 AND learning_status IS NOT NULL AND deleted = 0
+     GROUP BY learning_status`,
+  )
   const out = { short: 0, long: 0 }
-  for (const r of rows) out[r.status] = r.n
+  for (const r of rows) out[r.status] = Number(r.n)
   return out
 }
 
 /** 11 PM evening job: transition short→long (7 days) and long→null (cleared). */
-export function transitionReady(): { shortToLong: number; longToNull: number } {
+export async function transitionReady(): Promise<{ shortToLong: number; longToNull: number }> {
   const db = openDb()
-  const shortToLong = db
-    .prepare(
+  const client = await db.connect()
+  try {
+    await client.query('BEGIN')
+    const s = await client.query(
       `UPDATE cards
        SET learning_status = 'long', learning_days_remaining = 7
        WHERE learning_status = 'short' AND learning_days_remaining = 0 AND deleted = 0`,
     )
-    .run().changes
-  const longToNull = db
-    .prepare(
+    const l = await client.query(
       `UPDATE cards
        SET learning_status = NULL, learning_days_remaining = NULL
        WHERE learning_status = 'long' AND learning_days_remaining = 0 AND deleted = 0`,
     )
-    .run().changes
-  return { shortToLong, longToNull }
+    await client.query('COMMIT')
+    return { shortToLong: s.rowCount ?? 0, longToNull: l.rowCount ?? 0 }
+  } catch (err) {
+    await client.query('ROLLBACK')
+    throw err
+  } finally {
+    client.release()
+  }
 }
 
 // ─── Push subscriptions ──────────────────────────────────────────────────────
 
-export function upsertPushSubscription(sub: PushSubscriptionRow): void {
+export async function upsertPushSubscription(sub: PushSubscriptionRow): Promise<void> {
   const db = openDb()
-  db.prepare(
+  await db.query(
     `INSERT INTO push_subscriptions (endpoint, p256dh, auth)
-     VALUES (?, ?, ?)
+     VALUES ($1, $2, $3)
      ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth`,
-  ).run(sub.endpoint, sub.p256dh, sub.auth)
+    [sub.endpoint, sub.p256dh, sub.auth],
+  )
 }
 
-export function removePushSubscription(endpoint: string): number {
+export async function removePushSubscription(endpoint: string): Promise<number> {
   const db = openDb()
-  return db
-    .prepare('DELETE FROM push_subscriptions WHERE endpoint = ?')
-    .run(endpoint).changes
+  const res = await db.query('DELETE FROM push_subscriptions WHERE endpoint = $1', [endpoint])
+  return res.rowCount ?? 0
 }
 
-export function listPushSubscriptions(): PushSubscriptionRow[] {
+export async function listPushSubscriptions(): Promise<PushSubscriptionRow[]> {
   const db = openDb()
-  return db
-    .prepare('SELECT endpoint, p256dh, auth FROM push_subscriptions')
-    .all() as PushSubscriptionRow[]
+  const { rows } = await db.query<PushSubscriptionRow>(
+    'SELECT endpoint, p256dh, auth FROM push_subscriptions',
+  )
+  return rows
 }
 
-export function getDbPath(): string {
-  return DB_PATH
+export function getDbUrl(): string {
+  return DATABASE_URL!.replace(/:\/\/([^:]+):([^@]+)@/, '://$1:***@')
 }
