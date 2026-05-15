@@ -1,8 +1,15 @@
-import { NavLink } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
 import { API_BASE } from '../types'
 
 type PermissionState = 'default' | 'granted' | 'denied' | 'unsupported'
+
+const PAGES = [
+  { label: 'Все карточки', path: '/' },
+  { label: 'Посмотреть сегодня', path: '/learning' },
+  { label: 'Выражения', path: '/expressions' },
+  { label: 'Избранное', path: '/favorites' },
+] as const
 
 function urlBase64ToUint8Array(base64String: string): Uint8Array {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
@@ -75,6 +82,32 @@ export default function Header() {
     getExistingSubscription().then((s) => setSubscribed(!!s))
   }, [])
 
+  const location = useLocation()
+  const current = PAGES.find((p) => p.path === location.pathname) ?? PAGES[0]
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onDown = (e: MouseEvent) => {
+      if (!menuRef.current?.contains(e.target as Node)) setMenuOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [menuOpen])
+
+  // Close the menu whenever the route changes (e.g. user navigated via dropdown).
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
+
   const handleBellClick = async () => {
     if (permission === 'unsupported') return
     if (subscribed) {
@@ -102,15 +135,29 @@ export default function Header() {
 
   return (
     <header className="app-header">
-      <nav className="header-tabs">
-        <NavLink
-          to="/learning"
-          className={({ isActive }) => `header-tab${isActive ? ' active' : ''}`}
-          end
+      <div className="header-tabs" ref={menuRef}>
+        <button
+          type="button"
+          className={`header-tab dropdown-trigger${menuOpen ? ' open' : ''}`}
+          aria-haspopup="menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((o) => !o)}
         >
-          Посмотреть сегодня
-        </NavLink>
-      </nav>
+          {current.label}
+          <span className="dropdown-caret" aria-hidden="true">▾</span>
+        </button>
+        {menuOpen && (
+          <ul className="dropdown-menu" role="menu">
+            {PAGES.filter((p) => p.path !== current.path).map((p) => (
+              <li key={p.path} role="none">
+                <NavLink to={p.path} role="menuitem" onClick={() => setMenuOpen(false)}>
+                  {p.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
       <button
         className={`bell-btn${subscribed ? ' active' : ''}`}
         type="button"

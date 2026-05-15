@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import LearningButton from './components/LearningButton'
-import { API_BASE, type LearningStatus, type TranslationCard } from './types'
+import CategoryButton from './components/CategoryButton'
+import { API_BASE, type CardCategory, type LearningStatus, type TranslationCard } from './types'
 
 const STORAGE_KEY = 'deutsch-uben:last-card-index'
 
@@ -215,6 +216,12 @@ function App() {
     )
   }, [])
 
+  const updateCategory = useCallback((cardId: number, next: CardCategory) => {
+    setAllCards((prev) =>
+      prev.map((c) => (c.id === cardId ? { ...c, category: next } : c)),
+    )
+  }, [])
+
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') goNext()
@@ -328,6 +335,18 @@ function App() {
             cardId={activeCard.id}
             status={activeCard.learning_status}
             onStatusChange={(next) => updateLearningStatus(activeCard.id, next)}
+          />
+          <CategoryButton
+            cardId={activeCard.id}
+            target="ausdruck"
+            current={activeCard.category}
+            onCategoryChange={(next) => updateCategory(activeCard.id, next)}
+          />
+          <CategoryButton
+            cardId={activeCard.id}
+            target="favorite"
+            current={activeCard.category}
+            onCategoryChange={(next) => updateCategory(activeCard.id, next)}
           />
           <button
             className="delete-btn"

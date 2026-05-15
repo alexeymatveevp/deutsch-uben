@@ -607,3 +607,106 @@ button {
   background: rgba(56, 89, 137, 0.9);
   border-color: rgba(125, 168, 219, 0.7);
 }
+
+/* ─── Category toggle buttons (stacked under .learning-btn) ─────────────── */
+
+.category-btn {
+  position: absolute;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 999px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.1s ease;
+  z-index: 10;
+}
+
+.category-btn.ausdruck { top: 64px; }
+.category-btn.favorite { top: 116px; }
+
+.category-btn:hover:not(.busy) {
+  color: #e2e8f0;
+  border-color: rgba(148, 163, 184, 0.8);
+}
+
+.category-btn.active.ausdruck {
+  color: #60a5fa;
+  border-color: rgba(96, 165, 250, 0.6);
+  background: rgba(96, 165, 250, 0.15);
+  transform: scale(0.96);
+}
+
+.category-btn.active.favorite {
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.6);
+  background: rgba(251, 191, 36, 0.15);
+  transform: scale(0.96);
+}
+
+.category-btn.busy {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* ─── Header page-switcher dropdown ─────────────────────────────────────── */
+
+.header-tabs {
+  position: relative;
+}
+
+.dropdown-trigger {
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+}
+
+.dropdown-caret {
+  font-size: 10px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.dropdown-trigger.open .dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  min-width: 220px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  z-index: 40;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(30, 41, 59, 0.8);
+  color: #f1f5f9;
+}

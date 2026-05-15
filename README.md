@@ -60,3 +60,12 @@ node scripts/enrich-data.mjs --dry-run
 ```
 
 Progress is saved after each item, so the script can be interrupted and resumed safely.
+
+## Database migrations
+
+The Postgres schema is the source of truth — the server no longer bootstraps tables. When the schema changes, run the migration once against `$DATABASE_URL`. Applied migrations to date:
+
+```sql
+-- Category column for the tag-style filter pages (Выражения / Избранное).
+ALTER TABLE cards ADD COLUMN category TEXT;
+```

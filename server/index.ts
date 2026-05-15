@@ -7,14 +7,17 @@ import {
   findCardBySourceText,
   getCardById,
   getDbUrl,
+  listByCategory,
   listCards,
   listLearningReady,
   openDb,
   removePushSubscription,
   replaceCardContent,
   resetLearning,
+  setCategory,
   startLearning,
   upsertPushSubscription,
+  type CardCategory,
 } from './db.js'
 import { enrichCardById, translateToRussian } from './enrich.js'
 import { sendReviewPush } from './push.js'
@@ -187,6 +190,38 @@ app.delete('/api/cards/:id/learning', async (req, res) => {
     return
   }
   res.json({ learning_status: null, learning_days_remaining: null })
+})
+
+app.get('/api/cards/category', async (req, res) => {
+  const value = req.query.value
+  if (value !== 'ausdruck' && value !== 'favorite') {
+    res.status(400).json({ error: 'value must be ausdruck or favorite' })
+    return
+  }
+  res.json(await listByCategory(value))
+})
+
+app.post('/api/cards/:id/category', async (req, res) => {
+  const id = Number(req.params.id)
+  if (!Number.isInteger(id) || id <= 0) {
+    res.status(400).json({ error: 'invalid id' })
+    return
+  }
+  const body = req.body as { category?: unknown }
+  const raw = body?.category
+  let category: CardCategory
+  if (raw === null) category = null
+  else if (raw === 'ausdruck' || raw === 'favorite') category = raw
+  else {
+    res.status(400).json({ error: 'category must be ausdruck, favorite, or null' })
+    return
+  }
+  const changes = await setCategory(id, category)
+  if (changes === 0) {
+    res.status(404).json({ error: 'not found' })
+    return
+  }
+  res.json({ category })
 })
 
 app.get('/api/cards/learning', async (req, res) => {

@@ -1,4 +1,5 @@
 export type LearningStatus = 'short' | 'long' | null
+export type CardCategory = 'ausdruck' | 'favorite' | null
 
 export type TranslationCard = {
   id: number
@@ -7,6 +8,7 @@ export type TranslationCard = {
   examples_html: string | null
   learning_status: LearningStatus
   learning_days_remaining: number | null
+  category: CardCategory
 }
 
 export const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? ''

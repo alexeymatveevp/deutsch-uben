@@ -1,6 +1,7 @@
 import { Pool } from 'pg'
 
 export type LearningStatus = 'short' | 'long' | null
+export type CardCategory = 'ausdruck' | 'favorite' | null
 
 export type TranslationCard = {
   id: number
@@ -9,6 +10,7 @@ export type TranslationCard = {
   examples_html: string | null
   learning_status: LearningStatus
   learning_days_remaining: number | null
+  category: CardCategory
 }
 
 export type ScrapedPair = {
@@ -43,7 +45,7 @@ export async function closeDb(): Promise<void> {
 }
 
 const CARD_COLS =
-  'id, source_text, target_text, examples_html, learning_status, learning_days_remaining'
+  'id, source_text, target_text, examples_html, learning_status, learning_days_remaining, category'
 
 export async function listCards(): Promise<TranslationCard[]> {
   const db = openDb()
@@ -262,6 +264,32 @@ export async function transitionReady(): Promise<{ shortToLong: number; longToNu
   } finally {
     client.release()
   }
+}
+
+// ─── Category ────────────────────────────────────────────────────────────────
+
+/** Set or clear a card's category. Mutually exclusive — `null` clears. */
+export async function setCategory(id: number, category: CardCategory): Promise<number> {
+  const db = openDb()
+  const res = await db.query(
+    `UPDATE cards SET category = $1 WHERE id = $2 AND deleted = 0`,
+    [category, id],
+  )
+  return res.rowCount ?? 0
+}
+
+/** List non-deleted cards with the given category. */
+export async function listByCategory(
+  category: 'ausdruck' | 'favorite',
+): Promise<TranslationCard[]> {
+  const db = openDb()
+  const { rows } = await db.query<TranslationCard>(
+    `SELECT ${CARD_COLS} FROM cards
+     WHERE category = $1 AND deleted = 0
+     ORDER BY id DESC`,
+    [category],
+  )
+  return rows
 }
 
 // ─── Push subscriptions ──────────────────────────────────────────────────────
