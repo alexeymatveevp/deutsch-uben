@@ -97,7 +97,7 @@ app.post('/api/cards/:id/regenerate', async (req, res) => {
   try {
     const { card, result } = await enrichCardById(id)
     if (result.skipped) {
-      res.status(503).json({ error: 'enrichment unavailable (OPENAI_API_KEY not set)' })
+      res.status(503).json({ error: 'enrichment unavailable (no OPENROUTER_API_KEY or OPENAI_API_KEY set)' })
       return
     }
     if (!card) {
@@ -153,7 +153,7 @@ app.post('/api/cards/:id/replace', async (req, res) => {
     return
   }
   if (target === null) {
-    res.status(503).json({ error: 'translation unavailable (OPENAI_API_KEY not set)' })
+    res.status(503).json({ error: 'translation unavailable (no OPENROUTER_API_KEY or OPENAI_API_KEY set)' })
     return
   }
 

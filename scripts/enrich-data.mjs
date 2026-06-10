@@ -14,12 +14,16 @@
  *
  * Programmatic usage (from scrape-public-collection-by-link.mjs):
  *   import { enrichAllMissing } from './enrich-data.mjs'
- *   await enrichAllMissing('gpt-4o')
+ *   await enrichAllMissing()
+ *
+ * Provider selection: OPENROUTER_API_KEY (if set) wins over OPENAI_API_KEY.
+ * Default model: 'openrouter/free' (or OPENROUTER_MODEL) on OpenRouter,
+ * 'gpt-4o' on OpenAI.
  *
  * Options:
  *   --limit N        Enrich the first N cards without examples_html
  *   --ids 1109,1108  Enrich specific cards by ID
- *   --model NAME     OpenAI model to use (default: gpt-4o)
+ *   --model NAME     Model override; must match the active provider
  *   --dry-run        Print the prompt for the first card and exit
  */
 
@@ -34,7 +38,12 @@ export { enrichCardsByIds, enrichAllMissing, buildPrompt }
 // ─── Argument parsing ─────────────────────────────────────────────────────────
 function parseArgs() {
   const args = process.argv.slice(2)
-  const opts = { limit: 0, ids: /** @type {number[]} */ ([]), model: 'gpt-4o', dryRun: false }
+  const opts = {
+    limit: 0,
+    ids: /** @type {number[]} */ ([]),
+    model: /** @type {string | undefined} */ (undefined),
+    dryRun: false,
+  }
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--limit' && args[i + 1]) opts.limit = parseInt(args[++i], 10)
     else if (args[i] === '--ids' && args[i + 1]) opts.ids = args[++i].split(',').map(Number)
@@ -79,8 +88,8 @@ async function main() {
     return
   }
 
-  if (!process.env.OPENAI_API_KEY) {
-    console.error('ERROR: Set OPENAI_API_KEY environment variable.')
+  if (!process.env.OPENROUTER_API_KEY && !process.env.OPENAI_API_KEY) {
+    console.error('ERROR: Set OPENROUTER_API_KEY or OPENAI_API_KEY environment variable.')
     process.exit(1)
   }
 

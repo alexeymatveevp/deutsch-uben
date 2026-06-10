@@ -9,6 +9,33 @@ import {
 
 export type EnrichResult = { processed: number; failed: number; skipped: boolean }
 
+type Provider = { client: OpenAI; model: string; name: string }
+
+/**
+ * Pick the LLM provider from the environment. OpenRouter wins when
+ * OPENROUTER_API_KEY is set; otherwise falls back to OpenAI. Returns
+ * null when neither key is configured.
+ *
+ * An explicit `model` argument overrides the provider default, so model
+ * IDs must match the active provider (e.g. 'openrouter/free' vs 'gpt-4o').
+ */
+export function getProvider(model?: string): Provider | null {
+  if (process.env.OPENROUTER_API_KEY) {
+    return {
+      name: 'openrouter',
+      client: new OpenAI({
+        baseURL: 'https://openrouter.ai/api/v1',
+        apiKey: process.env.OPENROUTER_API_KEY,
+      }),
+      model: model ?? process.env.OPENROUTER_MODEL ?? 'openrouter/free',
+    }
+  }
+  if (process.env.OPENAI_API_KEY) {
+    return { name: 'openai', client: new OpenAI(), model: model ?? 'gpt-4o' }
+  }
+  return null
+}
+
 export function buildPrompt(sourceText: string, targetText: string): string {
   return `Du bist ein hilfreicher Deutsch-Tutor. Der Benutzer lernt das folgende deutsche Wort oder den folgenden Ausdruck:
 
@@ -32,15 +59,16 @@ Antworte nur auf Deutsch. Benutze Markdown-Formatierung.`
 
 export async function enrichItems(
   items: TranslationCard[],
-  model: string,
+  model?: string,
 ): Promise<EnrichResult> {
   if (items.length === 0) return { processed: 0, failed: 0, skipped: false }
-  if (!process.env.OPENAI_API_KEY) {
-    console.error('OPENAI_API_KEY not set — skipping enrichment.')
+  const provider = getProvider(model)
+  if (!provider) {
+    console.error('Neither OPENROUTER_API_KEY nor OPENAI_API_KEY set — skipping enrichment.')
     return { processed: 0, failed: 0, skipped: true }
   }
+  console.error(`Using ${provider.name} (${provider.model})`)
 
-  const openai = new OpenAI()
   let processed = 0
   let failed = 0
 
@@ -49,8 +77,8 @@ export async function enrichItems(
     console.error(`[enrich ${i + 1}/${items.length}] ID ${item.id}: "${item.source_text}"…`)
 
     try {
-      const response = await openai.chat.completions.create({
-        model,
+      const response = await provider.client.chat.completions.create({
+        model: provider.model,
         messages: [{ role: 'user', content: buildPrompt(item.source_text, item.target_text) }],
         temperature: 0.7,
         max_tokens: 1000,
@@ -78,7 +106,7 @@ export async function enrichItems(
 
 export async function enrichCardsByIds(
   ids: number[],
-  model = 'gpt-4o',
+  model?: string,
 ): Promise<EnrichResult> {
   if (!ids || ids.length === 0) return { processed: 0, failed: 0, skipped: false }
   const items = await listCardsWithoutExamples({ ids })
@@ -89,7 +117,7 @@ export async function enrichCardsByIds(
   return enrichItems(items, model)
 }
 
-export async function enrichAllMissing(model = 'gpt-4o'): Promise<EnrichResult> {
+export async function enrichAllMissing(model?: string): Promise<EnrichResult> {
   const items = await listCardsWithoutExamples()
   if (items.length === 0) {
     console.error('No cards missing examples_html.')
@@ -102,11 +130,11 @@ export async function enrichAllMissing(model = 'gpt-4o'): Promise<EnrichResult> 
 /**
  * Regenerate (or generate) examples for a single card and return the
  * fresh row. Returns null if the card is missing/deleted or enrichment
- * failed. `skipped` means OPENAI_API_KEY is not configured.
+ * failed. `skipped` means no API key is configured.
  */
 export async function enrichCardById(
   id: number,
-  model = 'gpt-4o',
+  model?: string,
 ): Promise<{ card: TranslationCard | null; result: EnrichResult }> {
   const result = await enrichCardsByIds([id], model)
   const card = result.processed > 0 ? await getCardById(id) : null
@@ -114,17 +142,18 @@ export async function enrichCardById(
 }
 
 /**
- * Translate a German word/phrase to Russian via OpenAI. Returns null if
- * OPENAI_API_KEY is not configured or the API returns no usable text.
+ * Translate a German word/phrase to Russian via the configured LLM
+ * provider. Returns null if no API key is configured or the API returns
+ * no usable text.
  */
 export async function translateToRussian(
   germanText: string,
-  model = 'gpt-4o',
+  model?: string,
 ): Promise<string | null> {
-  if (!process.env.OPENAI_API_KEY) return null
-  const openai = new OpenAI()
-  const response = await openai.chat.completions.create({
-    model,
+  const provider = getProvider(model)
+  if (!provider) return null
+  const response = await provider.client.chat.completions.create({
+    model: provider.model,
     messages: [
       {
         role: 'user',

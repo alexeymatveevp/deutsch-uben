@@ -162,7 +162,7 @@ async function main() {
   }
 
   console.error('\n── Enriching missing cards ──')
-  const { processed, failed, skipped } = await enrichAllMissing('gpt-4o')
+  const { processed, failed, skipped } = await enrichAllMissing()
   if (!skipped) {
     console.error(`  Enriched: ${processed}, failed: ${failed}`)
   }
