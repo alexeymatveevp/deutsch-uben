@@ -7,6 +7,7 @@ type PermissionState = 'default' | 'granted' | 'denied' | 'unsupported'
 const PAGES = [
   { label: 'Все карточки', path: '/' },
   { label: 'Посмотреть сегодня', path: '/learning' },
+  { label: 'В обучении', path: '/studying' },
   { label: 'Выражения', path: '/expressions' },
   { label: 'Избранное', path: '/favorites' },
 ] as const

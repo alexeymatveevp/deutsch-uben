@@ -202,6 +202,34 @@ export async function resetLearning(id: number): Promise<number> {
   return res.rowCount ?? 0
 }
 
+export type StudyingCard = TranslationCard & { learning_days_ago: number }
+
+/**
+ * Every card currently in learning (short or long), with an estimated
+ * "days in learning" derived from the countdown — no stored start date:
+ *   short: countdown starts at 1   →  days_ago = 1 - days_remaining
+ *   long:  starts at 7 after the ~1-day short phase  →  days_ago = 8 - days_remaining
+ * Clamped at 0 (legacy cards started at 2). Sorted ascending by days_ago
+ * (most recently added first), id as a stable tie-breaker.
+ */
+export async function listAllLearning(): Promise<StudyingCard[]> {
+  const db = openDb()
+  const { rows } = await db.query<StudyingCard>(
+    `SELECT ${CARD_COLS},
+       GREATEST(0,
+         CASE learning_status
+           WHEN 'short' THEN 1 - learning_days_remaining
+           WHEN 'long'  THEN 8 - learning_days_remaining
+           ELSE 0
+         END
+       )::int AS learning_days_ago
+     FROM cards
+     WHERE learning_status IS NOT NULL AND deleted = 0
+     ORDER BY learning_days_ago ASC, id DESC`,
+  )
+  return rows
+}
+
 /** Cards in a given learning status that are due today (days=0). */
 export async function listLearningReady(status: 'short' | 'long'): Promise<TranslationCard[]> {
   const db = openDb()

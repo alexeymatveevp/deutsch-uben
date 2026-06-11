@@ -11,4 +11,6 @@ export type TranslationCard = {
   category: CardCategory
 }
 
+export type StudyingCard = TranslationCard & { learning_days_ago: number }
+
 export const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? ''

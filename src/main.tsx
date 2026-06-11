@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import App from './App'
 import LearningList from './pages/LearningList'
+import StudyingList from './pages/StudyingList'
 import CategoryList from './pages/CategoryList'
 import Admin from './pages/Admin'
 import AppShell from './components/AppShell'
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route element={<AppShell />}>
           <Route path="/" element={<App />} />
           <Route path="/learning" element={<LearningList />} />
+          <Route path="/studying" element={<StudyingList />} />
           <Route path="/learning/short" element={<Navigate to="/learning" replace />} />
           <Route path="/learning/long" element={<Navigate to="/learning" replace />} />
           <Route

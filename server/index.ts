@@ -7,6 +7,7 @@ import {
   findCardBySourceText,
   getCardById,
   getDbUrl,
+  listAllLearning,
   listByCategory,
   listCards,
   listLearningReady,
@@ -231,6 +232,11 @@ app.get('/api/cards/learning', async (req, res) => {
     return
   }
   res.json(await listLearningReady(status))
+})
+
+// All cards currently in learning (short + long), with derived days-in-learning.
+app.get('/api/cards/learning/all', async (_req, res) => {
+  res.json(await listAllLearning())
 })
 
 // ─── Push subscriptions ──────────────────────────────────────────────────────

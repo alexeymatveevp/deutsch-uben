@@ -504,6 +504,52 @@ button {
   font-size: 15px;
 }
 
+/* ─── Studying (В обучении) table ──────────────────────────────────────── */
+
+.studying-table {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.studying-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 18px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.studying-row:hover,
+.studying-row:focus-visible {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(148, 163, 184, 0.4);
+  outline: none;
+}
+
+.studying-head,
+.studying-head:hover {
+  cursor: default;
+  background: transparent;
+  border-color: transparent;
+  padding-bottom: 2px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.studying-days {
+  text-align: right;
+  color: #e2e8f0;
+  font-variant-numeric: tabular-nums;
+}
+
 /* ─── Admin page ──────────────────────────────────────────────────────── */
 
 .admin-page {
