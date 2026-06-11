@@ -9,8 +9,9 @@
  *   tsx scripts/scrape-public-collection-by-link.mjs            # scrape the URLS list below
  *   tsx scripts/scrape-public-collection-by-link.mjs <URL>      # scrape just that URL
  *
- * Scheduling (cron on the VPS):
- *   0 5 * * *  cd /srv/deutsch-uben && /usr/bin/env npx tsx scripts/scrape-public-collection-by-link.mjs >> /var/log/deutsch-uben-scrape.log 2>&1
+ * Scheduling (systemd timer on the VPS): runs hourly at :30 past the hour
+ * (deutsch-uben-scrape.timer). The :30 offset keeps it from racing the
+ * 08:00 morning learning job.
  *
  * New pairs get IDs assigned as MAX(id) + 1 so that "higher id = newer".
  * Duplicates (by source_text) are skipped — including rows that were
@@ -23,20 +24,12 @@ import { insertCardsMissing, startLearning, closeDb, getDbUrl } from '../server/
 import { enrichAllMissing } from './enrich-data.mjs'
 
 /**
- * Starting countdown for a freshly-scraped card. Matches the server-side
- * logic in server/index.ts so a card inserted before today's 9 AM
- * Europe/Berlin cron doesn't get decremented to 0 and notified the same
- * day — user wants the reminder *tomorrow*.
+ * Starting countdown for a freshly-scraped card. Always 1 so the very next
+ * 08:00 morning job decrements it to 0 and notifies — the user wants the
+ * reminder at the next morning pass, even if the card was scraped only
+ * hours earlier the same day.
  */
-function computeStartingLearningDays() {
-  const hourStr = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'Europe/Berlin',
-    hour: 'numeric',
-    hour12: false,
-  }).format(new Date())
-  const hour = Number(hourStr)
-  return hour < 9 ? 2 : 1
-}
+const STARTING_LEARNING_DAYS = 1
 
 // ─── Hardcoded URL list for scheduled runs ────────────────────────────────────
 // Populate these with the collection URLs to scrape daily.
@@ -122,7 +115,7 @@ async function main() {
   let totalSkipped = 0
   let totalLearning = 0
   const failures = []
-  const learningDays = computeStartingLearningDays()
+  const learningDays = STARTING_LEARNING_DAYS
 
   try {
     for (const url of urls) {
