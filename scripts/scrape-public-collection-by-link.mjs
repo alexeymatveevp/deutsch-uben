@@ -55,11 +55,11 @@ function parseArgs() {
 // ─── Scrape one page (browser-agnostic) ───────────────────────────────────────
 async function scrapePage(page, url) {
   console.error(`\n→ ${url}`)
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 })
+  await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 })
   await page.waitForTimeout(2000)
 
-  await page.waitForSelector('li.record-item', { timeout: 15000 }).catch(() => {
-    console.error('  Warning: no li.record-item found within 15 s — page may not have loaded correctly.')
+  await page.waitForSelector('li.record-item', { timeout: 60000 }).catch(() => {
+    console.error('  Warning: no li.record-item found within 60 s — page may not have loaded correctly.')
   })
 
   const pairs = await page.evaluate(() => {
