@@ -22,6 +22,7 @@ import {
 } from './db.js'
 import { enrichCardById, translateToRussian } from './enrich.js'
 import { sendReviewPush } from './push.js'
+import { getScrapeState, startScrape } from './scrape-job.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const PORT = Number(process.env.PORT ?? 3001)
@@ -244,6 +245,21 @@ app.get('/api/cards/learning', async (req, res) => {
 // All cards currently in learning (short + long), with derived days-in-learning.
 app.get('/api/cards/learning/all', async (_req, res) => {
   res.json(await listAllLearning())
+})
+
+// ─── Scrape (fetch new cards from the collection URLs) ───────────────────────
+// Same job the hourly deutsch-uben-scrape timer runs, triggered from the UI.
+
+app.post('/api/scrape', (_req, res) => {
+  if (!startScrape()) {
+    res.status(409).json({ error: 'scrape already running', state: getScrapeState() })
+    return
+  }
+  res.status(202).json(getScrapeState())
+})
+
+app.get('/api/scrape', (_req, res) => {
+  res.json(getScrapeState())
 })
 
 // ─── Push subscriptions ──────────────────────────────────────────────────────

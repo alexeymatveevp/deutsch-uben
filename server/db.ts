@@ -13,9 +13,29 @@ export type TranslationCard = {
   category: CardCategory
 }
 
-export type ScrapedPair = {
+/** One entry of a Yandex Translate collection, as its JSON API reports it. */
+export type ScrapedRecord = {
   source_text: string
   target_text: string
+  /** Collection-side creation time, unix seconds (fractional). */
+  created_at: number
+}
+
+export type SyncResult = {
+  /** Brand-new texts inserted. */
+  inserted: number
+  /**
+   * Texts that already existed but were re-added to the collection later
+   * than the copy we had: the old row is dropped and a fresh one inserted
+   * with a new (highest) id so it surfaces at the top of the list again.
+   */
+  readded: number
+  /** Already present and unchanged. */
+  skipped: number
+  /** Ids of all rows inserted this run (new + re-added), for starting learning. */
+  insertedIds: number[]
+  /** What was inserted, so the caller can attribute it per collection. */
+  changes: { id: number; source_text: string; kind: 'new' | 'readded' }[]
 }
 
 export type PushSubscriptionRow = {
@@ -73,39 +93,100 @@ export async function deleteCardById(id: number): Promise<number> {
   return res.rowCount ?? 0
 }
 
-export async function insertCardsMissing(
-  pairs: ScrapedPair[],
-): Promise<{ inserted: number; skipped: number; insertedIds: number[] }> {
+/**
+ * Adds the `source_created_at` column used to tell a re-added collection
+ * entry from one we already imported. Idempotent; the scrape calls it on
+ * every run because the schema has no migration mechanism otherwise.
+ */
+export async function ensureScrapeSchema(): Promise<void> {
+  const db = openDb()
+  await db.query('ALTER TABLE cards ADD COLUMN IF NOT EXISTS source_created_at double precision')
+}
+
+/**
+ * Bring the cards table in line with what the collections currently hold.
+ *
+ * Records must be sorted by created_at ascending: ids are handed out as
+ * MAX(id)+1 in that order, so the card added to the collection most
+ * recently gets the highest id and therefore shows first in the UI.
+ *
+ * Per record (matched on exact source_text):
+ * - not in the table → insert.
+ * - in the table with no source_created_at (imported before we tracked
+ *   it) → just remember the timestamp; nothing else changes.
+ * - in the table but the collection entry is newer than the stored
+ *   timestamp → the user removed and re-added it. Drop the old row
+ *   (whether live or soft-deleted) and insert it fresh with a new id.
+ *   Examples and category carry over so nothing has to be regenerated;
+ *   learning state does not, since the caller starts it like a new card.
+ * - otherwise → skip.
+ */
+export async function syncScrapedRecords(records: ScrapedRecord[]): Promise<SyncResult> {
   const db = openDb()
   const client = await db.connect()
+  // Timestamps are fractional seconds; treat sub-second drift as equal.
+  const EPSILON = 1
   try {
     await client.query('BEGIN')
     const maxRes = await client.query<{ max_id: number }>(
       'SELECT COALESCE(MAX(id), 0)::int AS max_id FROM cards',
     )
     let nextId = maxRes.rows[0].max_id + 1
-    let inserted = 0
-    let skipped = 0
-    const insertedIds: number[] = []
-    for (const row of pairs) {
-      const existsRes = await client.query(
-        'SELECT 1 FROM cards WHERE source_text = $1',
-        [row.source_text],
+    const result: SyncResult = { inserted: 0, readded: 0, skipped: 0, insertedIds: [], changes: [] }
+
+    for (const rec of records) {
+      const existing = await client.query<{
+        id: number
+        source_created_at: number | null
+        examples_html: string | null
+        category: CardCategory
+      }>(
+        'SELECT id, source_created_at, examples_html, category FROM cards WHERE source_text = $1',
+        [rec.source_text],
       )
-      if ((existsRes.rowCount ?? 0) > 0) {
-        skipped++
+      const row = existing.rows[0]
+
+      if (!row) {
+        await client.query(
+          `INSERT INTO cards (id, source_text, target_text, examples_html, source_created_at)
+           VALUES ($1, $2, $3, NULL, $4)`,
+          [nextId, rec.source_text, rec.target_text, rec.created_at],
+        )
+        result.insertedIds.push(nextId)
+        result.changes.push({ id: nextId, source_text: rec.source_text, kind: 'new' })
+        nextId++
+        result.inserted++
         continue
       }
-      await client.query(
-        'INSERT INTO cards (id, source_text, target_text, examples_html) VALUES ($1, $2, $3, NULL)',
-        [nextId, row.source_text, row.target_text],
-      )
-      insertedIds.push(nextId)
-      nextId++
-      inserted++
+
+      if (row.source_created_at === null) {
+        await client.query('UPDATE cards SET source_created_at = $2 WHERE id = $1', [
+          row.id,
+          rec.created_at,
+        ])
+        result.skipped++
+        continue
+      }
+
+      if (rec.created_at > row.source_created_at + EPSILON) {
+        await client.query('DELETE FROM cards WHERE id = $1', [row.id])
+        await client.query(
+          `INSERT INTO cards (id, source_text, target_text, examples_html, category, source_created_at)
+           VALUES ($1, $2, $3, $4, $5, $6)`,
+          [nextId, rec.source_text, rec.target_text, row.examples_html, row.category, rec.created_at],
+        )
+        result.insertedIds.push(nextId)
+        result.changes.push({ id: nextId, source_text: rec.source_text, kind: 'readded' })
+        nextId++
+        result.readded++
+        continue
+      }
+
+      result.skipped++
     }
+
     await client.query('COMMIT')
-    return { inserted, skipped, insertedIds }
+    return result
   } catch (err) {
     await client.query('ROLLBACK')
     throw err

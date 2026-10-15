@@ -33,14 +33,16 @@ function App() {
   const pageRef = useRef<HTMLDivElement>(null)
   const [searchParams, setSearchParams] = useSearchParams()
 
+  const fetchAllCards = useCallback(async (): Promise<TranslationCard[]> => {
+    const r = await fetch(`${API_BASE}/api/cards`)
+    if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
+    return r.json()
+  }, [])
+
   useEffect(() => {
     let cancelled = false
-    fetch(`${API_BASE}/api/cards`)
-      .then((r) => {
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
-        return r.json()
-      })
-      .then((data: TranslationCard[]) => {
+    fetchAllCards()
+      .then((data) => {
         if (cancelled) return
         setAllCards(data)
       })
@@ -54,7 +56,92 @@ function App() {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [fetchAllCards])
+
+  // ─── "Обновить карточки": run the scrape job and pull in what it found ──
+  type ScrapeState = {
+    status: 'idle' | 'running' | 'done' | 'error'
+    inserted: number | null
+    readded: number | null
+    enriched: number | null
+    enrichFailed: number | null
+    collections: { name: string; count: number; inserted: number; readded: number; error: string | null }[]
+    error: string | null
+  }
+  const [isScraping, setIsScraping] = useState(false)
+  const [scrapeNotice, setScrapeNotice] = useState<{ text: string; kind: 'ok' | 'err' } | null>(
+    null,
+  )
+
+  // Auto-dismiss the result notice; an error stays until the next run.
+  useEffect(() => {
+    if (!scrapeNotice || scrapeNotice.kind === 'err') return
+    const t = setTimeout(() => setScrapeNotice(null), 6000)
+    return () => clearTimeout(t)
+  }, [scrapeNotice])
+
+  const runScrape = useCallback(async () => {
+    if (isScraping) return
+    setIsScraping(true)
+    setScrapeNotice(null)
+    try {
+      const start = await fetch(`${API_BASE}/api/scrape`, { method: 'POST' })
+      // 409 means a run (ours or the hourly timer's) is already going — just
+      // attach to it and wait for the result like any other.
+      if (!start.ok && start.status !== 409) {
+        throw new Error(`${start.status} ${start.statusText}`)
+      }
+
+      // The job scrapes with a headless browser, then enriches; it can take
+      // a couple of minutes. Poll rather than hold the request open.
+      let state: ScrapeState
+      do {
+        await new Promise((resolve) => setTimeout(resolve, 2000))
+        const r = await fetch(`${API_BASE}/api/scrape`)
+        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
+        state = (await r.json()) as ScrapeState
+      } while (state.status === 'running')
+
+      if (state.status === 'error') {
+        throw new Error(state.error ?? 'scrape failed')
+      }
+
+      // Reload cards, keeping the user on the card they were looking at.
+      const fresh = await fetchAllCards()
+      const currentId = cards[index]?.id
+      setAllCards(fresh)
+      if (currentId !== undefined) {
+        const visible = newOnly ? [...fresh].sort((a, b) => b.id - a.id).slice(0, 100) : fresh
+        const idx = visible.findIndex((c) => c.id === currentId)
+        if (idx >= 0) setIndex(idx)
+      }
+
+      const inserted = state.inserted ?? 0
+      const readded = state.readded ?? 0
+      const parts: string[] = []
+      parts.push(inserted > 0 ? `Новых карточек: ${inserted}` : 'Новых карточек нет')
+      if (readded > 0) parts.push(`заново добавлено: ${readded}`)
+      // Per-collection breakdown: "31 March 2026: 135 (+6)", or the fetch
+      // error for a collection that could not be read.
+      const perCollection = state.collections.map((c) => {
+        if (c.error) return `${c.name}: ошибка (${c.error})`
+        const added = c.inserted + c.readded
+        return `${c.name}: ${c.count}${added > 0 ? ` (+${added})` : ''}`
+      })
+      if (perCollection.length > 0) parts.push(perCollection.join('; '))
+      if (state.enriched) parts.push(`примеров создано: ${state.enriched}`)
+      if (state.enrichFailed) parts.push(`без примеров: ${state.enrichFailed}`)
+      const hadProblem = Boolean(state.enrichFailed) || state.collections.some((c) => c.error)
+      setScrapeNotice({ text: parts.join(' · '), kind: hadProblem ? 'err' : 'ok' })
+    } catch (err) {
+      setScrapeNotice({
+        text: `Не удалось обновить: ${(err as Error).message || 'unknown error'}`,
+        kind: 'err',
+      })
+    } finally {
+      setIsScraping(false)
+    }
+  }, [isScraping, fetchAllCards, cards, index, newOnly])
 
   // Honor ?card=<id> on first load, falling back to localStorage or random.
   useEffect(() => {
@@ -319,6 +406,20 @@ function App() {
         >
           Новое
         </button>
+        <button
+          className={`scrape-badge${isScraping ? ' busy' : ''}`}
+          type="button"
+          onClick={runScrape}
+          disabled={isScraping}
+          title="Загрузить новые карточки из коллекций переводчика и создать для них примеры"
+        >
+          {isScraping ? 'Обновляем…' : 'Обновить карточки'}
+        </button>
+        {scrapeNotice && (
+          <div className={`scrape-notice ${scrapeNotice.kind}`} role="status">
+            {scrapeNotice.text}
+          </div>
+        )}
         <div className="card-wrapper">
           <button
             className={`card ${isFlipped ? 'is-flipped' : ''} ${
