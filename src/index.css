@@ -101,6 +101,40 @@ button {
   margin: 1.5em 0;
 }
 
+.examples-empty {
+  padding-bottom: 32px;
+  color: #94a3b8;
+  font-style: italic;
+  text-align: center;
+}
+
+.examples-error {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: min(900px, 92vw);
+  margin: 8px auto 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  border-left: 3px solid #f87171;
+  border-radius: 8px;
+  background: rgba(127, 29, 29, 0.25);
+  font-size: clamp(13px, 2vw, 15px);
+  line-height: 1.5;
+}
+
+.examples-error-title {
+  color: #fca5a5;
+  font-weight: 600;
+}
+
+.examples-error-detail {
+  color: #e2e8f0;
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
 .app-empty {
   color: #e2e8f0;
 }

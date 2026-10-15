@@ -7,9 +7,42 @@ import {
   type TranslationCard,
 } from './db.js'
 
-export type EnrichResult = { processed: number; failed: number; skipped: boolean }
+export type EnrichResult = {
+  processed: number
+  failed: number
+  skipped: boolean
+  /** Provider-reported reason for the last failure, for surfacing in the UI. */
+  error?: string
+}
 
-type Provider = { client: OpenAI; model: string; name: string }
+type Provider = {
+  client: OpenAI
+  model: string
+  name: string
+  /**
+   * OpenRouter-only: models to try, in order, if `model` fails (dead slug,
+   * rate limit, provider outage). Sent as the `models` routing param.
+   */
+  fallbackModels?: string[]
+}
+
+/**
+ * Default OpenRouter model. Claude Haiku 5.5 writes natural, idiomatic
+ * German, handles the nuance-between-synonyms part of the prompt well, and
+ * at ~$0.10/M input + $0.50/M output a card costs well under $0.001.
+ * Paid slugs don't get retired the way ":free" ones did (twice).
+ */
+export const DEFAULT_OPENROUTER_MODEL = 'anthropic/claude-haiku-5.5'
+
+/**
+ * Tried in order by OpenRouter when the primary model errors. Both are
+ * cheap, strong at German, and from different vendors than the primary so
+ * a single-provider outage doesn't take enrichment down.
+ */
+export const OPENROUTER_FALLBACK_MODELS = [
+  'google/gemini-2.5-flash',
+  'openai/gpt-5-mini',
+]
 
 /**
  * Pick the LLM provider from the environment. OpenRouter wins when
@@ -17,7 +50,9 @@ type Provider = { client: OpenAI; model: string; name: string }
  * null when neither key is configured.
  *
  * An explicit `model` argument overrides the provider default, so model
- * IDs must match the active provider (e.g. 'openrouter/free' vs 'gpt-4o').
+ * IDs must match the active provider (e.g. 'anthropic/claude-haiku-5.5' on
+ * OpenRouter vs 'gpt-4o' on OpenAI). Fallback routing only applies when
+ * no explicit model was requested.
  */
 export function getProvider(model?: string): Provider | null {
   if (process.env.OPENROUTER_API_KEY) {
@@ -27,13 +62,50 @@ export function getProvider(model?: string): Provider | null {
         baseURL: 'https://openrouter.ai/api/v1',
         apiKey: process.env.OPENROUTER_API_KEY,
       }),
-      model: model ?? process.env.OPENROUTER_MODEL ?? 'openrouter/free',
+      model: model ?? process.env.OPENROUTER_MODEL ?? DEFAULT_OPENROUTER_MODEL,
+      fallbackModels: model ? undefined : OPENROUTER_FALLBACK_MODELS,
     }
   }
   if (process.env.OPENAI_API_KEY) {
     return { name: 'openai', client: new OpenAI(), model: model ?? 'gpt-4o' }
   }
   return null
+}
+
+/**
+ * Extra request params the OpenAI SDK doesn't type but OpenRouter honours.
+ * `models` makes OpenRouter fall back to the next slug when the primary
+ * one is unavailable (404 retired, 429 upstream, 5xx) instead of failing.
+ */
+function routingParams(provider: Provider): Record<string, unknown> {
+  if (!provider.fallbackModels?.length) return {}
+  return { models: [provider.model, ...provider.fallbackModels] }
+}
+
+/**
+ * Turn a provider exception into something worth showing a user.
+ *
+ * OpenRouter often answers with a generic top-level message ("Provider
+ * returned error") and puts the actionable text in error.metadata.raw —
+ * e.g. "…is temporarily rate-limited upstream. Please retry shortly".
+ * Prefer the specific one, and keep the HTTP status as a prefix since it
+ * distinguishes a retryable 429 from a dead model slug (404).
+ */
+export function describeProviderError(err: unknown): string {
+  const e = err as {
+    status?: number
+    message?: string
+    error?: { message?: string; metadata?: { raw?: string } }
+  }
+  const generic = e?.error?.message ?? ''
+  const raw = e?.error?.metadata?.raw ?? ''
+  // metadata.raw wins when it says more than the top-level message does.
+  let detail = raw && !generic.includes(raw) ? raw : generic
+  if (!detail) detail = e?.message ?? String(err)
+  detail = detail.trim().replace(/\s+/g, ' ')
+  if (detail.length > 300) detail = `${detail.slice(0, 297)}…`
+  const status = typeof e?.status === 'number' ? `${e.status} ` : ''
+  return detail.startsWith(status.trim()) ? detail : `${status}${detail}`
 }
 
 export function buildPrompt(sourceText: string, targetText: string): string {
@@ -71,6 +143,7 @@ export async function enrichItems(
 
   let processed = 0
   let failed = 0
+  let error: string | undefined
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i]
@@ -81,27 +154,42 @@ export async function enrichItems(
         model: provider.model,
         messages: [{ role: 'user', content: buildPrompt(item.source_text, item.target_text) }],
         temperature: 0.7,
-        max_tokens: 1000,
+        // Reasoning models bill their hidden chain-of-thought against
+        // max_tokens, so a tight budget gets spent thinking and the card
+        // comes back truncated or empty (finish_reason 'length'). Leave
+        // enough headroom for the reasoning plus the full card.
+        max_tokens: 2500,
+        ...routingParams(provider),
       })
 
       if (response.usage) {
         console.error(
-          `  tokens: ${response.usage.prompt_tokens}+${response.usage.completion_tokens}`,
+          `  tokens: ${response.usage.prompt_tokens}+${response.usage.completion_tokens}` +
+            (response.model && response.model !== provider.model
+              ? ` (served by fallback ${response.model})`
+              : ''),
         )
       }
-      const markdown = response.choices[0].message.content ?? ''
+      const markdown = response.choices[0]?.message?.content?.trim() ?? ''
+      if (!markdown) {
+        // A provider can answer 200 with empty content (filtered, truncated,
+        // or a reasoning-only reply). Saving that leaves a blank card.
+        throw new Error('provider returned an empty response')
+      }
       const html = await marked.parse(markdown)
 
       await updateExamplesHtml(item.id, html)
       console.error('  ✓ saved')
       processed++
     } catch (err) {
-      console.error(`  ✗ error: ${(err as Error).message}`)
+      const detail = describeProviderError(err)
+      error = `${provider.name} (${provider.model}): ${detail}`
+      console.error(`  ✗ error: ${detail}`)
       failed++
     }
   }
 
-  return { processed, failed, skipped: false }
+  return { processed, failed, skipped: false, error }
 }
 
 export async function enrichCardsByIds(
@@ -112,7 +200,7 @@ export async function enrichCardsByIds(
   const items = await listCardsWithoutExamples({ ids })
   if (items.length === 0) {
     console.error('No cards to enrich (already enriched or deleted).')
-    return { processed: 0, failed: 0, skipped: false }
+    return { processed: 0, failed: 0, skipped: false, error: 'card not found or deleted' }
   }
   return enrichItems(items, model)
 }
@@ -161,7 +249,10 @@ export async function translateToRussian(
       },
     ],
     temperature: 0,
-    max_tokens: 100,
+    // Also needs reasoning headroom — see the note in enrichItems. A
+    // translation is short, but the thinking that precedes it is not.
+    max_tokens: 600,
+    ...routingParams(provider),
   })
   const text = response.choices[0]?.message?.content?.trim() ?? ''
   return text || null

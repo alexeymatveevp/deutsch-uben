@@ -130,6 +130,7 @@ function App() {
   const [isRipping, setIsRipping] = useState(false)
   const [isRegenerating, setIsRegenerating] = useState(false)
   const [isReplacing, setIsReplacing] = useState(false)
+  const [enrichError, setEnrichError] = useState<string | null>(null)
   const [selectionText, setSelectionText] = useState('')
   const examplesRef = useRef<HTMLElement>(null)
 
@@ -155,14 +156,21 @@ function App() {
     if (!activeCard || isRegenerating) return
     const cardId = activeCard.id
     setIsRegenerating(true)
+    setEnrichError(null)
     try {
       const r = await fetch(`${API_BASE}/api/cards/${cardId}/regenerate`, { method: 'POST' })
-      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
+      if (!r.ok) {
+        // The API reports the provider's own reason in `message` — show that
+        // rather than a bare status code, since it's the actionable part
+        // (dead model slug, rate limit, missing API key).
+        const data = await r.json().catch(() => null)
+        throw new Error(data?.message || data?.error || `${r.status} ${r.statusText}`)
+      }
       const updated: TranslationCard = await r.json()
       setAllCards((prev) => prev.map((c) => (c.id === cardId ? updated : c)))
     } catch (err) {
       console.error('Regenerate failed:', err)
-      alert('Regenerate failed — see console')
+      setEnrichError((err as Error).message || 'unknown error')
     } finally {
       setIsRegenerating(false)
     }
@@ -232,6 +240,12 @@ function App() {
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
   }, [goNext, goPrev, deleteCard])
+
+  // A regenerate failure belongs to the card it happened on, so drop it
+  // as soon as the user moves to another card.
+  useEffect(() => {
+    setEnrichError(null)
+  }, [activeCard?.id])
 
   // Watch text selection inside the examples section so we can offer
   // "Replace with …" when the user highlights a phrase to promote into
@@ -370,12 +384,24 @@ function App() {
           </button>
         </div>
       </main>
-      {activeCard.examples_html && (
+      {enrichError && (
+        <section className="examples-error" role="alert">
+          <span className="examples-error-title">Couldn’t generate AI examples</span>
+          <span className="examples-error-detail">{enrichError}</span>
+        </section>
+      )}
+      {activeCard.examples_html ? (
         <section
           ref={examplesRef}
           className="examples"
           dangerouslySetInnerHTML={{ __html: activeCard.examples_html }}
         />
+      ) : (
+        !enrichError && (
+          <section className="examples examples-empty">
+            No AI examples for this card yet — press <strong>Regenerate</strong> to create them.
+          </section>
+        )
       )}
       <div className="regenerate-row">
         <button

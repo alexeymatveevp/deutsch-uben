@@ -98,11 +98,18 @@ app.post('/api/cards/:id/regenerate', async (req, res) => {
   try {
     const { card, result } = await enrichCardById(id)
     if (result.skipped) {
-      res.status(503).json({ error: 'enrichment unavailable (no OPENROUTER_API_KEY or OPENAI_API_KEY set)' })
+      res.status(503).json({
+        error: 'enrichment unavailable',
+        message: 'no AI provider configured (OPENROUTER_API_KEY / OPENAI_API_KEY missing)',
+      })
       return
     }
     if (!card) {
-      res.status(500).json({ error: 'enrichment failed', failed: result.failed })
+      res.status(502).json({
+        error: 'enrichment failed',
+        message: result.error ?? 'the AI provider did not return any examples',
+        failed: result.failed,
+      })
       return
     }
     res.json(card)

@@ -17,7 +17,8 @@
  *   await enrichAllMissing()
  *
  * Provider selection: OPENROUTER_API_KEY (if set) wins over OPENAI_API_KEY.
- * Default model: 'openrouter/free' (or OPENROUTER_MODEL) on OpenRouter,
+ * Default model: 'anthropic/claude-haiku-5.5' (or OPENROUTER_MODEL) on
+ * OpenRouter, with automatic fallback to gemini-2.5-flash / gpt-5-mini;
  * 'gpt-4o' on OpenAI.
  *
  * Options:
