@@ -20,7 +20,7 @@ import {
   upsertPushSubscription,
   type CardCategory,
 } from './db.js'
-import { enrichCardById, translateToRussian } from './enrich.js'
+import { enrichCardById, generateStory, translateToRussian } from './enrich.js'
 import { sendReviewPush } from './push.js'
 import { getScrapeState, startScrape } from './scrape-job.js'
 
@@ -245,6 +245,40 @@ app.get('/api/cards/learning', async (req, res) => {
 // All cards currently in learning (short + long), with derived days-in-learning.
 app.get('/api/cards/learning/all', async (_req, res) => {
   res.json(await listAllLearning())
+})
+
+// ─── Mini story ──────────────────────────────────────────────────────────────
+// A short absurd text built around three cards. Generated on demand, never
+// stored.
+
+const STORY_CARDS = 3
+
+app.post('/api/story', async (req, res) => {
+  const body = req.body as { ids?: unknown }
+  const raw = Array.isArray(body?.ids) ? body.ids : []
+  const ids = [...new Set(raw.map(Number))].filter((n) => Number.isInteger(n) && n > 0)
+  if (ids.length !== STORY_CARDS) {
+    res.status(400).json({ error: `exactly ${STORY_CARDS} distinct card ids required` })
+    return
+  }
+  const cards = (await Promise.all(ids.map((id) => getCardById(id)))).filter(
+    (c): c is NonNullable<typeof c> => c !== null,
+  )
+  if (cards.length !== STORY_CARDS) {
+    res.status(404).json({ error: 'card not found' })
+    return
+  }
+  try {
+    const result = await generateStory(cards)
+    if (!result.ok) {
+      res.status(result.skipped ? 503 : 502).json({ error: 'story failed', message: result.error })
+      return
+    }
+    res.json({ html: result.html, format: result.format, cards })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ error: 'story failed', message: (err as Error).message })
+  }
 })
 
 // ─── Scrape (fetch new cards from the collection URLs) ───────────────────────

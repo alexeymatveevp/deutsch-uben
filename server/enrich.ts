@@ -257,3 +257,80 @@ export async function translateToRussian(
   const text = response.choices[0]?.message?.content?.trim() ?? ''
   return text || null
 }
+
+// ─── Mini story ───────────────────────────────────────────────────────────────
+
+/**
+ * Formats the story prompt rotates through, so three cards don't always
+ * yield the same kind of text. One is picked at random per request.
+ */
+const STORY_FORMATS = [
+  'eine absurde Kurzgeschichte',
+  'einen absurden Dialog zwischen zwei Personen',
+  'einen Witz mit einer richtigen Pointe am Ende',
+  'eine absurde Nachrichtenmeldung im Stil einer Tagesschau',
+  'ein absurdes Mini-Märchen ("Es war einmal …")',
+  'einen absurden Tagebucheintrag',
+  'eine absurde Werbeanzeige',
+  'ein absurdes Kochrezept mit Zutaten und Schritten',
+  'eine absurde Beschwerde-E-Mail an einen Kundenservice',
+  'ein absurdes Gespräch beim Arzt, beim Amt oder im Supermarkt',
+]
+
+export type StoryResult =
+  | { ok: true; html: string; format: string }
+  | { ok: false; skipped: boolean; error: string }
+
+export function buildStoryPrompt(cards: TranslationCard[], format: string): string {
+  const list = cards
+    .map((c) => `- **${c.source_text.replace(/\.\s*$/, '')}** (${c.target_text.replace(/\.\s*$/, '')})`)
+    .join('\n')
+  return `Du bist ein witziger Deutsch-Tutor. Der Lernende wiederholt gerade diese drei Wörter oder Ausdrücke:
+
+${list}
+
+Schreibe ${format} auf Deutsch, in der alle drei Ausdrücke natürlich und in ihrer richtigen Bedeutung vorkommen. Die Geschichte soll absurd, überraschend und lustig sein — je unerwarteter die Verbindung zwischen den drei Ausdrücken, desto besser. Humor ist wichtiger als Realismus.
+
+Regeln:
+- Länge: etwa 80–150 Wörter. Kurz und knackig.
+- Sprachniveau B1–B2: lebendige Alltagssprache, keine seltenen Wörter außer den dreien.
+- Markiere jedes Vorkommen der drei Zielausdrücke **fett** (auch in flektierter Form).
+- Beginne mit einer kurzen Überschrift als Markdown-H2 (## …).
+- Keine Erklärungen, keine Übersetzungen, keine Kommentare vor oder nach dem Text. Antworte nur mit der Geschichte.`
+}
+
+/**
+ * Write a short absurd text (story, dialogue, joke…) that uses the given
+ * cards. Nothing is persisted; the caller shows it once.
+ */
+export async function generateStory(cards: TranslationCard[], model?: string): Promise<StoryResult> {
+  const provider = getProvider(model)
+  if (!provider) {
+    return { ok: false, skipped: true, error: 'no AI provider configured' }
+  }
+  const format = STORY_FORMATS[Math.floor(Math.random() * STORY_FORMATS.length)]
+  console.error(
+    `Story (${provider.name} ${provider.model}, ${format}): ${cards.map((c) => `"${c.source_text}"`).join(', ')}`,
+  )
+  try {
+    const response = await provider.client.chat.completions.create({
+      model: provider.model,
+      messages: [{ role: 'user', content: buildStoryPrompt(cards, format) }],
+      // High temperature on purpose: variety and absurdity are the point.
+      temperature: 1.0,
+      max_tokens: 1200,
+      ...routingParams(provider),
+    })
+    if (response.usage) {
+      console.error(`  tokens: ${response.usage.prompt_tokens}+${response.usage.completion_tokens}`)
+    }
+    const markdown = response.choices[0]?.message?.content?.trim() ?? ''
+    if (!markdown) throw new Error('provider returned an empty response')
+    const html = await marked.parse(markdown)
+    return { ok: true, html, format }
+  } catch (err) {
+    const detail = describeProviderError(err)
+    console.error(`  ✗ story error: ${detail}`)
+    return { ok: false, skipped: false, error: `${provider.name} (${provider.model}): ${detail}` }
+  }
+}

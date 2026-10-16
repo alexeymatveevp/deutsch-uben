@@ -2,6 +2,7 @@
 export const PAGES = [
   { label: 'Все карточки', path: '/' },
   { label: 'Квиз', path: '/quiz' },
+  { label: 'Мини-история', path: '/story' },
   { label: 'Посмотреть сегодня', path: '/learning' },
   { label: 'В обучении', path: '/studying' },
   { label: 'Выражения', path: '/expressions' },

@@ -7,6 +7,7 @@ import StudyingList from './pages/StudyingList'
 import CategoryList from './pages/CategoryList'
 import Admin from './pages/Admin'
 import Quiz from './pages/Quiz'
+import Story from './pages/Story'
 import AppShell from './components/AppShell'
 import './index.css'
 
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route element={<AppShell />}>
           <Route path="/" element={<App />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/story" element={<Story />} />
           <Route path="/learning" element={<LearningList />} />
           <Route path="/studying" element={<StudyingList />} />
           <Route path="/learning/short" element={<Navigate to="/learning" replace />} />
