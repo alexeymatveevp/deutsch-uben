@@ -1,9 +1,12 @@
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import Header from './Header'
+import Drawer from './Drawer'
 
 export default function AppShell() {
   const navigate = useNavigate()
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  const onDrawerChange = useCallback((open: boolean) => setDrawerOpen(open), [])
 
   useEffect(() => {
     if (!('serviceWorker' in navigator)) return
@@ -22,7 +25,8 @@ export default function AppShell() {
 
   return (
     <>
-      <Header />
+      <Header onMenu={() => setDrawerOpen((o) => !o)} menuOpen={drawerOpen} />
+      <Drawer open={drawerOpen} onOpenChange={onDrawerChange} />
       <Outlet />
     </>
   )
